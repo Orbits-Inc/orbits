@@ -6,7 +6,7 @@ const Navbar = ({classextend}) => {
         <div class="logo">
             <a href="/">
             <div class="flex">
-              <img class="animate-spin-slow w-10 mr-5 delay-1000" src="/favicon.png" alt="logo" width="250px" className="inline mr-3" />
+              <img class="animate-spin-slow w-10 mr-5" src="/favicon.png" alt="logo" width="250px" className="inline mr-3" />
               <div class="font-bold text-3xl">orbits.</div>
             </div>
             </a>
