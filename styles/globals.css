@@ -1,9 +1,12 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700;800&display=swap");
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +16,43 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+}
+
+#level-1{
+  background:url("/background-l1.svg");
+  background-size:cover;
+  background-position: center;
+}
+
+.nav-link::before {
+  transition: 400ms;
+  height: 5px;
+  content:"";
+  position: absolute;
+  background-color: white;
+}
+
+.nav-link-ltr::before {
+  width: 0;
+  top:70px;
+  background-color: transparent;
+}
+
+.nav-link-ltr:hover::before {
+  width: 30px;
+  background-color: white;
+}
+
+.oops{
+  background:url("/glitch.gif");
+  background-size:cover;
+  background-position: center;
+}
+
+#parent{position: relative;}
+#child{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
