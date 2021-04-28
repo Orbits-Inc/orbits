@@ -31,7 +31,7 @@ export default function Home() {
                 e.preventDefault();
                 let res=await addEmail(email);
                 console.log(email+" resgistered!")
-                addToast("Wosh! that email went by the speed of light, thought we caught it!", {
+                addToast("Wosh! that email went by the speed of light, though we caught it!", {
                     appearance: 'success',
                     autoDismiss: true,
                   })
