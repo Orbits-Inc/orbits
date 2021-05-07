@@ -23,7 +23,7 @@ export default function Home() {
       <main class="overflow-hidden">
         <div id="level-1" className="relative h-screen p-6 px-20 text-primary">
           <Navbar/>
-            <div id="child" class="flex justify-evenly w-11/12 lg:mt-24 md:mt-28">
+            <div id="child" className="flex justify-evenly w-11/12 lg:mt-24 md:mt-28">
               <div className="">
               <div className="font-black lg:text-7xl md:text-5xl mx-auto lg:mx-0 md:mx-0 mr-12 text-4xl pt-4"><div class="tagline mb-2 pt-2">Research.</div>Write.<br/>Spread.</div>
               <div className="font-semibold text-accent mx-auto lg:mx-0 md:mx-0 py-8">Science, space & tech is what all we talk and write about!</div>
