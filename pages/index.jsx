@@ -27,7 +27,7 @@ export default function Home() {
               <div className="">
               <div className="font-black lg:text-7xl md:text-5xl mx-auto lg:mx-0 md:mx-0 mr-12 text-4xl pt-4"><div class="tagline mb-2 pt-2">Research.</div>Write.<br/>Spread.</div>
               <div className="font-semibold text-accent mx-auto lg:mx-0 md:mx-0 py-8">Science, space & tech is what all we talk and write about!</div>
-              <CustomButton title="Coming Soon" classextend="glow bg-secondary text-white font-bold text-lg rounded-full py-3 w-52 hover:bg-blue-700 outline-none"/>
+              <CustomButton title="Coming Soon" classextend="glow bg-secondary text-white font-bold text-lg rounded-full py-3 w-52 hover:bg-blue-700"/>
             </div>
             <div class="">
               <img class="inline md:h-4/6 lg:h-5/6 lg:ml-40 md:ml-10" src="/illustration.svg"/>
