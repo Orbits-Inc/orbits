@@ -9,8 +9,8 @@ body {
   margin: 0;
 }
 
-button:focus{
-  outline: none;
+button{
+  outline: 0;
 }
 
 a {
