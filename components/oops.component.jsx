@@ -2,7 +2,7 @@ import Navbar from "./navbar.component";
 const OopsPage = ({ msg }) => {
   return (
     <div id="parent" class={`parent oops text-white h-screen`}>
-      <Navbar classextend="p-6 lg:px-20 md:px-20" logintext="text-white" />
+      <Navbar classextend="p-6 py-3 lg:py-6 md:py-6 lg:px-24 md:px-24" logintext="text-white" />
       <div
         id="child"
         class={`child p-8 err-msg text-5xl text-center w-full font-bold text-center mt-11/12`}

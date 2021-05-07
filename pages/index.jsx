@@ -29,7 +29,7 @@ export default function Home() {
       <main class="overflow-x-hidden lg:overflow-hidden md:overflow-hidden">
         <div
           id="level-1"
-          className="relative h-screen p-6 py-3 lg:py-none md:py-none lg:px-24 md:px-24 text-primary"
+          className="relative h-screen p-6 py-3 lg:py-6 md:py-6 lg:px-24 md:px-24 text-primary"
         >
           <Navbar />
           <div
