@@ -29,7 +29,7 @@ export default function Home() {
       <main class="overflow-x-hidden lg:overflow-hidden md:overflow-hidden">
         <div
           id="level-1"
-          className="relative h-screen p-6 py-3 lg:py-none md:py-none lg:px-20 md:px-20 text-primary"
+          className="relative h-screen p-6 py-3 lg:py-none md:py-none lg:px-24 md:px-24 text-primary"
         >
           <Navbar />
           <div
@@ -52,7 +52,7 @@ export default function Home() {
             </div>
             <div class="">
               <img
-                class="hidden lg:inline md:inline md:h-4/6 lg:h-5/6 lg:ml-40 md:ml-10"
+                class="hidden lg:inline lg:mb-3 md:inline md:h-4/6 lg:h-5/6 lg:ml-10 md:ml-10"
                 src="/illustration.svg"
               />
             </div>
