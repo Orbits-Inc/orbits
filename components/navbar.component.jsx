@@ -1,6 +1,6 @@
 import CustomButton from "./custombutton.component";
 
-const Navbar = ({classextend}) => {
+const Navbar = ({classextend, logintext}) => {
     return (
       <div class={`flex justify-between ${classextend}`}>
         <div class="logo mt-1">
@@ -14,7 +14,7 @@ const Navbar = ({classextend}) => {
         <div>
         <ul class="navbar lg:block md:block hidden ml-auto h-12 mt-2 font-semibold text-xl text-accent">
         <li class="inline">
-          <CustomButton title="Login" classextend="sign-up bg-transparent border-2 border-gray-300 mr-8 text-primary hover:border-gray-500"/>
+          <CustomButton title="Login" classextend={`sign-up bg-transparent border-2 border-gray-300 mr-8 ${logintext?logintext:"text-primary"} hover:border-gray-500`}/>
         </li>
            <li class="inline">
              <CustomButton title="Sign up" classextend="sign-up bg-secondary text-white hover:text-white hover:bg-blue-700"/>
