@@ -15,33 +15,13 @@ a {
 }
 
 * {
-  box-sizing: border-box;
   font-family: 'Spartan', sans-serif;
 }
 
 #level-1{
-  background:url("/background-l1.svg");
+  background:url("/background.svg");
   background-size:cover;
   background-position: center;
-}
-
-.nav-link::before {
-  transition: 400ms;
-  height: 5px;
-  content:"";
-  position: absolute;
-  background-color: white;
-}
-
-.nav-link-ltr::before {
-  width: 0;
-  top:70px;
-  background-color: transparent;
-}
-
-.nav-link-ltr:hover::before {
-  width: 30px;
-  background-color: white;
 }
 
 .oops{
@@ -55,4 +35,19 @@ a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.tagline{
+  background: linear-gradient(90.23deg, #1A6EFC 13.13%, rgba(26, 110, 252, 0.388062) 133.92%, rgba(26, 110, 252, 0.29) 153.28%);
+  background-size: 100%;
+  background-repeat: repeat;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  -moz-background-clip:text;
+  -moz-text-fill-color:transparent;
+}
+
+.glow{
+  box-shadow: 4px 4px 37px rgba(26, 110, 252, 0.25);
 }

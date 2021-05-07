@@ -8,6 +8,14 @@ module.exports = {
       },
       animation: {
          'spin-slow': 'spin 3s linear infinite',
+      },
+      textColor:{
+        primary:"#3A3A3A",
+        secondary:"#347EFD",
+        accent:"#9A9A9A"
+      },
+      backgroundColor:{
+        secondary:"#347EFD"
       }
     }
   },
