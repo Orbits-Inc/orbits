@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import OopsPage from "../components/oops.component"
+import Head from "next/head";
+import OopsPage from "../components/oops.component";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
         <title>orbits</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-        <OopsPage msg="no such page exists, guess you got lost..."/>
+      <OopsPage msg="no such page exists, guess you got lost..." />
     </div>
-  )
+  );
 }
