@@ -2,12 +2,30 @@ import Head from "next/head";
 import Navbar from "../components/navbar.component";
 import CustomInput from "../components/custominput.component";
 import CustomButton from "../components/custombutton.component";
-import { useState } from "react";
-import addEmail from "../utils/add_email.js";
-import { useToasts } from "react-toast-notifications";
+import SignIn from "../components/signin.component";
+import { Edit2 } from "react-feather";
+import { usePopup } from "../utils/popup.provider";
+import { useAuth } from "../utils/auth.provider";
+
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const { addToast } = useToasts();
+  const StartWriting = () => {
+    return (
+      <CustomButton
+        logo={<Edit2 className="inline mr-3 mb-2 mt-1" size="24" />}
+        title="Start Writing"
+        classextend="mx-auto lg:mx-none md:lg-none glow bg-secondary text-white font-bold text-lg rounded-full py-3 px-8 hover:bg-blue-700"
+        onclick={() => {
+          if (!user) {
+            setIsOpen(true);
+          }
+        }}
+      />
+    );
+  };
+
+  const { isOpen, setIsOpen } = usePopup();
+  const { user } = useAuth();
+
   return (
     <div>
       <Head>
@@ -27,6 +45,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main class="overflow-x-hidden lg:overflow-hidden md:overflow-hidden">
+        <SignIn />
         <div
           id="level-1"
           className="relative h-screen p-6 py-3 lg:py-6 md:py-6 lg:px-24 md:px-24 text-primary"
@@ -45,10 +64,7 @@ export default function Home() {
               <div className="font-semibold text-center lg:text-left md:text-left text-accent mx-auto lg:mx-0 md:mx-0 py-8">
                 Science, space & tech is what all we talk and write about!
               </div>
-              <CustomButton
-                title="Coming Soon"
-                classextend="glow bg-secondary text-white font-bold text-lg rounded-full py-3 w-52 hover:bg-blue-700"
-              />
+              <StartWriting />
             </div>
             <div class="">
               <img
@@ -68,10 +84,7 @@ export default function Home() {
                 Science, space & tech is what all we talk and write about!
               </div>
               <div class="flex">
-                <CustomButton
-                  title="Coming Soon"
-                  classextend="glow bg-secondary text-white font-bold text-lg mx-auto rounded-full py-3 w-52 hover:bg-blue-700"
-                />
+                <StartWriting />
               </div>
             </div>
             <div class="z-0">

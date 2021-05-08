@@ -62,3 +62,7 @@ button {
 .glow {
   box-shadow: 4px 4px 37px rgba(26, 110, 252, 0.25);
 }
+
+.popup {
+  background: rgba(0, 0, 0, 0.21);
+}

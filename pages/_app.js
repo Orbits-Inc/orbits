@@ -1,13 +1,17 @@
 import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
-import { ToastProvider } from 'react-toast-notifications'
+import { PopupProvider } from '../utils/popup.provider'
+import { AuthProvider } from "../utils/auth.provider";
+
 function MyApp({ Component, pageProps }) {
   return (
-    <ToastProvider>
+    <AuthProvider>
+    <PopupProvider>
     <div className="">
       <Component {...pageProps} />
     </div>
-    </ToastProvider>
+    </PopupProvider>
+    </AuthProvider>
   )
 }
 
