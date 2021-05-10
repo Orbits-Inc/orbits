@@ -66,3 +66,13 @@ button {
 .popup {
   background: rgba(0, 0, 0, 0.21);
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 148, 148, 0.44);
+}

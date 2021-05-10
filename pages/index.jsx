@@ -48,7 +48,7 @@ export default function Home() {
         <SignIn />
         <div
           id="level-1"
-          className="relative h-screen p-6 py-3 lg:py-6 md:py-6 lg:px-24 md:px-24 text-primary"
+          className="relative lg:h-screen md:h-screen p-6 py-3 lg:py-3 md:py-3 lg:px-24 md:px-24 text-primary"
         >
           <Navbar />
           <div
@@ -74,7 +74,7 @@ export default function Home() {
             </div>
           </div>
           <div id="mobile" className="block lg:hidden md:hidden mt-10 mx-auto">
-            <div className="z-10">
+            <div className="">
               <div className="font-black text-center text-5xl pt-4">
                 <div class="tagline mb-2 pt-2">Research.</div>Write.
                 <br />
@@ -87,7 +87,7 @@ export default function Home() {
                 <StartWriting />
               </div>
             </div>
-            <div class="z-0">
+            <div class="mb-10">
               <img
                 style={{ transform: "scale(1.3)" }}
                 class="pt-12 pb-2 block mt-10"
@@ -96,6 +96,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div id="level-2" class="hidden h-screen px-2 lg:px-24 md:px-24"></div>
       </main>
     </div>
   );

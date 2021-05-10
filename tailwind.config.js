@@ -16,6 +16,7 @@ module.exports = {
       },
       backgroundColor: {
         secondary: "#347EFD",
+        accent: "#F6F6F6",
       },
     },
   },
