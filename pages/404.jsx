@@ -1,5 +1,5 @@
 import Head from "next/head";
-import OopsPage from "../components/oops.component";
+import Page404 from "../components/PageAssets/page404.component";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
         <title>Orbits</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <OopsPage msg="no such page exists, guess you got lost..." />
+      <Page404 message="No such page exists, guess you got lost..." />
     </div>
   );
 }

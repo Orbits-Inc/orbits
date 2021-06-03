@@ -76,3 +76,8 @@ button {
 ::-webkit-scrollbar-thumb {
   background: rgba(148, 148, 148, 0.44);
 }
+
+.article link {
+  font-weight: bold;
+  color: #347efd;
+}

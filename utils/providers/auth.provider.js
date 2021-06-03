@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
-import nookies from "nookies";
-import firebaseClient from "./firebase.js";
+import addNewUser from "../helpers/user/add_new_user.js";
+import getUser from "../helpers/user/get_user.js";
+import firebaseClient from "../firebase.js";
 import firebase from "firebase";
 import "firebase/auth";
 const AuthContext = createContext({});
@@ -10,16 +11,18 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    return firebase.auth().onIdTokenChanged(async (user) => {
-      console.log("auth changed");
-      console.log(user ? user.id : "Nothing");
-      if (!user) {
+    return firebase.auth().onIdTokenChanged(async (_user) => {
+      if (!_user) {
         setUser(null);
         return;
       }
-
-      const token = await user.getIdToken();
-      setUser(user);
+      try {
+        await addNewUser(_user);
+      } catch (err) {
+        console.log(err);
+      }
+      const __user = await getUser(_user.uid);
+      setUser(__user);
     });
   }, []);
   return (
