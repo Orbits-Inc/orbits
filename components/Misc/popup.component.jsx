@@ -1,8 +1,6 @@
 import { usePopup } from "../../utils/providers/popup.provider";
 
-const Popup = ({ className, children }) => {
-  const { isOpen, setIsOpen } = usePopup();
-
+const Popup = ({ className, children, isOpen }) => {
   return (
     <div
       className={`z-10 popup ${isOpen ? "fixed" : "hidden"} h-screen ${
