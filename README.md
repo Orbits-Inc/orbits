@@ -1,13 +1,12 @@
 <div align="center">
+  <img src="./public/Orbits%20Banner.svg" width="700"/>
   <h1>Welcome to the Orbits Github Repository 📖</h1>
   <strong>Researching, Exploring and Sharing makes a day worthy, make it easier with Orbits.</strong>
   <br/><br/>  
-  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/orbits-inc/orbits?color=3A3A3A&style=for-the-badge">
-  <img alt="Next.js" src="https://img.shields.io/badge/next.js-1A6EFC?style=for-the-badge&logo=next-dot-js&logoColor=white">
-  <img alt="Vercel" src="https://img.shields.io/badge/vercel-1A6EFC?style=for-the-badge&logo=vercel&logoColor=white">
-  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-1A6EFC?style=for-the-badge&logo=node-dot-js&logoColor=white">
-  <img alt="Node.js" src="https://img.shields.io/badge/firebase-1A6EFC?style=for-the-badge&logo=firebase&logoColor=white">
-  <img alt="Node.js" src="https://img.shields.io/badge/MongoDB-1A6EFC?style=for-the-badge&logo=mongodb&logoColor=white">
+  <img alt="Stars" src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge">
+  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/orbits-inc/orbits?style=for-the-badge">
+  <img alt="Forks" src="https://img.shields.io/github/forks/Orbits-Inc/orbits?style=for-the-badge">
+  <img alt="Stars" src="https://img.shields.io/github/stars/Orbits-Inc/orbits?style=for-the-badge">
 </div>
 <br>
 
