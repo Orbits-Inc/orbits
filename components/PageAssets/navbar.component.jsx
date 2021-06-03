@@ -75,11 +75,11 @@ const Navbar = ({ className, loginText }) => {
               />
             )}
           </li>
-          <li class="inline">
+          <li className="inline">
             {!!user ? (
-              <div class="inline-flex">
+              <div className="inline-flex">
                 <img
-                  class="rounded-full inline h-10 duration-300 hover:bg-gray-200 p-1 cursor-pointer"
+                  className="rounded-full inline h-10 duration-300 hover:bg-gray-200 p-1 cursor-pointer"
                   src={user.display_picture}
                 />
               </div>
