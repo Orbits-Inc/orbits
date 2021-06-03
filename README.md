@@ -26,7 +26,7 @@ At Orbits we care about:
 
 We, as science nerds, spend a lot of time looking for valuable articles and blog posts about our favorite field of science. We believe that searching through old and broken sites for new researches isn't a thing science fans should do anymore. It's hard to catch up with all the latest happenings,as it's spread on very less blogs and consumes tons of time to find correct one.
 
-That's why built Orbits, to help you:
+That's why we built Orbits, to help you:
 * 🧑‍🔬 Stay productive
 * 😀 Make Friends
 * 📰 Discover articles in one click
