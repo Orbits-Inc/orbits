@@ -35,7 +35,7 @@ function Section1() {
       >
         <div>
           <div className="font-black text-center lg:text-left md:text-left lg:text-7xl md:text-5xl mx-auto lg:mx-0 md:mx-0 lg:mr-12 md:mr-12 text-4xl pt-4">
-            <div class="tagline mb-2 pt-2">Research.</div>Write.
+            <div className="tagline mb-2 pt-2">Research.</div>Write.
             <br />
             Spread.
           </div>

@@ -37,7 +37,7 @@ const Navbar = ({ className, loginText }) => {
           )}
           {!!user ? (
             <li className="inline lg:hidden">
-              <div className="inline-flex mr-6 text-primary">
+              <div className="inline-flex mr-3 text-primary">
                 <Search
                   className="relative inline text-primary duration-300 cursor-pointer hover:bg-gray-200 p-1 rounded-full"
                   size="38"
@@ -49,7 +49,7 @@ const Navbar = ({ className, loginText }) => {
           )}
           <li className="inline">
             {!!user ? (
-              <div className="relative inline-flex mr-6">
+              <div className="relative inline-flex mr-3 lg:mr-6 md:mr-6">
                 <Bell
                   className="relative inline text-primary duration-300 cursor-pointer hover:bg-gray-200 p-1 rounded-full"
                   size="38"
