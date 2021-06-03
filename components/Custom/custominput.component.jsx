@@ -4,7 +4,7 @@ const CustomInput = ({ className, submitHandler, logo, ...otherProps }) => {
       className={`px-1 rounded-lg inline-flex ${className || ""}`}
       onSubmit={submitHandler}
     >
-      {logo}
+      <div>{logo}</div>
       <input
         className="outline-none text-sm text-primary px-1 bg-transparent rounded-lg"
         {...otherProps}
