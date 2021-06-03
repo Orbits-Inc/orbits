@@ -14,7 +14,7 @@
 
 > Orbits help you reserach, learn and spread 🧑‍🔬
 
-It help you learn about more on your favorite subject, help others on their reserach. Help others to discover, create new things in new fields. Daily feed about your interests. It is like github but for scientist.
+It help you learn about more on your favorite subject, help others on their reserach. Help others to discover, create new things in new fields. Daily feed about your interests.
 
 At Orbits we care about:
 
@@ -27,8 +27,8 @@ At Orbits we care about:
 We, as science nerds, spend a lot of time looking for valuable articles and blog posts about our favorite field of science. We believe that searching through old and broken sites for new researches isn't a thing science fans should do anymore. It's hard to catch up with all the latest happenings,as it's spread on very less blogs and consumes tons of time to find correct one.
 
 That's why built Orbits, to help you:
-* 🧑‍🔬 Stay up-to-date
-* ⏳Save time
+* 🧑‍🔬 Stay productive
+* 😀 Make Friends
 * 📰 Discover articles in one click
 
 ## 🗂 Tech Stack
