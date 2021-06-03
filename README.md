@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="/public/Readme Banner.png" alt="Orbits Banner">
   <h1>Welcome to the Orbits Github Repository 📖</h1>
   <strong>Researching, Exploring and Sharing makes a day worthy, make it easier with Orbits.</strong>
   <br/><br/>  
@@ -12,7 +11,7 @@
 </div>
 <br>
 
-## 🪐 Orbits
+## 🪐 Orbits (Under Construction 🚧)
 
 > Orbits help you reserach, learn and spread 🧑‍🔬
 
@@ -48,7 +47,7 @@ Below is a list of technologies we use at Orbits.
 We would be very happy and grateful if you want to contribute.
 There are two repos:-
 
-* 🏗 **Frontend Repo:** This repo is frontend repo
+* 🏗 **Frontend Repo:** <a href="https://github.com/Orbits-Inc/orbits">Orbits Frontend</a>
 * 🏗 **Backend Repo:** <a href="https://github.com/Orbits-Inc/orbits-api">Orbits Backend</a>
 
 We are open to all kinds of contributions. If you want to:
