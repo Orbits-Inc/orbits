@@ -1,16 +1,42 @@
 import CustomButton from "../Custom/custombutton.component";
 import { usePopup } from "../../utils/providers/popup.provider";
+import Popup from "../Misc/popup.component";
+import OutsideClickHandler from "react-outside-click-handler";
+import { X } from "react-feather";
+import { useState } from "react";
 import { useAuth } from "../../utils/providers/auth.provider";
 import { Bell } from "react-feather";
 import SearchBar from "../Custom/searchbar.component";
 import { Search } from "react-feather";
+import firebase from "firebase";
 
 const Navbar = ({ className, loginText }) => {
   const { isOpen, setIsOpen } = usePopup();
+  const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   const { user } = useAuth();
 
   return (
     <div className={`flex justify-between ${className || ""}`}>
+      <Popup className="absolute top-0 left-0" isOpen={isSearchBarOpen}>
+        <OutsideClickHandler
+          className="relative"
+          onOutsideClick={() => {
+            if (isSearchBarOpen) {
+              setIsSearchBarOpen(false);
+            }
+          }}
+        >
+          <div className="absolute pt-16 left-0 bottom-0 rounded-none w-full transition duration-300 ease-in-out bg-white p-6 lg:p-12 md:p-12 text-center">
+            <X
+              className="absolute top-0 right-0 m-5 cursor-pointer"
+              onClick={() => {
+                setIsSearchBarOpen(false);
+              }}
+            />
+            <SearchBar />
+          </div>
+        </OutsideClickHandler>
+      </Popup>
       <div className="logo mt-2">
         <a href="/">
           <div className="flex">
@@ -39,6 +65,9 @@ const Navbar = ({ className, loginText }) => {
             <li className="inline lg:hidden">
               <div className="inline-flex mr-3 text-primary">
                 <Search
+                  onClick={() => {
+                    setIsSearchBarOpen(true);
+                  }}
                   className="relative inline text-primary duration-300 cursor-pointer hover:bg-gray-200 p-1 rounded-full"
                   size="38"
                 />
@@ -49,7 +78,7 @@ const Navbar = ({ className, loginText }) => {
           )}
           <li className="inline">
             {!!user ? (
-              <div className="relative inline-flex mr-3 lg:mr-6 md:mr-6">
+              <div className="relative inline-flex mr-3 lg:mr-6 md:mr-3">
                 <Bell
                   className="relative inline text-primary duration-300 cursor-pointer hover:bg-gray-200 p-1 rounded-full"
                   size="38"

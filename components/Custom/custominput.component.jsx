@@ -1,9 +1,7 @@
 const CustomInput = ({ className, submitHandler, logo, ...otherProps }) => {
   return (
     <form
-      className={`w-80 px-1 rounded-lg bg-gray-200 inline-flex ${
-        className || ""
-      }`}
+      className={`px-1 rounded-lg inline-flex ${className || ""}`}
       onSubmit={submitHandler}
     >
       {logo}

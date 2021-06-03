@@ -31,7 +31,7 @@ const SignIn = () => {
   const { isOpen, setIsOpen } = usePopup();
 
   return (
-    <Popup className="flex justify-center">
+    <Popup className="flex justify-center" isOpen={isOpen}>
       <OutsideClickHandler
         className="relative"
         onOutsideClick={() => {
