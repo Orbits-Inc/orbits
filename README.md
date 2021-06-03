@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./public/Orbits%20Banner.svg" width="700"/>
-  <br/>
+  <hr/>
   <strong>Researching, Exploring and Sharing makes a day worthy, make it easier with Orbits.</strong>
   <br/><br/>  
   <img alt="Stars" src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge">
