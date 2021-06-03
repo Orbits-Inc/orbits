@@ -40,12 +40,17 @@ Below is a list of technologies we use at Orbits.
 
 * 🎨 **Frontend:** Nextjs
 * 🌳 **Backend:** Node.js
-* 🏗 **Backend Repo:** <a href="https://github.com/Orbits-Inc/orbits-api">Orbits Backend</a>
 * 🧰 **Services:** Firebase
 * 🗄️ **Database:** MongoDB
 * ☁ **Deployment:** Vercel
 
 ## 🙌 Want to Contribute?
+
+We would be very happy and grateful if you want to contribute.
+There are two repos:-
+
+* 🏗 **Frontend Repo:** This repo is frontend repo
+* 🏗 **Backend Repo:** <a href="https://github.com/Orbits-Inc/orbits-api">Orbits Backend</a>
 
 We are open to all kinds of contributions. If you want to:
 * 🤔 Suggest a feature
