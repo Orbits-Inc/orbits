@@ -6,7 +6,9 @@
   <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/orbits-inc/orbits?color=3A3A3A&style=for-the-badge">
   <img alt="Next.js" src="https://img.shields.io/badge/next.js-1A6EFC?style=for-the-badge&logo=next-dot-js&logoColor=white">
   <img alt="Vercel" src="https://img.shields.io/badge/vercel-1A6EFC?style=for-the-badge&logo=vercel&logoColor=white">
-  <img alt="Node.js" src="https://img.shields.io/badge/node.js-1A6EFC?style=for-the-badge&logo=node-dot-js&logoColor=white">
+  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-1A6EFC?style=for-the-badge&logo=node-dot-js&logoColor=white">
+  <img alt="Node.js" src="https://img.shields.io/badge/firebase-1A6EFC?style=for-the-badge&logo=firebase&logoColor=white">
+  <img alt="Node.js" src="https://img.shields.io/badge/MongoDB-1A6EFC?style=for-the-badge&logo=mongodb&logoColor=white">
 </div>
 <br>
 
@@ -37,7 +39,10 @@ That's why built Orbits, to help you:
 Below is a list of technologies we use at Orbits.
 
 * 🎨 **Frontend:** Nextjs
-* 🌳 **Services:** Node.js
+* 🌳 **Backend:** Node.js
+* 🏗 **Backend Repo:** <a href="https://github.com/Orbits-Inc/orbits-api">Orbits Backend</a>
+* 🧰 **Services:** Firebase
+* 🗄️ **Database:** MongoDB
 * ☁ **Deployment:** Vercel
 
 ## 🙌 Want to Contribute?
