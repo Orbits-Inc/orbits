@@ -16,6 +16,5 @@ export async function getTopPosts() {
   const res = await axios.get(
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/post/topPosts`
   );
-  console.log(res.data);
   return res.data;
 }

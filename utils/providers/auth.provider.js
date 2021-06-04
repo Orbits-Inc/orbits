@@ -16,13 +16,13 @@ export const AuthProvider = ({ children }) => {
         setUser(null);
         return;
       }
+      setUser(_user);
       try {
         await addNewUser(_user);
       } catch (err) {
         console.log(err);
       }
-      const __user = await getUser(_user.uid);
-      setUser(__user);
+      //const __user = await getUser(_user.uid);
     });
   }, []);
   return (

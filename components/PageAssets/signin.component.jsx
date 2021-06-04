@@ -6,29 +6,35 @@ import { usePopup } from "../../utils/providers/popup.provider";
 import OutsideClickHandler from "react-outside-click-handler";
 import { X } from "react-feather";
 
-const uiConfig = {
-  signInFlow: "popup",
-  signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-  ],
-  callbacks: {
-    signInSuccessWithAuthResult: () => {},
-  },
-};
-
-const FirebaseApp = () => {
-  return (
-    <>
-      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-    </>
-  );
-};
-
 const SignIn = () => {
-  firebaseClient();
   const { isOpen, setIsOpen } = usePopup();
+
+  const uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+    ],
+    callbacks: {
+      signInSuccessWithAuthResult: () => {
+        setIsOpen(false);
+      },
+    },
+  };
+
+  const FirebaseApp = () => {
+    return (
+      <>
+        <StyledFirebaseAuth
+          uiConfig={uiConfig}
+          firebaseAuth={firebase.auth()}
+        />
+      </>
+    );
+  };
+
+  firebaseClient();
 
   return (
     <Popup className="flex justify-center" isOpen={isOpen}>

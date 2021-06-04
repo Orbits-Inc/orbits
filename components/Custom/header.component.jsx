@@ -8,13 +8,13 @@ const Header = ({ title }) => {
               src="/favicon.png"
               alt="logo"
               width="250px"
-              className="inline mr-3 w-10"
+              className="inline mr-2 w-8 h-8"
             />
-            <div className="font-black mt-1 text-2xl mr-4">orbits</div>
+            <div className="font-black mt-1 text-xl mr-4">orbits</div>
             <div className="mt-2 mr-4 text-gray-300 font-semibold text-xl">
               |
             </div>
-            <div className="mt-2 text-accent font-semibold text-lg">
+            <div className="mt-2 text-accent font-semibold text-sm">
               {title}
             </div>
           </div>

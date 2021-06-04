@@ -1,8 +1,8 @@
-const CustomInput = ({ className, submitHandler, logo, ...otherProps }) => {
+const CustomInput = ({ className, onSubmit, logo, ...otherProps }) => {
   return (
     <form
       className={`px-1 rounded-lg inline-flex ${className || ""}`}
-      onSubmit={submitHandler}
+      onSubmit={onSubmit}
     >
       <div>{logo}</div>
       <input

@@ -2,19 +2,18 @@ import CustomButton from "../Custom/custombutton.component";
 import { usePopup } from "../../utils/providers/popup.provider";
 import Popup from "../Misc/popup.component";
 import OutsideClickHandler from "react-outside-click-handler";
-import { X } from "react-feather";
+import { X, Bell, Search, LogOut } from "react-feather";
 import { useState } from "react";
 import { useAuth } from "../../utils/providers/auth.provider";
-import { Bell } from "react-feather";
 import SearchBar from "../Custom/searchbar.component";
-import { Search } from "react-feather";
 import firebase from "firebase";
+import { Menu, MenuItem, MenuButton, MenuDivider } from "@szhsin/react-menu";
+import "@szhsin/react-menu/dist/index.css";
 
 const Navbar = ({ className, loginText }) => {
   const { isOpen, setIsOpen } = usePopup();
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   const { user } = useAuth();
-
   return (
     <div className={`flex justify-between ${className || ""}`}>
       <Popup className="top-0 left-0" isOpen={isSearchBarOpen}>
@@ -44,7 +43,7 @@ const Navbar = ({ className, loginText }) => {
               src="/favicon.png"
               alt="logo"
               width="250px"
-              className="inline mr-3 w-10"
+              className="inline mr-3 w-10 h-10"
             />
             <div className="font-black mt-1 text-2xl">orbits</div>
           </div>
@@ -106,12 +105,29 @@ const Navbar = ({ className, loginText }) => {
           </li>
           <li className="inline">
             {!!user ? (
-              <div className="inline-flex">
-                <img
-                  className="rounded-full inline h-10 duration-300 hover:bg-gray-200 p-1 cursor-pointer"
-                  src={user.display_picture}
-                />
-              </div>
+              <Menu
+                className="text-sm font-medium"
+                menuButton={
+                  <div className="inline-flex">
+                    <img
+                      className="rounded-full inline h-10 duration-300 hover:bg-gray-200 p-1 cursor-pointer"
+                      src={user.photoURL}
+                    />
+                  </div>
+                }
+              >
+                <MenuItem>Your profile</MenuItem>
+                <MenuItem>Start writing</MenuItem>
+                <MenuDivider />
+                <MenuItem
+                  onClick={() => {
+                    firebase.auth().signOut();
+                    window.location.href = "/";
+                  }}
+                >
+                  <LogOut className="mr-3" size="20" /> Logout
+                </MenuItem>
+              </Menu>
             ) : (
               <CustomButton
                 onClick={() => {
