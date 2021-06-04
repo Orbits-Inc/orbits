@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/Orbits%20Banner.svg" width="700"/>
+  <img src="./public/Orbits-Banner.svg" width="700"/>
   <br/><br/>
   <img alt="Stars" src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge">
   <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/orbits-inc/orbits?style=for-the-badge">
