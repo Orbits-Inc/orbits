@@ -68,7 +68,7 @@ const Navbar = ({ className, loginText }) => {
                     setIsSearchBarOpen(true);
                   }}
                   className="relative inline text-primary duration-300 cursor-pointer hover:bg-gray-200 p-1 rounded-full"
-                  size="38"
+                  size="36"
                 />
               </div>
             </li>
@@ -80,10 +80,10 @@ const Navbar = ({ className, loginText }) => {
               <div className="relative inline-flex mr-3 lg:mr-6 md:mr-3">
                 <Bell
                   className="relative inline text-primary duration-300 cursor-pointer hover:bg-gray-200 p-1 rounded-full"
-                  size="38"
+                  size="36"
                 />
                 {user.ping || true ? (
-                  <span className="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+                  <span className="flex absolute h-3 w-3 top-0 right-0">
                     <span className="absolute inline-flex rounded-full w-2 h-2 bg-secondary"></span>
                     <span className="relative inline-flex animate-ping rounded-full w-2 h-2 bg-secondary"></span>
                   </span>
@@ -110,7 +110,7 @@ const Navbar = ({ className, loginText }) => {
                 menuButton={
                   <div className="inline-flex">
                     <img
-                      className="rounded-full inline h-10 duration-300 hover:bg-gray-200 p-1 cursor-pointer"
+                      className="rounded-full inline w-10 h-10 duration-300 hover:bg-gray-200 p-1 cursor-pointer"
                       src={user.photoURL}
                     />
                   </div>
