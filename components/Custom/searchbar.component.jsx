@@ -16,7 +16,7 @@ function SearchBar() {
       onSubmit={(e) => {
         e.preventDefault();
 
-        if (query ) {
+        if (query && query!='') {
           window.location.href = `/search/${query}`;
         }
       }}
