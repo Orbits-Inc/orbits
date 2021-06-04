@@ -5,6 +5,13 @@ import { useState } from "react";
 function SearchBar() {
   const [query, setQuery] = useState(undefined);
 
+  const search = (q) => {
+    q = q.trim();
+    if (q && q !== "") {
+      window.location.href = `/search/${q}`;
+    }
+  };
+
   return (
     <CustomInput
       placeholder="search ..."
@@ -15,9 +22,7 @@ function SearchBar() {
       }}
       onSubmit={(e) => {
         e.preventDefault();
-        if (query) {
-          window.location.href = `/search/${query}`;
-        }
+        search(query);
       }}
       logo={
         <Search
