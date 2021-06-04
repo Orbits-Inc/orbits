@@ -11,7 +11,7 @@ const PostCrumb = ({ post }) => {
     .catch((err) => console.log(err));
   return (
     <div
-      className={`pt-4 text-sm font-semibold px-6 py-2 cursor-pointer bg-gray-100 mb-2`}
+      className={`hover:bg-white duration-300 pt-4 text-sm font-semibold px-6 py-2 cursor-pointer bg-gray-100 mb-2`}
     >
       <div className="">
         <div class="flex space-x-4">
