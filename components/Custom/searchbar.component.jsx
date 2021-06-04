@@ -15,8 +15,9 @@ function SearchBar() {
       }}
       onSubmit={(e) => {
         e.preventDefault();
+        
         if (query) {
-          window.location.href = `/search/${query}`;
+          window.location.href = `/search/${query.trim()}`;
         }
       }}
       logo={
