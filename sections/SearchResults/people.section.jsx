@@ -5,7 +5,9 @@ import ProfileCrumb from "../../components/Misc/profilecrumb.component";
 function People({ query }) {
   const { searchUser } = useApi();
   const [results, setResults] = useState(undefined);
-  searchUser(query).then((res) => setResults(res));
+  searchUser(query)
+    .then((res) => setResults(res))
+    .catch((err) => console.log(err));
   return (
     <div className="flex flex-col text-primary">
       <div className="mb-3 font-bold text-xl text-primary">People</div>

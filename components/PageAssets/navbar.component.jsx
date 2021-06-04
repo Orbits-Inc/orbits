@@ -43,7 +43,7 @@ const Navbar = ({ className, loginText }) => {
               src="/favicon.png"
               alt="logo"
               width="250px"
-              className="inline mr-3 w-10"
+              className="inline mr-3 w-10 h-10"
             />
             <div className="font-black mt-1 text-2xl">orbits</div>
           </div>
@@ -111,7 +111,7 @@ const Navbar = ({ className, loginText }) => {
                   <div className="inline-flex">
                     <img
                       className="rounded-full inline h-10 duration-300 hover:bg-gray-200 p-1 cursor-pointer"
-                      src={user.display_picture}
+                      src={user.photoURL}
                     />
                   </div>
                 }
