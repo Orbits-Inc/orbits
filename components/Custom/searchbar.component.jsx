@@ -11,13 +11,16 @@ function SearchBar() {
       className="w-full lg:w-80 hover:bg-gray-100 duration-500 bg-gray-200"
       required
       onChange={(e) => {
-        setQuery(e.target.value.trim());
+        setQuery(e.target.value);
       }}
       onSubmit={(e) => {
         e.preventDefault();
 
         if (query && query!='') {
           window.location.href = `/search/${query}`;
+        
+        if (query) {
+          window.location.href = `/search/${query.trim()}`;
         }
       }}
       logo={
