@@ -1,14 +1,14 @@
-name: Lint 
+name: Lint
 
 on:
   push:
     branches:
-      - '**'
+      - "**"
   pull_request:
 
 jobs:
   lint:
-    name: Lint 
+    name: Lint
     runs-on: ubuntu-latest
 
     steps:
@@ -25,5 +25,3 @@ jobs:
 
       - name: Run Linting
         run: npm run lint
-
-

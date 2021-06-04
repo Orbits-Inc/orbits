@@ -8,7 +8,7 @@ function Search() {
   const router = useRouter();
   const { query } = router.query;
   return (
-    <div className="relative lg:h-screen md:h-screen p-6 py-3 lg:py-3 md:py-3 lg:px-24 md:px-24 text-primary">
+    <div className="relative lg:h-screen md:h-screen p-4 py-2 lg:py-3 md:py-3 lg:px-24 md:px-24 text-primary">
       <NavBar />
       <div className="flex justify-between space-x-10 mt-12">
         <div className="w-full">
@@ -17,7 +17,10 @@ function Search() {
             <span className="text-secondary cursor-pointer hover:underline">
               {query}
             </span>
-            <div className="mt-3 text-sm text-secondary border-2 flex bg-blue-50 border-blue-500 space-x-12 rounded-lg py-2 px-6">
+            <div className="mt-3 text-sm text-secondary border-2 flex bg-blue-50 border-blue-500 space-x-12 rounded-lg py-2 px-6 justify-between lg:justify-start">
+              <div className="hover:text-blue-700 cursor-pointer duration-300 mt-1">
+                TOP
+              </div>
               <div className="hover:text-blue-700 cursor-pointer duration-300 mt-1">
                 PEOPLE
               </div>
