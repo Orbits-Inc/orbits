@@ -18,11 +18,7 @@ function SearchBar() {
 
         if (query && query!='') {
           window.location.href = `/search/${query}`;
-        
-        if (query) {
-          window.location.href = `/search/${query.trim()}`;
-        }
-      }}
+     }}
       logo={
         <Search
           className="text-gray-500 duration-300 cursor-pointer p-2 rounded-full"
