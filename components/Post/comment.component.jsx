@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import { useEffect, useState } from "react";
-import Mention from "../Custom/mention.component";
+import Mention from "../Misc/mention.component";
 import axios from "axios";
 
 function Comment({ comment }) {
