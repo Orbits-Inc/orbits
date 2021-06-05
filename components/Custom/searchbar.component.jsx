@@ -15,7 +15,7 @@ function SearchBar() {
   return (
     <CustomInput
       placeholder="search ..."
-      className="w-full lg:w-80 hover:bg-gray-100 duration-500 bg-gray-200"
+      className="w-full lg:w-80 duration-500 bg-gray-200"
       required
       onChange={(e) => {
         setQuery(e.target.value);

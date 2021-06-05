@@ -1,24 +1,24 @@
 import { useApi } from "../../utils/providers/api.provider";
 import { useEffect, useState } from "react";
-import ProfileCrumb from "../../components/Misc/profilecrumb.component";
+import PostCard from "../../components/Post/postcard.component";
 
-function People({ query }) {
-  const { searchUser } = useApi();
+function Articles({ query }) {
+  const { searchPost } = useApi();
   const [results, setResults] = useState(undefined);
-  searchUser(query)
+  searchPost(query)
     .then((res) => setResults(res))
     .catch((err) => console.log(err));
   if (results?.length > 0) {
     return (
       <div className="flex flex-col text-primary">
-        <div className="mb-3 font-bold text-xl text-primary">People</div>
+        <div className="mb-3 font-bold text-xl text-primary">Articles</div>
         {results?.map((data, key) => (
           <div
-            className={`cursor-pointer hover:bg-gray-100 duration-300 p-3 pt-4 border-l border-r border-b border-gray-300 ${
+            className={`cursor-pointer hover:bg-gray-100 duration-300 p-5 pt-6 border-l border-r border-b border-gray-300 ${
               key === 0 ? "rounded-t-xl border-t" : "rounded-none"
             } ${key === results?.length - 1 ? "rounded-b-xl" : "rounded-none"}`}
           >
-            <ProfileCrumb user={data} />
+            <PostCard post={data} />
           </div>
         ))}
       </div>
@@ -26,7 +26,7 @@ function People({ query }) {
   } else if (results?.length === 0) {
     return (
       <div className="flex flex-col">
-        <div className="mb-3 font-bold text-xl text-primary">People</div>
+        <div className="mb-3 font-bold text-xl text-primary">Articles</div>
         <div className="border border-gray-300 rounded-xl py-3 px-6 text-accent text-sm">
           🐝 Nothing found ...
         </div>
@@ -37,4 +37,4 @@ function People({ query }) {
   }
 }
 
-export default People;
+export default Articles;
