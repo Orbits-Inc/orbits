@@ -4,7 +4,7 @@ import SignIn from "../../components/PageAssets/signin.component";
 function LandingPage() {
   return (
     <div>
-      <main className="overflow-x-hidden lg:overflow-hidden md:overflow-hidden">
+      <main className="overflow-x-hidden">
         <SignIn />
         <Section1 />
       </main>

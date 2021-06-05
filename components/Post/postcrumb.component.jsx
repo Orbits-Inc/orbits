@@ -11,7 +11,7 @@ const PostCrumb = ({ post }) => {
     .catch((err) => console.log(err));
   return (
     <div
-      className={`hover:bg-gray-50 duration-300 pt-4 text-sm font-semibold px-6 py-2 cursor-pointer bg-gray-100 mb-2`}
+      className={`duration-300 pt-4 text-sm font-semibold px-6 py-2 cursor-pointer bg-gray-100 mb-2`}
     >
       <div className="">
         <div class="flex space-x-4">
@@ -25,7 +25,9 @@ const PostCrumb = ({ post }) => {
           {post?.title}
         </div>
         <div className="flex text-accent space-x-4 text-xs">
-          <div className="mt-1"><Mention user={user} /></div>
+          <div className="mt-1">
+            <Mention user={user} />
+          </div>
           <div className="py-1 flex space-x-1">
             <ThumbsUp size="18" className="" />
             <div className="pt-1">{post?.likes.length}</div>

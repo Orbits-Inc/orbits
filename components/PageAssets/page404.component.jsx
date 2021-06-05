@@ -4,7 +4,7 @@ const Page404 = ({ message }) => {
   return (
     <div id="parent" className="parent oops text-white h-screen">
       <Navbar
-        className="p-6 py-3 lg:py-3 md:py-3 lg:px-24 md:px-24"
+        className="p-4 py-2 lg:py-3 md:py-3 lg:px-24 md:px-24"
         loginText="text-white"
       />
       <div
