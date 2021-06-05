@@ -29,7 +29,7 @@ function Search() {
   return (
     <div className="p-4 py-2 lg:py-3 md:py-3 lg:px-24 md:px-24 text-primary">
       <NavBar />
-      <div className="flex justify-between space-x-10 mt-12">
+      <div className="flex justify-between space-x-10 mt-10">
         <div className="w-full">
           <div className="font-bold mb-12 text-2xl">
             Search Results for{" "}
