@@ -14,7 +14,7 @@ function Articles({ query }) {
         <div className="mb-3 font-bold text-xl text-primary">Articles</div>
         {results?.map((data, key) => (
           <div
-            className={`cursor-pointer hover:bg-gray-100 duration-300 p-4 border-l border-r border-b border-gray-300 ${
+            className={`cursor-pointer hover:bg-gray-100 duration-300 p-4 lg:p-5 border-l border-r border-b border-gray-300 ${
               key === 0 ? "rounded-t-xl border-t" : "rounded-none"
             } ${key === results?.length - 1 ? "rounded-b-xl" : "rounded-none"}`}
           >
