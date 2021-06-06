@@ -5,7 +5,6 @@ import Articles from "../../sections/SearchResults/articles.section";
 import NavBar from "../../components/PageAssets/navbar.component";
 import TrendingPosts from "../../sections/Post/trendingposts.section";
 import Header from "../../components/Custom/header.component";
-import SignIn from "../../components/PageAssets/signin.component";
 
 function Search() {
   const router = useRouter();
@@ -29,7 +28,6 @@ function Search() {
 
   return (
     <main>
-      <SignIn />
       <div className="p-4 py-2 lg:py-3 md:py-3 lg:px-24 md:px-24 text-primary">
         <NavBar />
         <div className="flex justify-between space-x-10 mt-10">

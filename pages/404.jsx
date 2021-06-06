@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Page404 from "../components/PageAssets/page404.component";
-import SignIn from "../components/PageAssets/signin.component";
 
-export default function Home() {
+export default function NotFound() {
   return (
     <main>
       <Head>

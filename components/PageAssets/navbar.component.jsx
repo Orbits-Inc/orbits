@@ -6,7 +6,7 @@ import { X, Bell, Search, LogOut } from "react-feather";
 import { useState } from "react";
 import { useAuth } from "../../utils/providers/auth.provider";
 import SearchBar from "../Custom/searchbar.component";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import { Menu, MenuItem, MenuButton, MenuDivider } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 

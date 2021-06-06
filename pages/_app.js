@@ -3,6 +3,7 @@ import "tailwindcss/tailwind.css";
 import { PopupProvider } from "../utils/providers/popup.provider";
 import { AuthProvider } from "../utils/providers/auth.provider";
 import { ApiProvider } from "../utils/providers/api.provider";
+import SignIn from "../components/PageAssets/signin.component";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
@@ -54,6 +55,7 @@ function MyApp({ Component, pageProps }) {
             <meta property="twitter:image" content="/Orbits-Banner.png" />
           </Head>
           <div>
+            <SignIn />
             <Component {...pageProps} />
           </div>
         </PopupProvider>
