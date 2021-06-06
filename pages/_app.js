@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps }) {
             />
             <meta property="twitter:image" content="/Orbits-Banner.png" />
           </Head>
-          <div>
+          <div className="">
             <SignIn />
             <Component {...pageProps} />
           </div>
