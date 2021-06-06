@@ -10,7 +10,7 @@ const SignIn = () => {
   const { isOpen, setIsOpen } = usePopup();
 
   const uiConfig = {
-    signInFlow: "popup",
+    signInFlow: "redirect",
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       firebase.auth.GithubAuthProvider.PROVIDER_ID,
