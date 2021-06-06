@@ -71,9 +71,7 @@ function PostCard({ post }) {
             <div className="font-medium text-sm rounded-lg bg-gray-300 text-accent w-60 h-6 animate-pulse"></div>
           </div>
           <div>
-            <div
-              className="h-40 md:h-60 w-full lg:h-32 lg:w-60 rounded-lg animate-pulse bg-gray-300"
-            ></div>
+            <div className="h-40 md:h-60 w-full lg:h-32 lg:w-60 rounded-lg animate-pulse bg-gray-300"></div>
           </div>
         </div>
       </div>

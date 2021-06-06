@@ -9,7 +9,7 @@ export default function Home() {
         <title>Orbits</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <SignIn/>
+      <SignIn />
       <Page404 message="No such page exists, guess you got lost..." />
     </main>
   );
