@@ -46,7 +46,7 @@ const SignIn = () => {
           }
         }}
       >
-        <div className="absolute left-0 bottom-0 rounded-none w-full transition duration-300 ease-in-out bg-white p-6 lg:p-12 md:p-12 text-center">
+        <div className="fixed left-0 bottom-0 rounded-none w-full transition duration-300 ease-in-out bg-white p-6 pt-8 lg:p-12 md:p-12 text-center">
           <X
             className="absolute top-0 right-0 m-5 cursor-pointer"
             onClick={() => {

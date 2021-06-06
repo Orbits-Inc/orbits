@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
         <PopupProvider>
           <Head>
             <title>Orbits</title>
-            <link rel="shortcut icon" href="./favicon.png"/>
+            <link rel="shortcut icon" href="./favicon.png" />
             <meta name="title" content="Orbits - Research | Learn | Share" />
             <meta
               name="description"
