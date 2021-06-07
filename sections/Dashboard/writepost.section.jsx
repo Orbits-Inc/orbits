@@ -7,13 +7,15 @@ function WritePost() {
 
   return (
     <div className="flex space-x-4 p-6 bg-white rounded-xl border border-white300">
-      <div>
-        <img
-          className="rounded-full w-12"
-          src={`${user ? user.photoURL : "/default.svg"}`}
-        />
+      <div className="">
+        <div className="h-12 w-12">
+          <img
+            className="rounded-full w-12 h-12"
+            src={`${user ? user.photoURL : "/default.svg"}`}
+          />
+        </div>
       </div>
-      <div className="w-full text-secondary">
+      <div className="text-secondary w-full">
         <CustomButton
           title="Start a post"
           className="mb-4 w-full text-left text-sm font-medium rounded-full p-3 px-6 text-black300 border border-white500"
