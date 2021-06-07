@@ -15,9 +15,9 @@ function Dashboard() {
 
   return (
     <main className="">
-      <div className="flex space-x-5 text-primary">
+      <div className="flex flex-col lg:flex-row lg:space-x-5 text-primary">
         <Navbar />
-        <div className="flex flex-col space-y-3 w-full">
+        <div className="flex flex-col space-y-2 lg:space-y-3 w-full">
           <div className="border border-white300 bg-white text-base font-bold w-full py-4 px-8 rounded-xl">
             <div className="flex justify-between items-center">
               <div>My Feed</div>
@@ -36,7 +36,7 @@ function Dashboard() {
           <Modal />
           <WritePost />
         </div>
-        <div className="flex flex-col space-y-3">
+        <div className="hidden lg:flex lg:flex-col space-y-3">
           <SearchBar />
           <div className="px-5 py-7 rounded-xl border border-white300 bg-white h-full">
             <div className="font-bold mb-1 text-primary">Top Articles</div>

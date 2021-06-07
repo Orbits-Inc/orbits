@@ -16,8 +16,8 @@ function WritePost() {
       <div className="w-full text-secondary">
         <CustomButton
           title="Start a post"
-          className="mb-4 w-full text-left text-sm font-medium rounded-full p-3 px-6 text-accent border border-gray-300"
-          logo={<Edit2 className="inline mr-3" size="16" />}
+          className="mb-4 w-full text-left text-sm font-medium rounded-full p-3 px-6 text-black300 border border-white500"
+          logo={<Edit2 className="inline mr-3 mb-1" size="16" />}
         />
         <div className="ml-5 flex text-xs space-x-6 font-medium">
           <div className="cursor-pointer hover:text-blue-700 duration-300 flex items-center space-x-2">

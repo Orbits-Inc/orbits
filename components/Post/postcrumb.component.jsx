@@ -11,7 +11,7 @@ const PostCrumb = ({ post }) => {
     .catch((err) => console.log(err));
   return (
     <div
-      className={`rounded-xl duration-300 pt-4 text-sm font-semibold px-4 py-2 cursor-pointer bg-white200 mb-2`}
+      className={`rounded-lg duration-300 pt-4 text-sm font-semibold px-4 py-2 cursor-pointer bg-white200 mb-2`}
     >
       <div className="">
         <div class="flex">

@@ -41,19 +41,19 @@ function Modal() {
         }}
       />
       <div>
-        <div className="font-black text-center lg:text-left md:text-left lg:text-5xl md:text-5xl mx-auto lg:mx-0 md:mx-0 lg:mr-12 md:mr-12 text-4xl pt-4">
+        <div className="font-black text-center lg:text-left md:text-left lg:text-5xl md:text-5xl mx-auto lg:mx-0 md:mx-0 lg:mr-12 md:mr-12 text-5xl pt-4">
           <div className="tagline mb-2 pt-2">Research.</div>Write.
           <br />
           Spread.
         </div>
-        <div className="font-medium w-2/4 text-accent text-sm my-6">
+        <div className="font-medium text-center lg:text-left md:text-left lg:w-7/12 md:w-7/12 text-accent text-sm my-6">
           Science, space & tech is what all we talk and write about!
         </div>
         <div className="flex flex-col items-center" />
-        <div>
+        <div className="flex justify-center lg:block md:block">
           <StartWriting />
         </div>
-        <div className="duration-300 cursor-pointer hover:text-secondary text-xs ml-3 text-blue-700 py-5">
+        <div className="flex justify-center lg:block md:block duration-300 cursor-pointer hover:text-secondary text-xs ml-2 text-blue-700 py-5">
           I'll just look around for now
           <ChevronDown className="inline ml-2" size="18" />
         </div>
