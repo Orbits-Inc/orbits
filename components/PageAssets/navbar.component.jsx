@@ -44,7 +44,8 @@ const Navbar = ({ className, loginText }) => {
                 setIsSearchBarOpen(false);
               }}
             />
-            <SearchBar />
+            <SearchBar
+              className="w-full"/>
           </div>
         </OutsideClickHandler>
       </Popup>

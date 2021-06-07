@@ -32,7 +32,7 @@ function Modal() {
       }}
       className={`${
         isOpen ? "relative" : "hidden"
-      } z-10 duration-300 border border-white300 text-primary w-full p-12 px-0 md:px-20 lg:px-20 rounded-xl`}
+      } duration-300 border border-white300 text-primary w-full p-12 px-0 md:px-20 lg:px-20 rounded-xl`}
     >
       <X
         className="absolute text-gray-400 hover:text-black top-0 right-0 m-5 cursor-pointer"
