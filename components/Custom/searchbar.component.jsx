@@ -15,7 +15,7 @@ function SearchBar() {
   return (
     <CustomInput
       placeholder="Search Orbits"
-      className="w-80 duration-500 shadow-sm bg-white py-2 rounded-full px-8"
+      className="w-80 duration-500 border border-white300 bg-white py-2 rounded-full px-8"
       required
       onChange={(e) => {
         setQuery(e.target.value);
