@@ -6,7 +6,7 @@ const CustomInput = ({ className, onSubmit, logo, ...otherProps }) => {
     >
       <div>{logo}</div>
       <input
-        className="outline-none text-base text-primary px-1 bg-transparent rounded-lg"
+        className="outline-none text-sm text-primary px-1 bg-transparent rounded-lg"
         {...otherProps}
       />
     </form>
