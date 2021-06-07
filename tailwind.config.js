@@ -20,7 +20,11 @@ module.exports = {
       },
       backgroundColor: {
         secondary: "#347EFD",
+        white200: "#F4F4F4",
         accent: "#F6F6F6",
+      },
+      borderColor: {
+        white300: "#EAEAEA",
       },
     },
   },

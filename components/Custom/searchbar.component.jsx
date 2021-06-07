@@ -14,8 +14,8 @@ function SearchBar() {
 
   return (
     <CustomInput
-      placeholder="search ..."
-      className="w-full lg:w-80 duration-500 bg-gray-200"
+      placeholder="Search Orbits"
+      className="w-80 duration-500 border border-white300 bg-white py-2 rounded-full px-8"
       required
       onChange={(e) => {
         setQuery(e.target.value);
@@ -26,7 +26,7 @@ function SearchBar() {
       }}
       logo={
         <Search
-          className="text-gray-500 duration-300 cursor-pointer p-2 rounded-full"
+          className="text-gray-400 duration-300 cursor-pointer p-2"
           size="40"
         />
       }

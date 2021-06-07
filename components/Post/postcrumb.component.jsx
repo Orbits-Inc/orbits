@@ -11,17 +11,13 @@ const PostCrumb = ({ post }) => {
     .catch((err) => console.log(err));
   return (
     <div
-      className={`duration-300 pt-4 text-sm font-semibold px-6 py-2 cursor-pointer bg-gray-100 mb-2`}
+      className={`rounded-xl duration-300 pt-4 text-sm font-semibold px-4 py-2 cursor-pointer bg-white200 mb-2`}
     >
       <div className="">
-        <div class="flex space-x-4">
+        <div class="flex">
           <Tag tag={post?.tags[0]} />
-          <div class="text-accent mt-2">
-            <Circle size="6" fill="#9A9A9A" />
-          </div>
-          <div class="text-accent text-sm mt-1">{post?.read_time} mins</div>
         </div>
-        <div className="break-words pt-2 text-primary font-semibold text-md">
+        <div className="break-words pt-4 pb-1 text-primary font-semibold text-md">
           {post?.title}
         </div>
         <div className="flex text-accent space-x-4 text-xs">

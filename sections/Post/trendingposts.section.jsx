@@ -10,7 +10,7 @@ function TrendingPosts() {
     .catch((err) => console.log(err));
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-2">
       {trendingPosts?.map((data, key) => (
         <PostCrumb post={data} />
       ))}
