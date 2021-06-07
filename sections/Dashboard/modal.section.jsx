@@ -58,10 +58,10 @@ function Modal() {
           <ChevronDown className="inline ml-2" size="18" />
         </div>
       </div>
-      <div className="lg:block md:block">
+      <div className="hidden lg:block md:block">
         <img
           style={{ zIndex: "-1" }}
-          className="opacity-20 lg:opacity-100 md:opacity-100 absolute top-0 right-0"
+          className="absolute top-0 right-0"
           src="/illustration.svg"
         />
       </div>
