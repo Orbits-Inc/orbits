@@ -43,7 +43,7 @@ function Dashboard() {
             <div className="font-medium text-xs text-accent mb-5 text-primary">
               This Week
             </div>
-            <TrendingPosts />
+            {/*<TrendingPosts />*/}
           </div>
         </div>
       </div>

@@ -29,6 +29,7 @@ function Modal() {
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
+        zIndex:"2",
       }}
       className={`${
         isOpen ? "relative" : "hidden"
