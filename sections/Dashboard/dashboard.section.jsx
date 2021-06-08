@@ -8,6 +8,7 @@ import SearchBar from "../../components/Custom/searchbar.component";
 import TrendingPosts from "../Post/trendingposts.section";
 import Switcher from "../../components/Misc/switcher.component";
 import WritePost from "./writepost.section";
+import Posts from "../Post/posts.section";
 
 function Dashboard() {
   const { isOpen, setIsOpen } = usePopup();
@@ -35,6 +36,7 @@ function Dashboard() {
           </div>
           <Modal />
           <WritePost />
+          <Posts />
         </div>
         <div className="hidden lg:flex lg:flex-col space-y-3">
           <SearchBar />
@@ -43,7 +45,7 @@ function Dashboard() {
             <div className="font-medium text-xs text-accent mb-5 text-primary">
               This Week
             </div>
-            {/*<TrendingPosts />*/}
+            <TrendingPosts />
           </div>
         </div>
       </div>

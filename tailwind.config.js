@@ -18,6 +18,7 @@ module.exports = {
         secondary: "#347EFD",
         accent: "#9A9A9A",
         black300: "#616161",
+        white800: "#9A9A9A",
       },
       backgroundColor: {
         secondary: "#347EFD",
