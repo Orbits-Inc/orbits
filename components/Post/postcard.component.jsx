@@ -1,5 +1,5 @@
 import { useApi } from "../../utils/providers/api.provider";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProfileCrumb from "../Misc/profilecrumb.component";
 import Tag from "../Custom/tag.component";
 import { ThumbsUp, MessageSquare, Circle, Calendar } from "react-feather";
@@ -7,9 +7,12 @@ import { ThumbsUp, MessageSquare, Circle, Calendar } from "react-feather";
 function PostCard({ post }) {
   const { getUser } = useApi();
   const [user, setUser] = useState(undefined);
-  getUser(post?.author_id)
-    .then((res) => setUser(res))
-    .catch((err) => console.log(err));
+
+  useEffect(() => {
+    getUser(post?.author_id)
+      .then((res) => setUser(res))
+      .catch((err) => console.log(err));
+  }, [])
 
   if (user && post) {
     return (
@@ -19,7 +22,7 @@ function PostCard({ post }) {
           <div className="w-full">
             <div className="flex space-x-3 mt-5 mb-3">
               {post?.tags.map((data, key) => (
-                <Tag tag={data} />
+                <Tag tag={data} key={key} />
               ))}
             </div>
             <div className="font-bold text-xl mb-1">{post?.title}</div>

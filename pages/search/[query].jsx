@@ -5,24 +5,37 @@ import Articles from "../../sections/SearchResults/articles.section";
 import NavBar from "../../components/PageAssets/navbar.component";
 import TrendingPosts from "../../sections/Post/trendingposts.section";
 import Header from "../../components/Custom/header.component";
+import NothingFound from "../../sections/SearchResults/nothingFound.component";
+import { searchUser } from "../../utils/helpers/user/search_user";
+import { searchPost } from "../../utils/helpers/post/search_post";
+import Searching from "../../sections/SearchResults/searching.component"
 
-function Search() {
-  const router = useRouter();
+export const getServerSideProps = async (ctx) => {
+  const query = ctx.query.query
+  const people = await searchUser(query)
+  const articles = await searchPost(query)
+  return { props: { people, articles } }
+}
+
+function Search({ people, articles }) {
+  const router = useRouter()
   const { query } = router.query;
   const [filter, setFilter] = useState("TOP");
 
   const SearchResults = () => {
-    if (filter === "TOP") {
+    if (filter === "TOP" && people && articles) {
       return (
         <>
-          <People query={query} />
-          <Articles query={query} />
+          <People people={people} />
+          <Articles articles={articles} />
         </>
       );
-    } else if (filter === "PEOPLE") {
-      return <People query={query} />;
+    } else if (filter === "PEOPLE" && people) {
+      return <People people={people} />;
+    } else if (filter === "ARTICLES" && articles) {
+      return <Articles articles={articles} />;
     } else {
-      return <Articles query={query} />;
+      return <NothingFound />
     }
   };
 
@@ -34,30 +47,28 @@ function Search() {
           <div className="w-full">
             <div className="font-bold mb-12 text-2xl">
               Search Results for{" "}
+              <Searching />
               <span className="text-secondary cursor-pointer hover:underline">
                 {query}
               </span>
               <div className="mt-3 text-sm text-secondary border-2 flex bg-blue-50 border-blue-500 space-x-12 rounded-lg py-2 px-6 justify-between lg:justify-start">
                 <div
-                  className={`hover:text-blue-800 ${
-                    filter === "TOP" ? "text-blue-800" : ""
-                  } cursor-pointer duration-300 mt-1`}
+                  className={`hover:text-blue-800 ${filter === "TOP" ? "text-blue-800" : ""
+                    } cursor-pointer duration-300 mt-1`}
                   onClick={() => setFilter("TOP")}
                 >
                   TOP
                 </div>
                 <div
-                  className={`hover:text-blue-800 ${
-                    filter === "PEOPLE" ? "text-blue-800" : ""
-                  } cursor-pointer duration-300 mt-1`}
+                  className={`hover:text-blue-800 ${filter === "PEOPLE" ? "text-blue-800" : ""
+                    } cursor-pointer duration-300 mt-1`}
                   onClick={() => setFilter("PEOPLE")}
                 >
                   PEOPLE
                 </div>
                 <div
-                  className={`hover:text-blue-800 ${
-                    filter === "ARTICLES" ? "text-blue-800" : ""
-                  } cursor-pointer duration-300 mt-1`}
+                  className={`hover:text-blue-800 ${filter === "ARTICLES" ? "text-blue-800" : ""
+                    } cursor-pointer duration-300 mt-1`}
                   onClick={() => setFilter("ARTICLES")}
                 >
                   ARTICLES
@@ -68,7 +79,7 @@ function Search() {
               <SearchResults />
             </div>
           </div>
-          <div class="w-2/4 hidden lg:block">
+          <div className="w-2/4 hidden lg:block">
             <div className="mb-6">
               <Header title="Trending" />
             </div>
