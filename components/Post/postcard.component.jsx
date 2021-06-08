@@ -5,15 +5,8 @@ import Tag from "../Custom/tag.component";
 import { ThumbsUp, MessageSquare, Circle, Calendar } from "react-feather";
 
 function PostCard({ post }) {
-  const { getUser } = useApi();
-  const [user, setUser] = useState(undefined);
-
-  useEffect(() => {
-    getUser(post?.author_id)
-      .then((res) => setUser(res))
-      .catch((err) => console.log(err));
-  }, [])
-
+  const user = post.author;
+  console.log(post);
   if (user && post) {
     return (
       <div>

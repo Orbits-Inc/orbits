@@ -8,17 +8,24 @@ import Header from "../../components/Custom/header.component";
 import NothingFound from "../../sections/SearchResults/nothingFound.component";
 import { searchUser } from "../../utils/helpers/user/search_user";
 import { searchPost } from "../../utils/helpers/post/search_post";
-import Searching from "../../sections/SearchResults/searching.component"
+import { getUser } from "../../utils/helpers/user/get_user";
+import { CloudLightning } from "react-feather";
 
 export const getServerSideProps = async (ctx) => {
-  const query = ctx.query.query
-  const people = await searchUser(query)
-  const articles = await searchPost(query)
-  return { props: { people, articles } }
-}
+  const query = ctx.query.query;
+  const people = await searchUser(query);
+  let articles = await searchPost(query);
+
+  for (let i = 0; i < articles.length; i++) {
+    const article = articles[i];
+    article.author = await getUser(article.author_id);
+  }
+
+  return { props: { people, articles } };
+};
 
 function Search({ people, articles }) {
-  const router = useRouter()
+  const router = useRouter();
   const { query } = router.query;
   const [filter, setFilter] = useState("TOP");
 
@@ -35,7 +42,7 @@ function Search({ people, articles }) {
     } else if (filter === "ARTICLES" && articles) {
       return <Articles articles={articles} />;
     } else {
-      return <NothingFound />
+      return <NothingFound />;
     }
   };
 
@@ -47,28 +54,30 @@ function Search({ people, articles }) {
           <div className="w-full">
             <div className="font-bold mb-12 text-2xl">
               Search Results for{" "}
-              <Searching />
               <span className="text-secondary cursor-pointer hover:underline">
                 {query}
               </span>
               <div className="mt-3 text-sm text-secondary border-2 flex bg-blue-50 border-blue-500 space-x-12 rounded-lg py-2 px-6 justify-between lg:justify-start">
                 <div
-                  className={`hover:text-blue-800 ${filter === "TOP" ? "text-blue-800" : ""
-                    } cursor-pointer duration-300 mt-1`}
+                  className={`hover:text-blue-800 ${
+                    filter === "TOP" ? "text-blue-800" : ""
+                  } cursor-pointer duration-300 mt-1`}
                   onClick={() => setFilter("TOP")}
                 >
                   TOP
                 </div>
                 <div
-                  className={`hover:text-blue-800 ${filter === "PEOPLE" ? "text-blue-800" : ""
-                    } cursor-pointer duration-300 mt-1`}
+                  className={`hover:text-blue-800 ${
+                    filter === "PEOPLE" ? "text-blue-800" : ""
+                  } cursor-pointer duration-300 mt-1`}
                   onClick={() => setFilter("PEOPLE")}
                 >
                   PEOPLE
                 </div>
                 <div
-                  className={`hover:text-blue-800 ${filter === "ARTICLES" ? "text-blue-800" : ""
-                    } cursor-pointer duration-300 mt-1`}
+                  className={`hover:text-blue-800 ${
+                    filter === "ARTICLES" ? "text-blue-800" : ""
+                  } cursor-pointer duration-300 mt-1`}
                   onClick={() => setFilter("ARTICLES")}
                 >
                   ARTICLES

@@ -1,6 +1,6 @@
 import PostCard from "../../components/Post/postcard.component";
-import NothingFound from "./nothingFound.component"
-import Searching from "./searching.component"
+import NothingFound from "./nothingFound.component";
+import Searching from "./searching.component";
 
 function Articles({ articles }) {
   if (articles?.length > 0) {
@@ -10,8 +10,11 @@ function Articles({ articles }) {
         {articles?.map((data, key) => (
           <div
             key={key}
-            className={`cursor-pointer hover:bg-gray-100 duration-300 p-4 lg:p-5 border-l border-r border-b border-gray-300 ${key === 0 ? "rounded-t-xl border-t" : "rounded-none"
-              } ${key === articles?.length - 1 ? "rounded-b-xl" : "rounded-none"}`}
+            className={`cursor-pointer hover:bg-gray-100 duration-300 p-4 lg:p-5 border-l border-r border-b border-gray-300 ${
+              key === 0 ? "rounded-t-xl border-t" : "rounded-none"
+            } ${
+              key === articles?.length - 1 ? "rounded-b-xl" : "rounded-none"
+            }`}
           >
             <PostCard post={data} />
           </div>
@@ -19,13 +22,9 @@ function Articles({ articles }) {
       </div>
     );
   } else if (articles?.length === 0) {
-    return (
-      <NothingFound />
-    );
+    return <NothingFound />;
   } else {
-    return (
-      <Searching />
-    );
+    return <Searching />;
   }
 }
 
