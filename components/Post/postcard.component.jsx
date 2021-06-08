@@ -1,8 +1,6 @@
-import { useApi } from "../../utils/providers/api.provider";
-import { useState, useEffect } from "react";
 import ProfileCrumb from "../Misc/profilecrumb.component";
 import Tag from "../Custom/tag.component";
-import { ThumbsUp, MessageSquare, Circle, Calendar } from "react-feather";
+import { ThumbsUp, MessageSquare, Calendar } from "react-feather";
 
 function PostCard({ post }) {
   const user = post.author;

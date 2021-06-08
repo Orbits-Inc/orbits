@@ -9,7 +9,6 @@ import NothingFound from "../../sections/SearchResults/nothingFound.component";
 import { searchUser } from "../../utils/helpers/user/search_user";
 import { searchPost } from "../../utils/helpers/post/search_post";
 import { getUser } from "../../utils/helpers/user/get_user";
-import { CloudLightning } from "react-feather";
 
 export const getServerSideProps = async (ctx) => {
   const query = ctx.query.query;

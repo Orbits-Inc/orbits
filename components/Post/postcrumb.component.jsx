@@ -1,5 +1,5 @@
 import Tag from "../Custom/tag.component";
-import { ThumbsUp, MessageSquare, Circle } from "react-feather";
+import { ThumbsUp, MessageSquare } from "react-feather";
 import Mention from "../Misc/mention.component";
 import { useApi } from "../../utils/providers/api.provider";
 import { useState } from "react";
