@@ -4,7 +4,6 @@ import { ThumbsUp, MessageSquare, Calendar } from "react-feather";
 
 function PostCard({ post }) {
   const user = post.author;
-  console.log(post);
   if (user && post) {
     return (
       <div>
