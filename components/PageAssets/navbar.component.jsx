@@ -44,7 +44,7 @@ const Navbar = ({ className, loginText }) => {
                 setIsSearchBarOpen(false);
               }}
             />
-            <SearchBar />
+            <SearchBar className="w-full" />
           </div>
         </OutsideClickHandler>
       </Popup>
@@ -109,9 +109,9 @@ const Navbar = ({ className, loginText }) => {
                   setIsOpen(true);
                 }}
                 title="Login"
-                className={`login bg-transparent border-2 border-gray-300 lg:mr-8 md:mr-8 ${
-                  loginText ? loginText : "text-primary"
-                } hover:border-gray-500`}
+                className={`rounded-full font-semibold text-sm px-5 py-2 login bg-transparent border-2 border-blue-500 lg:mr-3 md:mr-3 ${
+                  loginText ? loginText : "text-secondary"
+                } hover:bg-secondary hover:text-white`}
               />
             )}
           </li>
@@ -146,7 +146,7 @@ const Navbar = ({ className, loginText }) => {
                   setIsOpen(true);
                 }}
                 title="Sign up"
-                className="sign-up lg:inline md:inline hidden bg-secondary text-white hover:text-white hover:bg-blue-700"
+                className="sign-up rounded-full border-2 border-blue-500 hover:border-blue-700 text-sm font-semibold px-5 py-2 lg:inline md:inline hidden bg-secondary text-white hover:text-white hover:bg-blue-700"
               />
             )}
           </li>
@@ -173,7 +173,7 @@ const Navbar = ({ className, loginText }) => {
   const DesktopNavbar = () => (
     <>
       <div className="fixed h-screen w-56 pb-10">
-        <div className="shadow-sm p-6 rounded-xl bg-white w-full h-full">
+        <div className="border border-white-300 p-6 rounded-xl bg-white w-full h-full">
           <div className="flex flex-col h-full justify-between">
             <div>
               <div className="logo">
@@ -192,49 +192,52 @@ const Navbar = ({ className, loginText }) => {
               <div className="mt-6">
                 <StartWriting />
               </div>
-            </div>
-            <div className="flex flex-col space-y-6 mb-8 font-medium text-primary">
-              <NavLink href="/" activeClassName="text-secondary font-semibold">
-                <a className="flex space-x-4">
-                  <MenuFeather /> <div>My Feed</div>
-                </a>
-              </NavLink>
-              <NavLink
-                href="/explore"
-                activeClassName="text-secondary font-semibold"
-              >
-                <a className="flex space-x-4">
-                  <Compass /> <div>Explore</div>
-                </a>
-              </NavLink>
-              <NavLink
-                href="/profile"
-                activeClassName="text-secondary font-semibold"
-              >
-                <a className="flex space-x-4">
-                  <Bell /> <div>Notifications</div>
-                </a>
-              </NavLink>
-              <NavLink
-                href="/bookmarks"
-                activeClassName="text-secondary font-semibold"
-              >
-                <a className="flex space-x-4">
-                  <Bookmark /> <div>Bookmarks</div>
-                </a>
-              </NavLink>
-              <NavLink
-                href="/profile"
-                activeClassName="text-secondary font-semibold"
-              >
-                <a className="flex space-x-4">
-                  <ChevronDown /> <div>More</div>
-                </a>
-              </NavLink>
+              <div className="flex flex-col space-y-6 my-8 mt-12 font-medium text-primary">
+                <NavLink
+                  href="/"
+                  activeClassName="text-secondary font-semibold"
+                >
+                  <a className="flex space-x-4">
+                    <MenuFeather /> <div>My Feed</div>
+                  </a>
+                </NavLink>
+                <NavLink
+                  href="/explore"
+                  activeClassName="text-secondary font-semibold"
+                >
+                  <a className="flex space-x-4">
+                    <Compass /> <div>Explore</div>
+                  </a>
+                </NavLink>
+                <NavLink
+                  href="/profile"
+                  activeClassName="text-secondary font-semibold"
+                >
+                  <a className="flex space-x-4">
+                    <Bell /> <div>Notifications</div>
+                  </a>
+                </NavLink>
+                <NavLink
+                  href="/bookmarks"
+                  activeClassName="text-secondary font-semibold"
+                >
+                  <a className="flex space-x-4">
+                    <Bookmark /> <div>Bookmarks</div>
+                  </a>
+                </NavLink>
+                <NavLink
+                  href="/profile"
+                  activeClassName="text-secondary font-semibold"
+                >
+                  <a className="flex space-x-4">
+                    <ChevronDown /> <div>More</div>
+                  </a>
+                </NavLink>
+              </div>
             </div>
             <div className="">
               <CustomButton
-                className="border-2 border-blue-500 text-secondary w-full px-6 py-3 hover:bg-blue-500 hover:text-white rounded-full"
+                className="font-semibold border-2 border-blue-500 text-secondary w-full px-6 py-3 hover:bg-blue-500 hover:text-white rounded-full"
                 title="Login"
               />
             </div>
