@@ -44,7 +44,7 @@ const Navbar = ({ className, loginText }) => {
                 setIsSearchBarOpen(false);
               }}
             />
-            <SearchBar />
+            <SearchBar className="w-full" />
           </div>
         </OutsideClickHandler>
       </Popup>
@@ -109,9 +109,9 @@ const Navbar = ({ className, loginText }) => {
                   setIsOpen(true);
                 }}
                 title="Login"
-                className={`login bg-transparent border-2 border-gray-300 lg:mr-8 md:mr-8 ${
-                  loginText ? loginText : "text-primary"
-                } hover:border-gray-500`}
+                className={`rounded-full font-semibold text-sm px-5 py-2 login bg-transparent border-2 border-blue-500 lg:mr-3 md:mr-3 ${
+                  loginText ? loginText : "text-secondary"
+                } hover:bg-secondary hover:text-white`}
               />
             )}
           </li>
@@ -146,7 +146,7 @@ const Navbar = ({ className, loginText }) => {
                   setIsOpen(true);
                 }}
                 title="Sign up"
-                className="sign-up lg:inline md:inline hidden bg-secondary text-white hover:text-white hover:bg-blue-700"
+                className="sign-up rounded-full border-2 border-blue-500 hover:border-blue-700 text-sm font-semibold px-5 py-2 lg:inline md:inline hidden bg-secondary text-white hover:text-white hover:bg-blue-700"
               />
             )}
           </li>
