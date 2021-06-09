@@ -1,5 +1,5 @@
 import Tag from "../Custom/tag.component";
-import { ThumbsUp, MessageSquare, Circle } from "react-feather";
+import { Heart2, Chat } from "react-iconly";
 import Mention from "../Misc/mention.component";
 import { useApi } from "../../utils/providers/api.provider";
 
@@ -23,12 +23,12 @@ const PostCrumb = ({ post }) => {
             <Mention user={user} />
           </div>
           <div className="py-1 flex space-x-1">
-            <ThumbsUp size="18" className="" />
+            <Heart2 className="pb-1" />
             <div className="pt-1">{post?.likes.length}</div>
           </div>
           <div className="py-1 flex space-x-1">
             <div>
-              <MessageSquare size="18" />
+              <Chat className="pb-1" />
             </div>
             <div className="pt-1">{post?.comments.length}</div>
           </div>

@@ -1,6 +1,6 @@
 import Navbar from "../../components/PageAssets/navbar.component";
 import CustomButton from "../../components/Custom/custombutton.component";
-import { Edit2, Clock, Home } from "react-feather";
+import { Clock, Home } from "react-feather";
 import { usePopup } from "../../utils/providers/popup.provider";
 import { useAuth } from "../../utils/providers/auth.provider";
 import Modal from "./modal.section";
@@ -19,6 +19,7 @@ function Dashboard() {
       <div className="flex flex-col lg:flex-row lg:space-x-4 text-primary">
         <Navbar />
         <div className="flex flex-col space-y-2 w-full">
+          <Modal />
           <div className="border border-white300 bg-white text-base font-bold w-full py-4 px-8 rounded-xl">
             <div className="flex justify-between items-center">
               <div>My Feed</div>
@@ -34,7 +35,6 @@ function Dashboard() {
               />
             </div>
           </div>
-          <Modal />
           <WritePost />
           <Posts />
         </div>
