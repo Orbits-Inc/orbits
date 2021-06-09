@@ -65,7 +65,7 @@ function PostCard({ post }) {
           </div>
         </div>
 
-        <div className="flex flex-col items-center md:flex-row lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3">
+        <div className="flex flex-col md:items-center lg:items-center md:flex-row lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3">
           <div className="w-full">
             <div className="font-bold text-xl mb-1">{post?.title}</div>
             <div className="font-medium text-sm text-accent">
