@@ -18,8 +18,8 @@ function PostCard({ post }) {
 
   const { user, isLoading, isError } = getUser(post?.author_id);
 
-  const EngageSection = () => {
-    return (
+  const EngageSection=()=>{
+    return(
       <div className="flex justify-between lg:justify-start md:justify-start space-x-8 mt-2">
         <div className="flex font-medium text-sm space-x-8 text-white800">
           <div className="py-1 flex space-x-2">
@@ -42,21 +42,21 @@ function PostCard({ post }) {
           <Bookmark fill={isBookmarked ? "#347EFD" : "white"} size="21" />
         </div>
       </div>
-    );
-  };
+    )
+  }
 
   if (user && post) {
     return (
       <div>
         <div className="flex flex-col lg:flex-row md:flex-row justify-between mb-3 lg:mb-4">
-          <div className="flex space-x-2">
-            <ProfileCrumb user={user} />
-            <div className="mt-6 text-white800 flex space-x-2 text-xs">
-              <div>
-                <Calendar size="12" />
-              </div>
-              <div className="">{post?.date}</div>
-            </div>
+        <div className="flex space-x-2">
+          <ProfileCrumb user={user} />
+          <div className="mt-6 text-white800 flex space-x-2 text-xs">
+          <div>
+            <Calendar size="12" />
+          </div>
+          <div className="">{post?.date}</div>
+          </div>
           </div>
           <div className="flex space-x-3 mt-3 lg:mt-5 md:mt-5">
             {post?.tags.map((data, key) => (
@@ -65,16 +65,14 @@ function PostCard({ post }) {
           </div>
         </div>
 
-        <div className="flex flex-col items-center md:flex-row lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3">
+        <div className="flex flex-col lg:items-center md:flex-row lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3">
           <div className="w-full">
-            <div className="font-bold text-xl mb-1">{post?.title}</div>
-            <div className="font-medium text-sm text-accent">
+            <div className="font-bold text-xl mb-1 text-black700">{post?.title}</div>
+            <div className="font-medium text-sm text-black400">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua...
             </div>
-            <div className="hidden md:block lg:block">
-              <EngageSection />
-            </div>
+            <div className="hidden md:block lg:block"><EngageSection/></div>
           </div>
           <div>
             <div
@@ -85,11 +83,10 @@ function PostCard({ post }) {
                 backgroundPosition: "center",
               }}
             ></div>
+
           </div>
         </div>
-        <div className="block md:hidden lg:hidden mt-4">
-          <EngageSection />
-        </div>
+          <div className="block md:hidden lg:hidden mt-4"><EngageSection/></div>
       </div>
     );
   } else if (isLoading) {
