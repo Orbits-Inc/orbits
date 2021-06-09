@@ -2,6 +2,8 @@ import { useApi } from "../../utils/providers/api.provider";
 import { useState } from "react";
 import ProfileCrumb from "../Misc/profilecrumb.component";
 import Tag from "../Custom/tag.component";
+import useSWR from "swr";
+
 import {
   ThumbsUp,
   Bookmark,
@@ -12,12 +14,9 @@ import {
 
 function PostCard({ post }) {
   const { getUser } = useApi();
-  const [user, setUser] = useState(undefined);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  getUser(post?.author_id)
-    .then((res) => setUser(res))
-    .catch((err) => console.log(err));
+  const { user, isLoading, isError } = getUser(post?.author_id);
 
   if (user && post) {
     return (
@@ -77,7 +76,7 @@ function PostCard({ post }) {
         </div>
       </div>
     );
-  } else {
+  } else if (isLoading) {
     return (
       <div>
         <div className="flex lg:items-center flex-col lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3">

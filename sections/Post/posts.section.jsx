@@ -4,10 +4,8 @@ import PostCard from "../../components/Post/postcard.component";
 
 function Posts() {
   const { getAllPosts } = useApi();
-  const [posts, setPosts] = useState(undefined);
-  getAllPosts()
-    .then((res) => setPosts(res))
-    .catch((err) => console.log(err));
+  const { posts, isError } = getAllPosts();
+
   return (
     <div className="flex flex-col text-primary">
       {posts?.map((data, key) => (
