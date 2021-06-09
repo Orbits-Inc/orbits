@@ -7,12 +7,10 @@ function Posts() {
   const { posts, isError } = getAllPosts();
 
   return (
-    <div className="flex flex-col text-primary">
+    <div className="flex flex-col space-y-2 text-primary">
       {posts?.map((data, key) => (
         <div
-          className={`bg-white duration-300 p-5 md:p-6 lg:p-7 border-l border-r border-b border-white300 ${
-            key === 0 ? "rounded-t-xl border-t" : "rounded-none"
-          } ${key === posts?.length - 1 ? "rounded-b-xl" : "rounded-none"}`}
+          className={`bg-white duration-300 p-6 lg:p-7 border border-white300 rounded-xl`}
         >
           <PostCard post={data} />
         </div>
