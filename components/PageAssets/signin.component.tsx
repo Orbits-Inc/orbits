@@ -2,7 +2,7 @@ import Popup from "../Misc/popup.component";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase/app";
 import "firebase/auth";
-import firebaseClient from "../../utils/firebase.js";
+import firebaseClient from "../../utils/firebase";
 import { usePopup } from "../../utils/providers/popup.provider";
 import OutsideClickHandler from "react-outside-click-handler";
 import { X } from "react-feather";

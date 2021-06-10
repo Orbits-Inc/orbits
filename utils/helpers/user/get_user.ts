@@ -1,5 +1,4 @@
 import axios from "axios";
-import usernameSuggestion from "./username_suggestion.js";
 
 export async function getUser(uid) {
   const res = await axios.get(

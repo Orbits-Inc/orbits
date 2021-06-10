@@ -14,7 +14,7 @@ const PostCrumb = ({ post }) => {
       className={`rounded-lg duration-300 pt-4 text-sm font-semibold px-4 py-2 cursor-pointer bg-white200 mb-2`}
     >
       <div className="">
-        <div class="flex">
+        <div className="flex">
           <Tag tag={post?.tags[0]} />
         </div>
         <div className="break-words pt-4 pb-1 text-primary font-semibold text-md">

@@ -43,11 +43,13 @@
     "remark-preset-lint-markdown-style-guide": "^4.0.0"
   },
   "devDependencies": {
+    "@types/react": "^17.0.11",
     "autoprefixer": "^10.2.5",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
     "postcss": "^8.2.13",
     "prettier": "^2.3.0",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.2",
+    "typescript": "^4.3.2"
   }
 }

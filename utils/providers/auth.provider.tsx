@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
-import addNewUser from "../helpers/user/add_new_user.js";
-import getUser from "../helpers/user/get_user.js";
-import firebaseClient from "../firebase.js";
+import addNewUser from "../helpers/user/add_new_user";
+import firebaseClient from "../firebase";
 import firebase from "firebase";
 import "firebase/auth";
+
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {

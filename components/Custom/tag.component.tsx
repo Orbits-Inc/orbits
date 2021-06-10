@@ -1,4 +1,4 @@
-import tags from "../../utils/popular_tags.js";
+import { tags } from "../../utils/popular_tags";
 
 const Tag = ({ tag }) => {
   return (
