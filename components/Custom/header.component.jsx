@@ -3,7 +3,7 @@ const Header = ({ title }) => {
     <div className="block">
       <div className="logo mt-2">
         <a href="/">
-          <div class="flex">
+          <div className="flex">
             <img
               src="/favicon.png"
               alt="logo"
