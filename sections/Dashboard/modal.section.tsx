@@ -1,6 +1,6 @@
 import Navbar from "../../components/PageAssets/navbar.component";
 import CustomButton from "../../components/Custom/custombutton.component";
-import { Edit2, X, ChevronDown } from "react-feather";
+import { X, ChevronDown } from "react-feather";
 import { usePopup } from "../../utils/providers/popup.provider";
 import { useAuth } from "../../utils/providers/auth.provider";
 import { useState } from "react";

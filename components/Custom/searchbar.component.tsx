@@ -1,7 +1,6 @@
 import CustomInput from "./custominput.component";
-import { Search } from "react-feather";
-import React, { useState } from "react";
-
+import { Search } from "react-iconly";
+import { useState } from "react";
 interface SearchBar {
   className?: string;
 }
@@ -19,7 +18,7 @@ function SearchBar({ className }: SearchBar) {
   return (
     <CustomInput
       placeholder="Search Orbits"
-      className={`w-full lg:w-80 duration-500 border border-white300 bg-white py-2 rounded-full px-8 ${className}`}
+      className={`py-4 w-full lg:w-80 duration-500 border border-white300 bg-white py-2 rounded-full px-8 ${className}`}
       required
       onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(e.target.value);
@@ -29,10 +28,7 @@ function SearchBar({ className }: SearchBar) {
         search(query);
       }}
       logo={
-        <Search
-          className="text-gray-400 duration-300 cursor-pointer p-2"
-          size="40"
-        />
+        <Search className="mr-2 pb-1 text-gray-400 duration-300 cursor-pointer" />
       }
     />
   );

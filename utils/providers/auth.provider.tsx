@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
 import addNewUser from "../helpers/user/add_new_user";
 import firebaseClient from "../firebase";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import "firebase/auth";
 
 const AuthContext = createContext({});

@@ -2,17 +2,17 @@ import CustomButton from "../Custom/custombutton.component";
 import { usePopup } from "../../utils/providers/popup.provider";
 import Popup from "../Misc/popup.component";
 import OutsideClickHandler from "react-outside-click-handler";
+import { X, Menu as MenuFeather } from "react-feather";
 import {
-  X,
   ChevronDown,
-  Bell,
+  Notification,
   Search,
+  Logout,
   Bookmark,
-  LogOut,
-  Edit2,
-  Menu as MenuFeather,
-  Compass,
-} from "react-feather";
+  Discovery,
+  Edit,
+} from "react-iconly";
+
 import { useState } from "react";
 import { useAuth } from "../../utils/providers/auth.provider";
 import SearchBar from "../Custom/searchbar.component";
@@ -67,7 +67,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
         </a>
       </div>
       <div>
-        <ul className="navbar ml-auto h-12 mt-2 font-semibold text-xl text-accent">
+        <ul className="flex items-center navbar ml-auto h-12 mt-2 font-semibold text-xl text-accent">
           {!!user ? (
             <li className="hidden lg:inline">
               <div className="inline-flex mr-6 text-primary">
@@ -85,7 +85,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                     setIsSearchBarOpen(true);
                   }}
                   className="relative inline text-primary duration-300 cursor-pointer hover:bg-gray-200 p-1 rounded-full"
-                  size="36"
+                  size="large"
                 />
               </div>
             </li>
@@ -95,9 +95,9 @@ const Navbar = ({ className, loginText }: Navbar) => {
           <li className="inline">
             {!!user ? (
               <div className="relative inline-flex mr-3 lg:mr-6 md:mr-3">
-                <Bell
+                <Notification
                   className="relative inline text-primary duration-300 cursor-pointer hover:bg-gray-200 p-1 rounded-full"
-                  size="36"
+                  size="large"
                 />
                 {user.ping || true ? (
                   <span className="flex absolute h-3 w-3 top-0 right-0">
@@ -114,7 +114,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                   setIsOpen(true);
                 }}
                 title="Login"
-                className={`rounded-full font-semibold text-sm px-5 py-2 login bg-transparent border-2 border-blue-500 lg:mr-3 md:mr-3 ${
+                className={`rounded-full mb-2 font-semibold text-sm px-5 py-2 login bg-transparent border-2 border-blue-500 lg:mr-3 md:mr-3 ${
                   loginText ? loginText : "text-secondary"
                 } hover:bg-secondary hover:text-white`}
               />
@@ -142,7 +142,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                     window.location.href = "/";
                   }}
                 >
-                  <LogOut className="mr-3" size="20" /> Logout
+                  <Logout className="mr-3" size="20" /> Logout
                 </MenuItem>
               </Menu>
             ) : (
@@ -151,7 +151,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                   setIsOpen(true);
                 }}
                 title="Sign up"
-                className="sign-up rounded-full border-2 border-blue-500 hover:border-blue-700 text-sm font-semibold px-5 py-2 lg:inline md:inline hidden bg-secondary text-white hover:text-white hover:bg-blue-700"
+                className="sign-up mb-2 rounded-full border-2 border-blue-500 hover:border-blue-700 text-sm font-semibold px-5 py-2 lg:inline md:inline hidden bg-secondary text-white hover:text-white hover:bg-blue-700"
               />
             )}
           </li>
@@ -163,9 +163,9 @@ const Navbar = ({ className, loginText }: Navbar) => {
   const StartWriting = () => {
     return (
       <CustomButton
-        logo={<Edit2 className="inline mr-2" size="18" />}
-        title="Scribble"
-        className="bg-secondary py-4 w-full text-white font-bold text-sm rounded-full hover:bg-blue-700"
+        logo={<Edit className="inline mr-2" />}
+        title="Write"
+        className="bg-secondary py-3.5 w-full text-white font-bold text-sm rounded-full hover:bg-blue-700"
         onClick={() => {
           if (!user) {
             setIsOpen(true);
@@ -211,7 +211,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                   activeClassName="text-secondary font-semibold"
                 >
                   <a className="flex space-x-4">
-                    <Compass /> <div>Explore</div>
+                    <Discovery /> <div>Explore</div>
                   </a>
                 </NavLink>
                 <NavLink
@@ -219,7 +219,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                   activeClassName="text-secondary font-semibold"
                 >
                   <a className="flex space-x-4">
-                    <Bell /> <div>Notifications</div>
+                    <Notification /> <div>Notifications</div>
                   </a>
                 </NavLink>
                 <NavLink
