@@ -1,5 +1,3 @@
-import { useApi } from "../../utils/providers/api.provider";
-import { useState } from "react";
 import ProfileCrumb from "../Misc/profilecrumb.component";
 import Tag from "../Custom/tag.component";
 import useSWR from "swr";
@@ -60,6 +58,7 @@ function PostCard({ post }) {
 
         <div className="flex flex-col md:items-center lg:items-center md:flex-row lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3 md:space-x-3">
           <div className="w-full">
+
             <div className="font-bold text-xl mb-2 text-black700">
               {post?.title}
             </div>

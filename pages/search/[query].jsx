@@ -5,24 +5,43 @@ import Articles from "../../sections/SearchResults/articles.section";
 import NavBar from "../../components/PageAssets/navbar.component";
 import TrendingPosts from "../../sections/Post/trendingposts.section";
 import Header from "../../components/Custom/header.component";
+import NothingFound from "../../sections/SearchResults/nothingFound.component";
+import { searchUser } from "../../utils/helpers/user/search_user";
+import { searchPost } from "../../utils/helpers/post/search_post";
+import { getUser } from "../../utils/helpers/user/get_user";
 
-function Search() {
+export const getServerSideProps = async (ctx) => {
+  const query = ctx.query.query;
+  const people = await searchUser(query);
+  let articles = await searchPost(query);
+
+  for (let i = 0; i < articles.length; i++) {
+    const article = articles[i];
+    article.author = await getUser(article.author_id);
+  }
+
+  return { props: { people, articles } };
+};
+
+function Search({ people, articles }) {
   const router = useRouter();
   const { query } = router.query;
   const [filter, setFilter] = useState("TOP");
 
   const SearchResults = () => {
-    if (filter === "TOP") {
+    if (filter === "TOP" && people && articles) {
       return (
         <>
-          <People query={query} />
-          <Articles query={query} />
+          <People people={people} />
+          <Articles articles={articles} />
         </>
       );
-    } else if (filter === "PEOPLE") {
-      return <People query={query} />;
+    } else if (filter === "PEOPLE" && people) {
+      return <People people={people} />;
+    } else if (filter === "ARTICLES" && articles) {
+      return <Articles articles={articles} />;
     } else {
-      return <Articles query={query} />;
+      return <NothingFound />;
     }
   };
 
@@ -68,7 +87,7 @@ function Search() {
               <SearchResults />
             </div>
           </div>
-          <div class="w-2/4 hidden lg:block">
+          <div className="w-2/4 hidden lg:block">
             <div className="mb-6">
               <Header title="Trending" />
             </div>
