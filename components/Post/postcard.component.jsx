@@ -2,43 +2,78 @@ import { useApi } from "../../utils/providers/api.provider";
 import { useState } from "react";
 import ProfileCrumb from "../Misc/profilecrumb.component";
 import Tag from "../Custom/tag.component";
-import {
-  ThumbsUp,
-  Bookmark,
-  MessageSquare,
-  Circle,
-  Calendar,
-} from "react-feather";
+import useSWR from "swr";
+import { Heart2, Chat, Bookmark, Calendar } from "react-iconly";
 
 function PostCard({ post }) {
   const { getUser } = useApi();
-  const [user, setUser] = useState(undefined);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  getUser(post?.author_id)
-    .then((res) => setUser(res))
-    .catch((err) => console.log(err));
+  const { user, isLoading, isError } = getUser(post?.author_id);
+
+  const EngageSection = () => {
+    return (
+      <div className="flex justify-between lg:justify-start md:justify-start space-x-8 mt-2">
+        <div className="flex font-medium text-sm space-x-8 text-white800">
+          <div className="py-1 flex space-x-2">
+            <Heart2 size="20" />
+            <div className="pt-1">{post?.likes.length}</div>
+          </div>
+          <div className="py-1 flex space-x-2">
+            <div>
+              <Chat size="20" />
+            </div>
+            <div className="pt-1">{post?.comments.length}</div>
+          </div>
+        </div>
+        <div
+          onClick={() => setIsBookmarked(!isBookmarked)}
+          className={`cursor-pointer ${
+            isBookmarked ? "text-secondary" : "text-white800"
+          } mt-1`}
+        >
+          <Bookmark set={isBookmarked ? "bold" : "light"} size="21" />
+        </div>
+      </div>
+    );
+  };
 
   if (user && post) {
     return (
       <div>
-        <ProfileCrumb user={user} />
-        <div className="flex flex-col lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3">
-          <div className="w-full">
-            <div className="flex space-x-3 mt-3 mb-2">
-              {post?.tags.map((data, key) => (
-                <Tag tag={data} />
-              ))}
+        <div className="flex flex-col lg:flex-row md:flex-row justify-between mb-3 lg:mb-4">
+          <div className="flex space-x-2">
+            <ProfileCrumb user={user} />
+            <div className="mt-6 text-white800 flex space-x-1 text-xs">
+              <div>
+                <Calendar size="small" className="pb-1" />
+              </div>
+              <div className="">{post?.date}</div>
             </div>
-            <div className="font-bold text-xl mb-1">{post?.title}</div>
-            <div className="font-medium text-sm text-accent">
+          </div>
+          <div className="flex space-x-3 mt-3 lg:mt-5 md:mt-5">
+            {post?.tags.map((data, key) => (
+              <Tag noColor tag={data} />
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col md:items-center lg:items-center md:flex-row lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3 md:space-x-3">
+          <div className="w-full">
+            <div className="font-bold text-xl mb-2 text-black700">
+              {post?.title}
+            </div>
+            <div className="font-medium text-sm mb-1 lg:mb-none md:mb-none text-black300">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua...
+            </div>
+            <div className="hidden md:block lg:block">
+              <EngageSection />
             </div>
           </div>
           <div>
             <div
-              className="h-40 md:h-60 w-full lg:h-32 lg:w-60 rounded-lg"
+              className="h-40 md:h-32 md:w-60 w-full lg:h-32 lg:w-60 rounded-lg"
               style={{
                 backgroundImage: `url(${post?.image})`,
                 backgroundSize: "cover",
@@ -47,37 +82,12 @@ function PostCard({ post }) {
             ></div>
           </div>
         </div>
-        <div className="flex justify-between mt-4">
-          <div className="flex font-medium text-sm space-x-6 text-white800">
-            <div className="py-1 flex space-x-2">
-              <ThumbsUp size="20" className="" />
-              <div className="pt-1">{post?.likes.length}</div>
-            </div>
-            <div className="py-1 flex space-x-2">
-              <div>
-                <MessageSquare size="20" />
-              </div>
-              <div className="pt-1">{post?.comments.length}</div>
-            </div>
-            <div className="py-1 flex space-x-2">
-              <div>
-                <Calendar size="20" />
-              </div>
-              <div className="pt-1">{post?.date}</div>
-            </div>
-          </div>
-          <div
-            onClick={() => setIsBookmarked(!isBookmarked)}
-            className={`cursor-pointer ${
-              isBookmarked ? "text-secondary" : "text-white800"
-            } mt-1`}
-          >
-            <Bookmark fill={isBookmarked ? "#347EFD" : "white"} size="24" />
-          </div>
+        <div className="block md:hidden lg:hidden mt-4">
+          <EngageSection />
         </div>
       </div>
     );
-  } else {
+  } else if (isLoading) {
     return (
       <div>
         <div className="flex lg:items-center flex-col lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3">

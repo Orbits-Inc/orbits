@@ -1,4 +1,5 @@
 import axios from "axios";
+import useSWR from "swr";
 
 export async function getPostById(uid) {
   const res = await axios.get(
@@ -7,14 +8,24 @@ export async function getPostById(uid) {
   return res.data;
 }
 
-export async function getAllPosts() {
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/post`);
-  return res.data;
+export function getAllPosts() {
+  const { data, error } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/post`
+  );
+
+  return {
+    posts: data,
+    isError: error,
+  };
 }
 
-export async function getTopPosts() {
-  const res = await axios.get(
+export function getTopPosts() {
+  const { data, error } = useSWR(
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/post/topPosts`
   );
-  return res.data;
+
+  return {
+    trendingPosts: data,
+    isError: error,
+  };
 }
