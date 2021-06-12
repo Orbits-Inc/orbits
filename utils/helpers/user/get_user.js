@@ -1,11 +1,16 @@
 import axios from "axios";
+import useSWR from "swr";
 import usernameSuggestion from "./username_suggestion.js";
 
-export async function getUser(uid) {
-  const res = await axios.get(
+export function getUser(uid) {
+  const { data, error } = useSWR(
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/user/byId/${uid}`
   );
-  return res.data;
+  return {
+    user: data,
+    isLoading: !error && !data,
+    isError: error,
+  };
 }
 
 export async function getUserByUsername(username) {

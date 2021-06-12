@@ -1,13 +1,9 @@
 import { useApi } from "../../utils/providers/api.provider";
 import PostCrumb from "../../components/Post/postcrumb.component";
-import { useState } from "react";
 
 function TrendingPosts() {
   const { getTopPosts } = useApi();
-  const [trendingPosts, setTrendingPosts] = useState(undefined);
-  getTopPosts()
-    .then((res) => setTrendingPosts(res))
-    .catch((err) => console.log(err));
+  const { trendingPosts, isError } = getTopPosts();
 
   return (
     <div className="flex flex-col space-y-2">
