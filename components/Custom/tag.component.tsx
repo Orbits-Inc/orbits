@@ -1,6 +1,10 @@
 import { tags } from "../../utils/popular_tags";
 
-const Tag = ({ tag }) => {
+interface Tag {
+  tag: string;
+}
+
+const Tag = ({ tag }: Tag) => {
   return (
     <button
       style={{

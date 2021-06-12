@@ -1,23 +1,22 @@
 import { useApi } from "../../utils/providers/api.provider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProfileCrumb from "../Misc/profilecrumb.component";
 import Tag from "../Custom/tag.component";
-import {
-  ThumbsUp,
-  Bookmark,
-  MessageSquare,
-  Circle,
-  Calendar,
-} from "react-feather";
+import { ThumbsUp, Bookmark, MessageSquare, Calendar } from "react-feather";
+import { Post } from "../../types/data.types";
 
-function PostCard({ post }) {
+interface PostCard {
+  post: Post;
+}
+
+function PostCard({ post }: PostCard) {
   const { getUser } = useApi();
   const [user, setUser] = useState(undefined);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   getUser(post?.author_id)
-    .then((res) => setUser(res))
-    .catch((err) => console.log(err));
+    .then((res: Post) => setUser(res))
+    .catch((err: Error) => console.log(err));
 
   if (user && post) {
     return (

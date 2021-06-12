@@ -1,6 +1,10 @@
-import { usePopup } from "../../utils/providers/popup.provider";
+interface Popup {
+  className: string;
+  children: JSX.Element;
+  isOpen: boolean;
+}
 
-const Popup = ({ className, children, isOpen }) => {
+const Popup = ({ className, children, isOpen }: Popup): JSX.Element => {
   return (
     <div
       className={`z-10 popup ${isOpen ? "fixed" : "hidden"} h-screen ${

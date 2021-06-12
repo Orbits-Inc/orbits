@@ -18,12 +18,17 @@ import { useAuth } from "../../utils/providers/auth.provider";
 import SearchBar from "../Custom/searchbar.component";
 import firebase from "firebase/app";
 import NavLink from "../Misc/navlink.component";
-import { Menu, MenuItem, MenuButton, MenuDivider } from "@szhsin/react-menu";
+import { Menu, MenuItem, MenuDivider } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 
-const Navbar = ({ className, loginText }) => {
-  const { isOpen, setIsOpen } = usePopup();
-  const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
+interface Navbar {
+  className?: string;
+  loginText?: string;
+}
+
+const Navbar = ({ className, loginText }: Navbar) => {
+  const { setIsOpen } = usePopup();
+  const [isSearchBarOpen, setIsSearchBarOpen] = useState<boolean>(false);
   const { user } = useAuth();
 
   const MobileNavbar = () => (

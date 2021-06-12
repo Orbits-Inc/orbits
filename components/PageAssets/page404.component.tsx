@@ -1,6 +1,10 @@
 import Navbar from "./navbar.component";
 
-const Page404 = ({ message }) => {
+interface Page404 {
+  message: string;
+}
+
+const Page404 = ({ message }: Page404): JSX.Element => {
   return (
     <div id="parent" className="parent oops text-white h-screen">
       <Navbar
