@@ -2,7 +2,14 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import React, { Children } from "react";
 
-const NavLink = ({ children, activeClassName, ...props }) => {
+interface NavLink {
+  children: JSX.Element;
+  activeClassName: string;
+  href: string;
+  [props: string]: any;
+}
+
+const NavLink = ({ children, activeClassName, href, ...props }: NavLink) => {
   const { asPath } = useRouter();
   const child = Children.only(children);
   const childClassName = child.props.className || "";
@@ -11,12 +18,12 @@ const NavLink = ({ children, activeClassName, ...props }) => {
   // pages/about.js will be matched via props.href
   // pages/[slug].js will be matched via props.as
   const className =
-    asPath === props.href || asPath === props.as
+    asPath === href || asPath === props.as
       ? `${childClassName} ${activeClassName}`.trim()
       : childClassName;
 
   return (
-    <Link {...props}>
+    <Link href={href} {...props}>
       {React.cloneElement(child, {
         className: className || null,
       })}

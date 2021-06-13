@@ -18,12 +18,17 @@ import { useAuth } from "../../utils/providers/auth.provider";
 import SearchBar from "../Custom/searchbar.component";
 import firebase from "firebase/app";
 import NavLink from "../Misc/navlink.component";
-import { Menu, MenuItem, MenuButton, MenuDivider } from "@szhsin/react-menu";
+import { Menu, MenuItem, MenuDivider } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 
-const Navbar = ({ className, loginText }) => {
-  const { isOpen, setIsOpen } = usePopup();
-  const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
+interface Navbar {
+  className?: string;
+  loginText?: string;
+}
+
+const Navbar = ({ className, loginText }: Navbar) => {
+  const { setIsOpen } = usePopup();
+  const [isSearchBarOpen, setIsSearchBarOpen] = useState<boolean>(false);
   const { user } = useAuth();
 
   const MobileNavbar = () => (
@@ -94,14 +99,16 @@ const Navbar = ({ className, loginText }) => {
                   className="relative inline text-primary duration-300 cursor-pointer hover:bg-gray-200 p-1 rounded-full"
                   size="large"
                 />
-                {user.ping || true ? (
-                  <span className="flex absolute h-3 w-3 top-0 right-0">
-                    <span className="absolute inline-flex rounded-full w-2 h-2 bg-secondary"></span>
-                    <span className="relative inline-flex animate-ping rounded-full w-2 h-2 bg-secondary"></span>
-                  </span>
-                ) : (
-                  <></>
-                )}
+                {
+                  /*user.ping || */ true ? (
+                    <span className="flex absolute h-3 w-3 top-0 right-0">
+                      <span className="absolute inline-flex rounded-full w-2 h-2 bg-secondary"></span>
+                      <span className="relative inline-flex animate-ping rounded-full w-2 h-2 bg-secondary"></span>
+                    </span>
+                  ) : (
+                    <></>
+                  )
+                }
               </div>
             ) : (
               <CustomButton
@@ -123,7 +130,7 @@ const Navbar = ({ className, loginText }) => {
                   <div className="inline-flex">
                     <img
                       className="rounded-full inline w-10 h-10 duration-300 hover:bg-gray-200 p-1 cursor-pointer"
-                      src={user.photoURL}
+                      src={user.display_picture}
                     />
                   </div>
                 }

@@ -1,4 +1,8 @@
-const Header = ({ title }) => {
+interface Header {
+  title: string;
+}
+
+const Header = ({ title }: Header): JSX.Element => {
   return (
     <div className="block">
       <div className="logo mt-2">

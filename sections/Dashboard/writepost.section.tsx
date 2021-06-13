@@ -37,13 +37,13 @@ function WritePost() {
         <div className="absolute left-0 w-full lg:hidden md:hidden">
           <div className="flex text-xs justify-between px-7 font-medium">
             <div className="cursor-pointer hover:text-blue-700 duration-300 flex items-center space-x-2">
-              <Image2 size="18" /> <div>Image</div>
+              <Image2 /> <div>Image</div>
             </div>
             <div className="cursor-pointer hover:text-blue-700 duration-300 flex items-center space-x-2">
-              <Video size="18" /> <div>GIF</div>
+              <Video /> <div>GIF</div>
             </div>
             <div className="cursor-pointer hover:text-blue-700 duration-300 flex items-center space-x-2">
-              <Document size="18" /> <div>Article</div>
+              <Document /> <div>Article</div>
             </div>
           </div>
         </div>

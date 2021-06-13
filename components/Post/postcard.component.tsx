@@ -1,13 +1,23 @@
+import { useApi } from "../../utils/providers/api.provider";
+import { useEffect, useState } from "react";
+import { Post } from "../../types/data.types";
 import ProfileCrumb from "../Misc/profilecrumb.component";
 import Tag from "../Custom/tag.component";
-import useSWR from "swr";
 import { Heart2, Chat, Bookmark, Calendar } from "react-iconly";
 
-function PostCard({ post }) {
-  const { getUser } = useApi();
-  const [isBookmarked, setIsBookmarked] = useState(false);
+interface PostCard {
+  post: Post;
+}
 
-  const { user, isLoading, isError } = getUser(post?.author_id);
+function PostCard({ post }: PostCard) {
+  const { getUser } = useApi();
+  const { user, isLoading } = getUser(post.author_id);
+
+  useEffect(() => {
+    console.log(user);
+  }, [user, isLoading]);
+
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   const EngageSection = () => {
     return (
@@ -50,15 +60,14 @@ function PostCard({ post }) {
             </div>
           </div>
           <div className="flex space-x-3 mt-3 lg:mt-5 md:mt-5">
-            {post?.tags.map((data, key) => (
-              <Tag noColor tag={data} />
+            {post?.tags.map((data, idx) => (
+              <Tag noColor tag={data} key={idx} />
             ))}
           </div>
         </div>
 
         <div className="flex flex-col md:items-center lg:items-center md:flex-row lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3 md:space-x-3">
           <div className="w-full">
-
             <div className="font-bold text-xl mb-2 text-black700">
               {post?.title}
             </div>

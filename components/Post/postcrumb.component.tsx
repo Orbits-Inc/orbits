@@ -1,12 +1,15 @@
 import Tag from "../Custom/tag.component";
 import { Heart2, Chat } from "react-iconly";
-
 import Mention from "../Misc/mention.component";
 import { useApi } from "../../utils/providers/api.provider";
+import { Post, User } from "../../types/data.types";
+interface PostCrumb {
+  post: Post;
+}
 
-const PostCrumb = ({ post }) => {
+const PostCrumb = ({ post }: PostCrumb) => {
   const { getUser } = useApi();
-  const { user, isLoading, isError } = getUser(post?.author_id);
+  const { user }: { user: User } = getUser(post?.authorID);
 
   return (
     <div
@@ -21,7 +24,7 @@ const PostCrumb = ({ post }) => {
         </div>
         <div className="flex text-accent space-x-4 text-xs">
           <div className="mt-1">
-            <Mention user={user} />
+            <Mention username={user?.username} />
           </div>
           <div className="py-1 flex space-x-1">
             <Heart2 className="pb-1" />

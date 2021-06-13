@@ -2,7 +2,7 @@ import Popup from "../Misc/popup.component";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase/app";
 import "firebase/auth";
-import firebaseClient from "../../utils/firebase.js";
+import firebaseClient from "../../utils/firebase";
 import { usePopup } from "../../utils/providers/popup.provider";
 import OutsideClickHandler from "react-outside-click-handler";
 import { X } from "react-feather";
@@ -10,7 +10,7 @@ import { X } from "react-feather";
 const SignIn = () => {
   const { isOpen, setIsOpen } = usePopup();
 
-  const uiConfig = {
+  const uiConfig: any = {
     signInFlow: "redirect",
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -28,7 +28,6 @@ const SignIn = () => {
     return (
       <>
         <StyledFirebaseAuth
-          id="ui"
           uiConfig={uiConfig}
           firebaseAuth={firebase.auth()}
         />

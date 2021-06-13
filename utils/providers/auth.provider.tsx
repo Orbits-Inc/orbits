@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
-import addNewUser from "../helpers/user/add_new_user.js";
-import getUser from "../helpers/user/get_user.js";
-import firebaseClient from "../firebase.js";
+import addNewUser from "../helpers/user/add_new_user";
+import firebaseClient from "../firebase";
 import firebase from "firebase/app";
 import "firebase/auth";
-const AuthContext = createContext({});
+import { User } from "../../types/data.types";
+
+interface UserContext {
+  user: User | null;
+}
+
+const AuthContext = createContext<UserContext | null>({ user: null });
 
 export const AuthProvider = ({ children }) => {
   firebaseClient();

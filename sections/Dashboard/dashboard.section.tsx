@@ -1,5 +1,4 @@
 import Navbar from "../../components/PageAssets/navbar.component";
-import CustomButton from "../../components/Custom/custombutton.component";
 import { Clock, Home } from "react-feather";
 import { usePopup } from "../../utils/providers/popup.provider";
 import { useAuth } from "../../utils/providers/auth.provider";
@@ -24,14 +23,16 @@ function Dashboard() {
             <div className="flex justify-between items-center">
               <div>My Feed</div>
               <Switcher
-                item1={{
-                  logo: () => <Home size="14" />,
-                  title: "For you",
-                }}
-                item2={{
-                  logo: () => <Clock size="14" />,
-                  title: "Recent",
-                }}
+                items={[
+                  {
+                    logo: <Home size={14} />,
+                    title: "For you",
+                  },
+                  {
+                    logo: <Clock size={14} />,
+                    title: "Recent",
+                  },
+                ]}
               />
             </div>
           </div>

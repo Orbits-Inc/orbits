@@ -1,6 +1,11 @@
-import tags from "../../utils/popular_tags.js";
+import { tags } from "../../utils/popular_tags";
 
-const Tag = ({ tag, noColor }) => {
+interface Tag {
+  tag: string;
+  noColor: boolean;
+}
+
+const Tag = ({ tag, noColor }: Tag) => {
   return (
     <button
       style={{

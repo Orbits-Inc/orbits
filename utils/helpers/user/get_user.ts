@@ -1,6 +1,5 @@
 import axios from "axios";
 import useSWR from "swr";
-import usernameSuggestion from "./username_suggestion.js";
 
 export function getUser(uid) {
   const { data, error } = useSWR(

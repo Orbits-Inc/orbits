@@ -1,7 +1,12 @@
 import Comment from "../../components/Post/comment.component";
 import CustomButton from "../../components/Custom/custombutton.component";
+import { CommentType } from "../../types/data.types";
 
-function Comments({ comments }) {
+interface Comments {
+  comments: CommentType[];
+}
+
+function Comments({ comments }: Comments) {
   return (
     <div>
       <div className="font-bold text-2xl text-primary mb-4">
