@@ -53,6 +53,22 @@ function MyApp({ Component, pageProps }) {
               content="Researching, Exploring, and Sharing makes a day worthy, make it easier with Orbits."
             />
             <meta property="twitter:image" content="/Orbits-Banner.png" />
+
+            <link rel="manifest" href="/manifest.json" />
+            <link
+              href="/favicon.png"
+              rel="icon"
+              type="image/png"
+              sizes="16x16"
+            />
+            <link
+              href="/favicon.png"
+              rel="icon"
+              type="image/png"
+              sizes="32x32"
+            />
+            <link rel="apple-touch-icon" href="/favicon.png"></link>
+            <meta name="theme-color" content="#3763ff" />
           </Head>
           <div className="">
             <SignIn />
