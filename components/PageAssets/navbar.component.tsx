@@ -99,14 +99,16 @@ const Navbar = ({ className, loginText }: Navbar) => {
                   className="relative inline text-primary duration-300 cursor-pointer hover:bg-gray-200 p-1 rounded-full"
                   size="large"
                 />
-                {user.ping || true ? (
-                  <span className="flex absolute h-3 w-3 top-0 right-0">
-                    <span className="absolute inline-flex rounded-full w-2 h-2 bg-secondary"></span>
-                    <span className="relative inline-flex animate-ping rounded-full w-2 h-2 bg-secondary"></span>
-                  </span>
-                ) : (
-                  <></>
-                )}
+                {
+                  /*user.ping || */ true ? (
+                    <span className="flex absolute h-3 w-3 top-0 right-0">
+                      <span className="absolute inline-flex rounded-full w-2 h-2 bg-secondary"></span>
+                      <span className="relative inline-flex animate-ping rounded-full w-2 h-2 bg-secondary"></span>
+                    </span>
+                  ) : (
+                    <></>
+                  )
+                }
               </div>
             ) : (
               <CustomButton
@@ -128,7 +130,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                   <div className="inline-flex">
                     <img
                       className="rounded-full inline w-10 h-10 duration-300 hover:bg-gray-200 p-1 cursor-pointer"
-                      src={user.photoURL}
+                      src={user.display_picture}
                     />
                   </div>
                 }

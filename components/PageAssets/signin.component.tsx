@@ -6,13 +6,8 @@ import firebaseClient from "../../utils/firebase";
 import { usePopup } from "../../utils/providers/popup.provider";
 import OutsideClickHandler from "react-outside-click-handler";
 import { X } from "react-feather";
-import { useEffect } from "react";
 
 const SignIn = () => {
-  useEffect(async () => {
-    const firebaseui = await import("firebaseui");
-  }, []);
-
   const { isOpen, setIsOpen } = usePopup();
 
   const uiConfig: any = {
@@ -33,7 +28,6 @@ const SignIn = () => {
     return (
       <>
         <StyledFirebaseAuth
-          id="ui"
           uiConfig={uiConfig}
           firebaseAuth={firebase.auth()}
         />

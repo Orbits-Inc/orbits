@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Post } from "../../types/data.types";
 import ProfileCrumb from "../Misc/profilecrumb.component";
 import Tag from "../Custom/tag.component";
-import useSWR from "swr";
 import { Heart2, Chat, Bookmark, Calendar } from "react-iconly";
 
 interface PostCard {
@@ -12,9 +11,13 @@ interface PostCard {
 
 function PostCard({ post }: PostCard) {
   const { getUser } = useApi();
-  const [isBookmarked, setIsBookmarked] = useState(false);
+  const { user, isLoading } = getUser(post.author_id);
 
-  const { user, isLoading, isError } = getUser(post?.authorID);
+  useEffect(() => {
+    console.log(user);
+  }, [user, isLoading]);
+
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   const EngageSection = () => {
     return (
@@ -57,8 +60,8 @@ function PostCard({ post }: PostCard) {
             </div>
           </div>
           <div className="flex space-x-3 mt-3 lg:mt-5 md:mt-5">
-            {post?.tags.map((data, key) => (
-              <Tag noColor tag={data} />
+            {post?.tags.map((data, idx) => (
+              <Tag noColor tag={data} key={idx} />
             ))}
           </div>
         </div>

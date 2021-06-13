@@ -3,8 +3,13 @@ import addNewUser from "../helpers/user/add_new_user";
 import firebaseClient from "../firebase";
 import firebase from "firebase/app";
 import "firebase/auth";
+import { User } from "../../types/data.types";
 
-const AuthContext = createContext({});
+interface UserContext {
+  user: User | null;
+}
+
+const AuthContext = createContext<UserContext | null>({ user: null });
 
 export const AuthProvider = ({ children }) => {
   firebaseClient();

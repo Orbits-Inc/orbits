@@ -1,9 +1,13 @@
 import { useState, createContext, useContext } from "react";
 
-const PopupContext = createContext({});
+const PopupContext = createContext<any>({});
 
-export const PopupProvider = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+interface PopupProvider {
+  children: JSX.Element;
+}
+
+export const PopupProvider = ({ children }: PopupProvider) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <PopupContext.Provider value={{ isOpen, setIsOpen }}>
