@@ -9,6 +9,7 @@ import NothingFound from "../../sections/SearchResults/nothingFound.component";
 import { searchUser } from "../../utils/helpers/user/search_user";
 import { searchPost } from "../../utils/helpers/post/search_post";
 import { getUser } from "../../utils/helpers/user/get_user";
+import { User, Post } from "../../types/data.types";
 
 export const getServerSideProps = async (ctx) => {
   const query = ctx.query.query;
@@ -23,22 +24,33 @@ export const getServerSideProps = async (ctx) => {
   return { props: { people, articles } };
 };
 
-function Search({ people, articles }) {
+interface Search {
+  people: User[];
+  articles: Post[];
+}
+
+enum SearchFilter {
+  TOP,
+  PEOPLE,
+  ARTICLES,
+}
+
+function Search({ people, articles }: Search) {
   const router = useRouter();
   const { query } = router.query;
-  const [filter, setFilter] = useState("TOP");
+  const [filter, setFilter] = useState<SearchFilter>(SearchFilter.TOP);
 
   const SearchResults = () => {
-    if (filter === "TOP" && people && articles) {
+    if (filter === SearchFilter.TOP && people && articles) {
       return (
         <>
           <People people={people} />
           <Articles articles={articles} />
         </>
       );
-    } else if (filter === "PEOPLE" && people) {
+    } else if (filter === SearchFilter.PEOPLE && people) {
       return <People people={people} />;
-    } else if (filter === "ARTICLES" && articles) {
+    } else if (filter === SearchFilter.ARTICLES && articles) {
       return <Articles articles={articles} />;
     } else {
       return <NothingFound />;
@@ -59,25 +71,25 @@ function Search({ people, articles }) {
               <div className="mt-3 text-sm text-secondary border-2 flex bg-blue-50 border-blue-500 space-x-12 rounded-lg py-2 px-6 justify-between lg:justify-start">
                 <div
                   className={`hover:text-blue-800 ${
-                    filter === "TOP" ? "text-blue-800" : ""
+                    filter === SearchFilter.TOP ? "text-blue-800" : ""
                   } cursor-pointer duration-300 mt-1`}
-                  onClick={() => setFilter("TOP")}
+                  onClick={() => setFilter(SearchFilter.TOP)}
                 >
                   TOP
                 </div>
                 <div
                   className={`hover:text-blue-800 ${
-                    filter === "PEOPLE" ? "text-blue-800" : ""
+                    filter === SearchFilter.PEOPLE ? "text-blue-800" : ""
                   } cursor-pointer duration-300 mt-1`}
-                  onClick={() => setFilter("PEOPLE")}
+                  onClick={() => setFilter(SearchFilter.PEOPLE)}
                 >
                   PEOPLE
                 </div>
                 <div
                   className={`hover:text-blue-800 ${
-                    filter === "ARTICLES" ? "text-blue-800" : ""
+                    filter === SearchFilter.ARTICLES ? "text-blue-800" : ""
                   } cursor-pointer duration-300 mt-1`}
-                  onClick={() => setFilter("ARTICLES")}
+                  onClick={() => setFilter(SearchFilter.ARTICLES)}
                 >
                   ARTICLES
                 </div>
