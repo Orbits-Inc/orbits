@@ -3,7 +3,6 @@ import "tailwindcss/tailwind.css";
 import { PopupProvider } from "../utils/providers/popup.provider";
 import { AuthProvider } from "../utils/providers/auth.provider";
 import { ApiProvider } from "../utils/providers/api.provider";
-import SignIn from "../components/PageAssets/signin.component";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: any) {
@@ -71,8 +70,7 @@ function MyApp({ Component, pageProps }: any) {
               <link rel="apple-touch-icon" href="/favicon.png"></link>
               <meta name="theme-color" content="#3763ff" />
             </Head>
-            <div className="">
-              <SignIn />
+            <div>
               <Component {...pageProps} />
             </div>
           </>
