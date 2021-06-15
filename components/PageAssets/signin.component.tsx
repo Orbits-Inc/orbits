@@ -36,7 +36,7 @@ const SignIn = () => {
         Login to kick start sharing and making new ideas!
       </div>
       <FirebaseApp />
-      <div className="font-semibold text-accent lg:w-3/5 text-sm p-4 text-center mx-auto">
+      <div className="font-thin text-accent lg:w-3/5 text-sm p-4 text-center mx-auto">
         By continuing, you are indicating that you accept our{" "}
         <a className="text-secondary cursor-pointer">Terms Of Service</a> and{" "}
         <a className="text-secondary cursor-pointer">Privacy Policy</a>
