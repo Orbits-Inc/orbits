@@ -9,7 +9,7 @@ interface PostCrumb {
 
 const PostCrumb = ({ post }: PostCrumb) => {
   const { getUser } = useApi();
-  const { user }: { user: User } = getUser(post?.authorID);
+  const { user }: { user: User } = getUser(post?.author_id);
 
   return (
     <div
