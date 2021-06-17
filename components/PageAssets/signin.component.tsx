@@ -28,20 +28,25 @@ const SignIn = () => {
   firebaseClient();
 
   return (
-    <>
-      <div className="font-bold text-primary text-2xl">
+    <div className="mx-auto">
+      <div className="font-bold h-full text-primary text-2xl">
         Login or Create an Account
       </div>
-      <div className="font-semibold text-accent text-sm p-4">
+      <div className="mb-2 font-semibold text-accent text-sm p-4">
         Login to kick start sharing and making new ideas!
       </div>
       <FirebaseApp />
-      <div className="font-thin text-accent lg:w-3/5 text-sm p-4 text-center mx-auto">
-        By continuing, you are indicating that you accept our{" "}
-        <a className="text-secondary cursor-pointer">Terms Of Service</a> and{" "}
-        <a className="text-secondary cursor-pointer">Privacy Policy</a>
+      <div className="absolute bottom-0 left-0 right-0 font-thin text-white-800 text-sm p-8 leading-loose">
+        By continuing, you are indicating that you accept our <br />
+        <a className="text-secondary cursor-pointer font-semibold hover:underline">
+          Terms Of Service
+        </a>{" "}
+        and{" "}
+        <a className="text-secondary cursor-pointer font-semibold hover:underline">
+          Privacy Policy
+        </a>
       </div>
-    </>
+    </div>
   );
 };
 
