@@ -10,7 +10,7 @@ function Modal() {
     return (
       <CustomButton
         title="Coming Soon"
-        className="mx-auto lg:mx-none md:lg-none glow bg-secondary text-white font-bold text-sm rounded-full py-4 px-12 hover:bg-blue-700"
+        className="mx-auto lg:mx-none md:lg-none glow bg-secondary text-white-default font-bold text-sm rounded-full py-4 px-12 hover:bg-blue-700"
         onClick={() => {
           if (!user) {
             setIsOpen(true);
@@ -59,7 +59,7 @@ function Modal() {
           <ChevronDown className="inline ml-2" size="18" />
         </div>
       </div>
-      <div className="hidden lg:block md:block md:h-20">
+      <div className="hidden lg:block md:block">
         <img
           style={{ zIndex: "-1" }}
           className="absolute top-0 right-0"

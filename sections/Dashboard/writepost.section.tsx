@@ -6,7 +6,7 @@ function WritePost() {
   const { user } = useAuth();
 
   return (
-    <div className="relative pb-10 lg:pb-6 md:pb-6 flex space-x-4 p-6 bg-white rounded-xl border border-white300">
+    <div className="relative pb-10 lg:pb-6 md:pb-6 flex space-x-4 p-6 bg-white-default rounded-xl border border-white-300">
       <div className="">
         <div className="h-12 w-12">
           <img
@@ -18,7 +18,7 @@ function WritePost() {
       <div className="text-secondary w-full">
         <CustomButton
           title="Start a post"
-          className="mb-4 w-full text-left text-sm font-medium rounded-full p-3 px-6 text-black300 border border-white500"
+          className="mb-4 w-full text-left text-sm font-medium rounded-full p-3 px-6 text-black-300 border border-white-500"
           logo={<Edit className="inline mr-3 pb-1" />}
         />
         <div className="hidden lg:block md:block">
