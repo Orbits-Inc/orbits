@@ -16,7 +16,7 @@ function Dashboard() {
 
   return (
     <main className="">
-      <div className="flex flex-col lg:flex-row lg:space-x-4 text-primary">
+      <div className="flex flex-col md:flex-row lg:flex-row lg:space-x-4 md:space-x-2 text-primary">
         <Navbar />
         <div className="flex flex-col space-y-2 w-full">
           <Modal />

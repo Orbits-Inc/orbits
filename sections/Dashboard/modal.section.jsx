@@ -47,7 +47,7 @@ function Modal() {
           <br />
           Spread.
         </div>
-        <div className="font-medium mx-auto lg:mx-0 md:mx-0 text-center lg:text-left md:text-left w-8/12 lg:w-7/12 md:w-7/12 text-accent text-sm my-6">
+        <div className="font-medium mx-auto lg:mx-0 md:mx-0 text-center lg:text-left md:text-left w-8/12 lg:w-7/12 md:w-10/12 text-accent text-sm my-6">
           Science, space & tech is what all we talk and write about!
         </div>
         <div className="flex flex-col items-center" />
@@ -59,7 +59,7 @@ function Modal() {
           <ChevronDown className="inline ml-2" size="18" />
         </div>
       </div>
-      <div className="hidden lg:block md:block">
+      <div className="hidden lg:block md:block md:h-20">
         <img
           style={{ zIndex: "-1" }}
           className="absolute top-0 right-0"

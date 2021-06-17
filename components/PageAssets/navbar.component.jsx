@@ -172,7 +172,7 @@ const Navbar = ({ className, loginText }) => {
 
   const DesktopNavbar = () => (
     <>
-      <div className="fixed h-screen w-56 pb-10">
+      <div className="fixed h-screen w-56 lg:pb-10 md:pb-5">
         <div className="border border-white-300 p-6 rounded-xl bg-white w-full h-full">
           <div className="flex flex-col h-full justify-between">
             <div>
@@ -250,10 +250,10 @@ const Navbar = ({ className, loginText }) => {
 
   return (
     <div>
-      <div className="hidden lg:block">
+      <div className="hidden md:block lg:block">
         <DesktopNavbar />
       </div>
-      <div className="block lg:hidden">
+      <div className="block md:hidden lg:hidden">
         <MobileNavbar />
       </div>
     </div>
