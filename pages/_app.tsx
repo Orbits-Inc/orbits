@@ -4,6 +4,19 @@ import { PopupProvider } from "../utils/providers/popup.provider";
 import { AuthProvider } from "../utils/providers/auth.provider";
 import { ApiProvider } from "../utils/providers/api.provider";
 import Head from "next/head";
+import ProgressBar from "@badrap/bar-of-progress";
+import Router from "next/router";
+
+const progress = new ProgressBar({
+  size: 2,
+  color: "#347efd",
+  className: "bar-of-progress",
+  delay: 100,
+});
+
+Router.events.on("routeChangeStart", progress.start);
+Router.events.on("routeChangeComplete", progress.finish);
+Router.events.on("routeChangeError", progress.finish);
 
 function MyApp({ Component, pageProps }: any) {
   return (
