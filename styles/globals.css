@@ -75,3 +75,7 @@ button {
   font-weight: bold;
   color: #347efd;
 }
+
+.bar-of-progress {
+  z-index: 50;
+}
