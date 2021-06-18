@@ -53,7 +53,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
           </div>
         </OutsideClickHandler>
       </Popup>
-      <div className="logo mt-1">
+      <div className="logo mt-">
         <a href="/">
           <div className="flex">
             <img
@@ -243,7 +243,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
             </div>
             <div>
               <CustomButton
-                className="font-semibold border-2 border-blue-500 text-secondary w-full px-6 py-3 hover:bg-blue-500 hover:text-white-default rounded-full"
+                className="font-semibold border-2 border-secondary text-secondary w-full px-6 py-3.5 hover:bg-secondary hover:text-white-default rounded-full"
                 title="Login"
                 onClick={() => {
                   window.location.href = "/auth";

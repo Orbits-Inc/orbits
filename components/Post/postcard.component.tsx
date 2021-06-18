@@ -29,12 +29,8 @@ function PostCard({ post }: PostCard) {
             <div className="pt-1">{post?.likes.length}</div>
           </div>
           <div className="py-1 flex space-x-2">
-            <div>
-              <Chat size="20" />
-            </div>
-            <div className="pt-1 leading-loose break-words">
-              {post?.comments.length}
-            </div>
+            <Chat size="20" />
+            <div className="pt-1">{post?.comments.length}</div>
           </div>
         </div>
         <div
@@ -74,7 +70,7 @@ function PostCard({ post }: PostCard) {
             <div className="font-bold text-xl mb-2 text-black-700">
               {post?.title}
             </div>
-            <div className="font-medium text-sm mb-1 lg:mb-none md:mb-none text-black-300">
+            <div className="leading-relaxed font-medium text-sm mb-1 lg:mb-none md:mb-none text-black-300">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua...
             </div>

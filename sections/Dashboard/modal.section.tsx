@@ -54,7 +54,12 @@ function Modal() {
         <div className="flex justify-center lg:block md:block">
           <StartWriting />
         </div>
-        <div className="flex justify-center lg:block md:block duration-300 cursor-pointer hover:text-secondary text-xs ml-2 text-blue-700 py-5">
+        <div
+          onClick={() => {
+            window.location.href = "#write-post";
+          }}
+          className="flex justify-center lg:block md:block duration-300 cursor-pointer hover:text-secondary text-xs ml-2 text-blue-700 py-5"
+        >
           I'll just look around for now
           <ChevronDown className="inline ml-2" size="18" />
         </div>
