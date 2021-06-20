@@ -5,6 +5,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
 }
@@ -74,4 +75,8 @@ button {
 .article link {
   font-weight: bold;
   color: #347efd;
+}
+
+.bar-of-progress {
+  z-index: 50;
 }

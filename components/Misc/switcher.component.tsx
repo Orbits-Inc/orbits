@@ -19,7 +19,7 @@ const Switcher = ({ items }: Switcher): JSX.Element => {
             <div
               className={`cursor-pointer duration-300 rounded-full p-2 ${
                 activeItem === idx
-                  ? "bg-secondary text-white"
+                  ? "bg-secondary text-white-default"
                   : "bg-transparent text-secondary"
               }`}
               onClick={() => setActiveItem(idx)}
