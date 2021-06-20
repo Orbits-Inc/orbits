@@ -5,23 +5,30 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import { User } from "../../types/data.types";
 
+// TODO: change User type to FirebaseUserData
+
 interface UserContext {
   user: User | null;
 }
 
-const AuthContext = createContext<UserContext | null>({ user: null });
+const AuthContext = createContext<any>({ user: null, loading: true });
 
 export const AuthProvider = ({ children }) => {
   firebaseClient();
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     return firebase.auth().onIdTokenChanged(async (_user) => {
       if (!_user) {
+        setLoading(true);
         setUser(null);
+        setLoading(false);
         return;
       }
+      setLoading(true);
       setUser(_user);
+      setLoading(false);
       try {
         await addNewUser(_user);
       } catch (err) {
@@ -31,7 +38,9 @@ export const AuthProvider = ({ children }) => {
     });
   }, []);
   return (
-    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user, loading }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 export const useAuth = () => useContext(AuthContext);
