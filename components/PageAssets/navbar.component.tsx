@@ -243,13 +243,15 @@ const Navbar = ({ className, loginText }: Navbar) => {
               </div>
             </div>
             <div>
-              <CustomButton
-                className="font-semibold border-2 border-blue-500 text-secondary w-full px-6 py-3 hover:bg-blue-500 hover:text-white rounded-full"
-                title="Login"
-                onClick={() => {
-                  window.location.href = "/auth";
-                }}
-              />
+              {!user && (
+                <CustomButton
+                  className="font-semibold border-2 border-blue-500 text-secondary w-full px-6 py-3 hover:bg-blue-500 hover:text-white rounded-full"
+                  title="Login"
+                  onClick={() => {
+                    window.location.href = "/auth";
+                  }}
+                />
+              )}
             </div>
           </div>
         </div>
