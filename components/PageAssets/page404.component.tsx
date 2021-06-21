@@ -1,5 +1,3 @@
-import Navbar from "./navbar.component";
-
 interface Page404 {
   message: string;
 }
@@ -9,7 +7,7 @@ const Page404 = ({ message }: Page404): JSX.Element => {
     <div id="parent" className="parent oops text-white-default h-screen">
       <div
         id="child"
-        className="child p-8 err-msg text-5xl text-center w-full font-bold text-center mt-11/12"
+        className="child p-8 err-msg text-5xl text-center w-full font-bold mt-11/12"
       >
         Oops!
         <br />

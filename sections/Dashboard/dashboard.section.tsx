@@ -1,7 +1,5 @@
 import Navbar from "../../components/PageAssets/navbar.component";
 import { Clock, Home } from "react-feather";
-import { usePopup } from "../../utils/providers/popup.provider";
-import { useAuth } from "../../utils/providers/auth.provider";
 import Modal from "./modal.section";
 import SearchBar from "../../components/Custom/searchbar.component";
 import TrendingPosts from "../Post/trendingposts.section";
@@ -10,9 +8,6 @@ import WritePost from "./writepost.section";
 import Posts from "../Post/posts.section";
 
 function Dashboard() {
-  const { isOpen, setIsOpen } = usePopup();
-  const { user } = useAuth();
-
   return (
     <main className="">
       <div className="flex flex-col md:flex-row lg:flex-row lg:space-x-4 md:space-x-2 text-primary">
@@ -43,7 +38,7 @@ function Dashboard() {
           <SearchBar />
           <div className="px-5 py-7 rounded-xl border border-white-300 bg-white-default h-full">
             <div className="font-bold mb-1 text-primary">Top Articles</div>
-            <div className="font-medium text-xs text-accent mb-5 text-primary">
+            <div className="font-medium text-xs text-accent mb-5">
               This Week
             </div>
             <TrendingPosts />
