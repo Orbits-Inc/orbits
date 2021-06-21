@@ -10,7 +10,7 @@ function Modal() {
     return (
       <CustomButton
         title="Coming Soon"
-        className="mx-auto lg:mx-none md:lg-none glow bg-secondary text-white font-bold text-sm rounded-full py-4 px-12 hover:bg-blue-700"
+        className="mx-auto lg:mx-none md:lg-none glow bg-secondary text-white-default font-bold text-sm rounded-full py-4 px-12 hover:bg-blue-700"
         onClick={() => {
           if (!user) {
             setIsOpen(true);
@@ -47,14 +47,19 @@ function Modal() {
           <br />
           Spread.
         </div>
-        <div className="font-medium mx-auto lg:mx-0 md:mx-0 text-center lg:text-left md:text-left w-8/12 lg:w-7/12 md:w-7/12 text-accent text-sm my-6">
+        <div className="font-medium mx-auto lg:mx-0 md:mx-0 text-center lg:text-left md:text-left w-8/12 lg:w-7/12 md:w-10/12 text-accent text-sm my-6">
           Science, space & tech is what all we talk and write about!
         </div>
         <div className="flex flex-col items-center" />
         <div className="flex justify-center lg:block md:block">
           <StartWriting />
         </div>
-        <div className="flex justify-center lg:block md:block duration-300 cursor-pointer hover:text-secondary text-xs ml-2 text-blue-700 py-5">
+        <div
+          onClick={() => {
+            window.location.href = "#write-post";
+          }}
+          className="flex justify-center lg:block md:block duration-300 cursor-pointer hover:text-secondary text-xs ml-2 text-blue-700 py-5"
+        >
           I'll just look around for now
           <ChevronDown className="inline ml-2" size="18" />
         </div>

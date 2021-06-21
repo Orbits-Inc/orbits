@@ -15,8 +15,8 @@ const Tag = ({ tag, noColor }: Tag) => {
       }}
       className={`${
         noColor || !Object.keys(tags).includes(tag)
-          ? "text-black700"
-          : "text-white"
+          ? "text-black-700"
+          : "text-white-default"
       } rounded-md text-xs font-semibold px-3 duration-300 transform hover:scale-105 py-1`}
     >
       #{tag}
