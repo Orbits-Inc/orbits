@@ -2,8 +2,11 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseClient from "../../utils/firebase";
+import useRouter from "next/router";
 
 const SignIn = () => {
+  const { router } = useRouter;
+
   const uiConfig: any = {
     signInFlow: "redirect",
     signInOptions: [
@@ -11,7 +14,13 @@ const SignIn = () => {
       firebase.auth.GithubAuthProvider.PROVIDER_ID,
       firebase.auth.TwitterAuthProvider.PROVIDER_ID,
     ],
-    signInSuccessUrl: "/",
+
+    callbacks: {
+      signInSuccessWithAuthResult: () => {
+        router.push("/");
+        return false;
+      },
+    },
   };
 
   const FirebaseApp = () => {

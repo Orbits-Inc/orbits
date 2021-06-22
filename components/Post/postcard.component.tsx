@@ -14,10 +14,6 @@ function PostCard({ post }: PostCard) {
   const { getUser } = useApi();
   const { user, isLoading } = getUser(post.author_id);
 
-  useEffect(() => {
-    console.log(user);
-  }, [user, isLoading]);
-
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const EngageSection = () => {
