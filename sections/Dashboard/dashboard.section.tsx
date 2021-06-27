@@ -1,5 +1,5 @@
 import Navbar from "../../components/PageAssets/navbar.component";
-import { Clock, Home } from "react-feather";
+import { Clock, Activity } from "react-feather";
 import Modal from "./modal.section";
 import SearchBar from "../../components/Custom/searchbar.component";
 import TrendingPosts from "../Post/trendingposts.section";
@@ -19,14 +19,16 @@ function Dashboard() {
               <Switcher
                 items={[
                   {
-                    logo: <Home size={14} />,
-                    title: "For you",
+                    logo: <Activity size={14} />,
+                    title: "Relevant",
                   },
                   {
                     logo: <Clock size={14} />,
                     title: "Recent",
                   },
                 ]}
+                switcherItemClassName="px-5 text-gray-500 font-thin rounded-lg py-1 border-gray-200 border text-sm"
+                switcherItemActiveClassName="border-0 bg-blue-200 text-blue-600"
               />
             </div>
           </div>
