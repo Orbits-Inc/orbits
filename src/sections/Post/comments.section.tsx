@@ -1,5 +1,5 @@
-import Comment from "../../components/Post/comment.component";
-import CustomButton from "../../components/Custom/custombutton.component";
+import Comment from "../../../components/Post/comment.component";
+import CustomButton from "../../../components/Custom/custombutton.component";
 import { CommentType } from "../../types/data.types";
 
 interface Comments {
