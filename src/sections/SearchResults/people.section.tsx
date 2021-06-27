@@ -1,6 +1,5 @@
 import ProfileCrumb from "../../components/Misc/profilecrumb.component";
 import NothingFound from "./nothingFound.component";
-import Searching from "./searching.component";
 
 function People({ people }) {
   if (people?.length > 0) {

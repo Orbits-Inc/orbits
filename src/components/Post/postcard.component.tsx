@@ -10,7 +10,7 @@ interface PostCard {
   post: Post;
 }
 
-function PostCard({ post }: PostCard) {
+const PostCard = ({ post }: PostCard) => {
   const { getUser } = useApi();
   const { user, isLoading } = getUser(post.author_id);
 
@@ -91,8 +91,8 @@ function PostCard({ post }: PostCard) {
       </div>
     );
   } else if (isLoading) {
-    return (<SkeletonPost/>);
+    return <SkeletonPost />;
   }
-}
+};
 
 export default PostCard;
