@@ -29,7 +29,7 @@ function Modal() {
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        zIndex: "2",
+        zIndex: 2,
       }}
       className={`${
         isOpen ? "relative" : "hidden"
@@ -66,7 +66,7 @@ function Modal() {
       </div>
       <div className="hidden lg:block md:block">
         <img
-          style={{ zIndex: "-1" }}
+          style={{ zIndex: -1 }}
           className="absolute top-0 right-0"
           src="/illustration.svg"
         />

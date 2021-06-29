@@ -10,9 +10,9 @@ interface PostCard {
   post: Post;
 }
 
-const PostCard = ({ post }: PostCard) => {
+const PostCard = ({ post }: PostCard): JSX.Element => {
   const { getUser } = useApi();
-  const { user, isLoading } = getUser(post.author_id);
+  const { user, isLoading }: any = getUser(post.author_id);
 
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -90,9 +90,8 @@ const PostCard = ({ post }: PostCard) => {
         </div>
       </div>
     );
-  } else if (isLoading) {
-    return <SkeletonPost />;
   }
+  return <SkeletonPost />;
 };
 
 export default PostCard;

@@ -17,7 +17,7 @@ const SignIn = () => {
 
     callbacks: {
       signInSuccessWithAuthResult: () => {
-        router.push("/");
+        router?.push("/");
         return false;
       },
     },

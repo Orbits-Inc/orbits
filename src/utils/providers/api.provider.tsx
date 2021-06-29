@@ -6,12 +6,12 @@ import { searchPost } from "../helpers/post/search_post";
 
 type anyArgs = [args: string];
 interface ApiContext {
-  [functions: string]: (anyArgs?) => {};
+  [functions: string]: (anyArgs?: any) => {};
 }
 
 const ApiContext = createContext<ApiContext>({});
 
-export const ApiProvider = ({ children }) => {
+export const ApiProvider = ({ children }: any) => {
   return (
     <ApiContext.Provider
       value={{ searchUser, getAllPosts, getTopPosts, getUser, searchPost }}

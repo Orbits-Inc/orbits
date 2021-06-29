@@ -34,7 +34,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
   const [isSearchBarOpen, setIsSearchBarOpen] = useState<boolean>(false);
   const { user } = useAuth();
   const { getUser } = useApi();
-  const res = getUser(user?.uid);
+  const res: any = getUser(user?.uid);
 
   const MobileNavbar = () => (
     <div className={`flex justify-between ${className || ""}`}>

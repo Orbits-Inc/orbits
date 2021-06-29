@@ -13,16 +13,16 @@ interface UserContext {
 
 const AuthContext = createContext<any>({ user: null, loading: true });
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }: any) => {
   firebaseClient();
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(undefined);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     return firebase.auth().onIdTokenChanged(async (_user) => {
       if (!_user) {
         setLoading(true);
-        setUser(null);
+        setUser(undefined);
         setLoading(false);
         return;
       }

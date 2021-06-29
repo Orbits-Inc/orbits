@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SkeletonPost() {
+export default function SkeletonPost(): JSX.Element {
   return (
     <div>
       <div className="flex lg:items-center flex-col lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3">
