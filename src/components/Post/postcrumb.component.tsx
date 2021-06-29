@@ -13,7 +13,7 @@ const PostCrumb = ({ post }: PostCrumb) => {
 
   return (
     <div
-      className={`rounded-lg duration-300 pt-4 text-sm font-semibold px-4 py-2 cursor-pointer bg-white-200 mb-2`}
+      className={`rounded-lg duration-300 pt-4 text-sm font-semibold px-4 py-2 cursor-pointer mb-1`}
     >
       <div className="">
         <div className="flex">

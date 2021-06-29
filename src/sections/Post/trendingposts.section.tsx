@@ -6,9 +6,12 @@ function TrendingPosts() {
   const { trendingPosts, isError } = getTopPosts();
 
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col space-y-1">
       {trendingPosts?.map((data, key) => (
-        <PostCrumb post={data} key={key} />
+        <>
+          <PostCrumb post={data} key={key} />
+          {key !== trendingPosts?.length - 1 ? <hr /> : <></>}
+        </>
       ))}
     </div>
   );

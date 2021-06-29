@@ -21,17 +21,19 @@ const Switcher = ({
   const [activeItem, setActiveItem] = useState<number>(0);
 
   return (
-    <div className={`flex items-center space-x-4 ${switcherClassName}`}>
+    <div
+      className={`hidden lg:flex md:flex items-center space-x-4 ${switcherClassName}`}
+    >
       {items.map((item, idx) => {
         return (
           <div
-            className={`${switcherItemClassName} ${
+            className={`duration-300 ${switcherItemClassName} ${
               activeItem === idx ? switcherItemActiveClassName : ""
             } cursor-pointer`}
             onClick={() => setActiveItem(idx)}
           >
             <div className="flex items-center">
-              <div className="pr-2">{item.logo}</div>
+              {item.logo ? <div className="pr-2">{item.logo}</div> : <></>}
               {item.title}
             </div>
           </div>

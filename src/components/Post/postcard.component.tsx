@@ -78,7 +78,7 @@ const PostCard = ({ post }: PostCard) => {
             <div
               className="h-40 md:h-32 md:w-60 w-full lg:h-32 lg:w-60 rounded-lg"
               style={{
-                backgroundImage: `url(${post?.image})`,
+                backgroundImage: `url("${post?.image}")`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
