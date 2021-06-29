@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "npx prettier --write ."
   },
+  "types": "./index.d.ts",
   "lint-staged": {
     "./**/*.{js,jsx,css}": [
       "npm run lint"
