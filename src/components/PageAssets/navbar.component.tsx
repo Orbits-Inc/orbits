@@ -40,7 +40,6 @@ const Navbar = ({ className, loginText }: Navbar) => {
     <div className={`flex justify-between ${className || ""}`}>
       <Popup className="top-0 left-0" isOpen={isSearchBarOpen}>
         <OutsideClickHandler
-          className="relative"
           onOutsideClick={() => {
             if (isSearchBarOpen) {
               setIsSearchBarOpen(false);

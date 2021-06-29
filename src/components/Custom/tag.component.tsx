@@ -2,7 +2,7 @@ import { tags } from "../../utils/popular_tags";
 
 interface Tag {
   tag: string;
-  noColor: boolean;
+  noColor?: boolean;
 }
 
 const Tag = ({ tag, noColor }: Tag) => {
