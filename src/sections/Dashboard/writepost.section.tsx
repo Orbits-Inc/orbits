@@ -23,7 +23,7 @@ function WritePost() {
         <AuthRequired checkAuthOn={CheckAuthOn.click}>
           <CustomButton
             title="Start a post"
-            className="mb-4 w-full text-left text-sm font-medium rounded-full p-3 px-6 text-black300 border border-white500"
+            className="mb-4 w-full text-left text-sm font-medium rounded-full p-3 px-6 text-black-300 border border-white500"
             logo={<Edit className="inline mr-3 pb-1" />}
           />
         </AuthRequired>
