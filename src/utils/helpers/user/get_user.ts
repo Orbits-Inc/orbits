@@ -1,7 +1,7 @@
 import axios from "axios";
 import useSWR from "swr";
 
-export function getUser(uid) {
+export function getUser(uid: any) {
   const { data, error } = useSWR(
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/user/byId/${uid}`
   );
@@ -12,7 +12,7 @@ export function getUser(uid) {
   };
 }
 
-export async function getUserByUsername(username) {
+export async function getUserByUsername(username: any) {
   const res = await axios.get(
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/user/byUsername/${username}`
   );

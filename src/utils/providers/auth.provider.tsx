@@ -15,7 +15,7 @@ const AuthContext = createContext<any>({ user: null, loading: true });
 
 export const AuthProvider = ({ children }: any) => {
   firebaseClient();
-  const [user, setUser] = useState(undefined);
+  const [user, setUser] = useState<any>(undefined);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
