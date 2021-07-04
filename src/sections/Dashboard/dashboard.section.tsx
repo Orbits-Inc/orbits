@@ -13,7 +13,7 @@ function Dashboard() {
       <div className="flex flex-col md:flex-row lg:flex-row lg:space-x-4 md:space-x-2 text-primary">
         <Navbar />
         <div className="flex flex-col space-y-2 w-full">
-          <div className="border border-white-300 bg-white-default text-base font-bold w-full py-4 px-8 rounded-xl">
+          <div className="border border-white-300 bg-white text-base font-bold w-full py-4 px-8 rounded-xl">
             <div className="flex justify-between items-center">
               <div>My Feed</div>
               <Switcher
@@ -38,7 +38,7 @@ function Dashboard() {
         </div>
         <div className="hidden lg:flex lg:flex-col space-y-3">
           <SearchBar />
-          <div className="px-5 py-7 rounded-xl border border-white-300 bg-white-default h-full">
+          <div className="px-5 py-7 rounded-xl border border-white-300 bg-white h-full">
             <div className="font-bold mb-1 text-primary">Top Articles</div>
             <div className="font-medium text-xs text-accent mb-5">
               This Week

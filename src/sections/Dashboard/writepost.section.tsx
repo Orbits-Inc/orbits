@@ -9,7 +9,7 @@ function WritePost() {
   return (
     <div
       id="write-post"
-      className="relative pb-10 lg:pb-6 md:pb-6 flex space-x-4 p-6 bg-white-default rounded-xl border border-white-300"
+      className="relative pb-10 lg:pb-6 md:pb-6 flex space-x-4 p-6 bg-white rounded-xl border border-white-300"
     >
       <div className="">
         <div className="h-12 w-12">

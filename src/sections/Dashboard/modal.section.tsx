@@ -10,7 +10,7 @@ function Modal() {
     return (
       <CustomButton
         title="Coming Soon"
-        className="mx-auto lg:mx-none md:lg-none glow bg-secondary text-white-default font-bold text-sm rounded-full py-4 px-12 hover:bg-blue-700"
+        className="mx-auto lg:mx-none md:lg-none glow bg-secondary text-white font-bold text-sm rounded-full py-4 px-12 hover:bg-blue-700"
         onClick={() => {
           if (!user) {
             setIsOpen(true);

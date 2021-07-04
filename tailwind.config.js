@@ -12,7 +12,7 @@ module.exports = {
         secondary: "#1A6EFC",
         accent: "#9A9A9A",
         white: {
-          default: "#FFF",
+          DEFAULT: "#FFF",
           200: "#F4F4F4",
           300: "#EAEAEA",
           500: "#CBCBCB",
