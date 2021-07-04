@@ -10,7 +10,7 @@ const ProfileCrumb = ({ user }: { user: User }): JSX.Element => {
       <div className="flex flex-col justify-center">
         <div className="font-semibold text-sm">{user?.name}</div>
         <div>
-          <Mention username={user.username} />
+          <Mention username={user?.username} />
         </div>
       </div>
     </div>

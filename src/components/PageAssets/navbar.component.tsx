@@ -15,11 +15,14 @@ import {
 
 import { useState } from "react";
 import { useAuth } from "../../utils/providers/auth.provider";
+import { useApi } from "../../utils/providers/api.provider";
 import SearchBar from "../Custom/searchbar.component";
 import firebase from "firebase/app";
 import NavLink from "../Misc/navlink.component";
+import ProfileCrumb from "../Misc/profilecrumb.component";
 import { Menu, MenuItem, MenuDivider } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
+import { User } from "../../types/data.types";
 
 interface Navbar {
   className?: string;
@@ -30,12 +33,13 @@ const Navbar = ({ className, loginText }: Navbar) => {
   const { setIsOpen } = usePopup();
   const [isSearchBarOpen, setIsSearchBarOpen] = useState<boolean>(false);
   const { user } = useAuth();
+  const { getUser } = useApi();
+  const res: any = getUser(user?.uid);
 
   const MobileNavbar = () => (
     <div className={`flex justify-between ${className || ""}`}>
       <Popup className="top-0 left-0" isOpen={isSearchBarOpen}>
         <OutsideClickHandler
-          className="relative"
           onOutsideClick={() => {
             if (isSearchBarOpen) {
               setIsSearchBarOpen(false);
@@ -60,7 +64,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
               src="/logo.png"
               alt="logo"
               width="250px"
-              className="inline mr-1 w-12 h-12"
+              className="inline mr-1 mt-1 w-12 h-12"
             />
           </div>
         </a>
@@ -178,7 +182,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
 
   const DesktopNavbar = () => (
     <>
-      <div className="fixed h-screen w-56 lg:pb-10 md:pb-5">
+      <div className="fixed h-screen w-60 lg:pb-10 md:pb-5">
         <div className="border border-white-300 p-6 rounded-xl bg-white-default w-full h-full">
           <div className="flex flex-col h-full justify-between">
             <div>
@@ -198,7 +202,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
               <div className="mt-6">
                 <StartWriting />
               </div>
-              <div className="flex flex-col space-y-6 my-8 mt-12 font-medium text-primary">
+              <div className="flex flex-col space-y-6 my-8 mt-16 font-medium text-primary">
                 <NavLink
                   href="/"
                   activeClassName="text-secondary font-semibold"
@@ -242,9 +246,20 @@ const Navbar = ({ className, loginText }: Navbar) => {
               </div>
             </div>
             <div>
-              {!user && (
+              {user ? (
+                <>
+                  <div>
+                    <div className="w-40 mx-auto text-sm text-orange-600 font-semibold mb-5 bg-orange-200 p-3 rounded-full">
+                      <img src="/Orb.svg" className="w-7 inline mr-2" /> 50 Orbs
+                    </div>
+                  </div>
+                  <div className="bg-white-200 p-3 rounded-full border-2 border-white-300">
+                    <ProfileCrumb user={res?.user} />
+                  </div>
+                </>
+              ) : (
                 <CustomButton
-                  className="font-semibold border-2 border-blue-500 text-secondary w-full px-6 py-3 hover:bg-blue-500 hover:text-white rounded-full"
+                  className="font-semibold border-2 border-blue-500 text-secondary w-full px-6 py-3 hover:bg-blue-500 hover:text-white-default rounded-full"
                   title="Login"
                   onClick={() => {
                     window.location.href = "/auth";
@@ -255,7 +270,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
           </div>
         </div>
       </div>
-      <div className="h-screen w-56"></div>
+      <div className="h-screen w-60"></div>
     </>
   );
 

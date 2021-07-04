@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function addNewUser(post) {
+export default async function addNewUser(post: any) {
   const res = await axios.post(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/post`, {
     title: post.title,
     description: post.description,

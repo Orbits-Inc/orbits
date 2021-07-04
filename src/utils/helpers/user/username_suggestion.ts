@@ -1,4 +1,7 @@
-export default function usernameSuggestion(user) {
+export default function usernameSuggestion(user: {
+  displayName: string;
+  uid: string;
+}) {
   var username = user.displayName.split(/\s+/).join("");
   username += user.uid.substring(
     Math.round(user.uid.length / 2) - 2,

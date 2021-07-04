@@ -10,9 +10,9 @@ interface PostCard {
   post: Post;
 }
 
-const PostCard = ({ post }: PostCard) => {
+const PostCard = ({ post }: PostCard): JSX.Element => {
   const { getUser } = useApi();
-  const { user, isLoading } = getUser(post.author_id);
+  const { user, isLoading }: any = getUser(post.author_id);
 
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -78,7 +78,7 @@ const PostCard = ({ post }: PostCard) => {
             <div
               className="h-40 md:h-32 md:w-60 w-full lg:h-32 lg:w-60 rounded-lg"
               style={{
-                backgroundImage: `url(${post?.image})`,
+                backgroundImage: `url("${post?.image}")`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -90,9 +90,8 @@ const PostCard = ({ post }: PostCard) => {
         </div>
       </div>
     );
-  } else if (isLoading) {
-    return <SkeletonPost />;
   }
+  return <SkeletonPost />;
 };
 
 export default PostCard;

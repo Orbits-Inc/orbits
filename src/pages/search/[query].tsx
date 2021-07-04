@@ -11,7 +11,7 @@ import { searchPost } from "../../utils/helpers/post/search_post";
 import { getUser } from "../../utils/helpers/user/get_user";
 import { User, Post } from "../../types/data.types";
 
-export const getServerSideProps = async (ctx) => {
+export const getServerSideProps = async (ctx: { query: { query: any } }) => {
   const query = ctx.query.query;
   const people = await searchUser(query);
   let articles = await searchPost(query);

@@ -9,11 +9,11 @@ interface PostCrumb {
 
 const PostCrumb = ({ post }: PostCrumb) => {
   const { getUser } = useApi();
-  const { user }: { user: User } = getUser(post?.author_id);
+  const { user }: any = getUser(post?.author_id);
 
   return (
     <div
-      className={`rounded-lg duration-300 pt-4 text-sm font-semibold px-4 py-2 cursor-pointer bg-white-200 mb-2`}
+      className={`rounded-lg duration-300 pt-4 text-sm font-semibold px-4 py-2 cursor-pointer mb-1`}
     >
       <div className="">
         <div className="flex">

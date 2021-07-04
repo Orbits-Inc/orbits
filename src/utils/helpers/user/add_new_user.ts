@@ -1,7 +1,7 @@
 import axios from "axios";
 import usernameSuggestion from "./username_suggestion";
 
-export default async function addNewUser(user) {
+export default async function addNewUser(user: any) {
   const res = await axios.post(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/user`, {
     user_id: user.uid,
     username: usernameSuggestion(user),

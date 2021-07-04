@@ -2,12 +2,12 @@ import PostCard from "../../components/Post/postcard.component";
 import NothingFound from "./nothingFound.component";
 import Searching from "./searching.component";
 
-function Articles({ articles }) {
+function Articles({ articles }: any) {
   if (articles?.length > 0) {
     return (
       <div className="flex flex-col text-primary">
         <div className="mb-3 font-bold text-xl text-primary">Articles</div>
-        {articles?.map((data, key) => (
+        {articles?.map((data: any, key: any) => (
           <div
             key={key}
             className={`cursor-pointer hover:bg-gray-100 duration-300 p-4 lg:p-5 border-l border-r border-b border-gray-300 ${

@@ -1,11 +1,12 @@
 import Navbar from "../../components/PageAssets/navbar.component";
-import { Clock, Activity } from "react-feather";
+import CustomButton from "../../components/Custom/custombutton.component";
 import Modal from "./modal.section";
 import SearchBar from "../../components/Custom/searchbar.component";
 import TrendingPosts from "../Post/trendingposts.section";
 import Switcher from "../../components/Misc/switcher.component";
 import WritePost from "./writepost.section";
 import Posts from "../Post/posts.section";
+import TabChanger from "./tabchanger.section";
 
 function Dashboard() {
   return (
@@ -13,37 +14,44 @@ function Dashboard() {
       <div className="flex flex-col md:flex-row lg:flex-row lg:space-x-4 md:space-x-2 text-primary">
         <Navbar />
         <div className="flex flex-col space-y-2 w-full">
-          <div className="border border-white-300 bg-white-default text-base font-bold w-full py-4 px-8 rounded-xl">
-            <div className="flex justify-between items-center">
-              <div>My Feed</div>
-              <Switcher
-                items={[
-                  {
-                    logo: <Activity size={14} />,
-                    title: "Relevant",
-                  },
-                  {
-                    logo: <Clock size={14} />,
-                    title: "Recent",
-                  },
-                ]}
-                switcherItemClassName="px-5 text-gray-500 font-thin rounded-lg py-1 border-gray-200 border text-sm"
-                switcherItemActiveClassName="border-0 bg-blue-200 text-blue-600"
-              />
-            </div>
-          </div>
+          <TabChanger />
           <Modal />
           <WritePost />
           <Posts />
         </div>
         <div className="hidden lg:flex lg:flex-col space-y-3">
           <SearchBar />
-          <div className="px-5 py-7 rounded-xl border border-white-300 bg-white-default h-full">
-            <div className="font-bold mb-1 text-primary">Top Articles</div>
-            <div className="font-medium text-xs text-accent mb-5">
-              This Week
+          <div
+            id="trending-posts"
+            className="px-5 py-7 rounded-xl border border-white-300 bg-white-default"
+          >
+            <div className="flex justify-between">
+              <div>
+                <div className="font-bold mb-1 text-primary">Top Articles</div>
+                <div className="font-medium text-xs text-accent mb-5">
+                  This Week
+                </div>
+              </div>
+              <div>
+                <Switcher
+                  items={[
+                    {
+                      title: "1w",
+                    },
+                    {
+                      title: "1m",
+                    },
+                  ]}
+                  switcherItemClassName="px-2 text-gray-500 font-medium rounded-xl py-2 text-xs"
+                  switcherItemActiveClassName="border-none bg-blue-200 text-blue-600"
+                />
+              </div>
             </div>
             <TrendingPosts />
+            <CustomButton
+              title="Show more"
+              className="mt-8 bottom-0 w-full border-secondary border-2 text-secondary py-3 font-medium rounded-xl hover:bg-secondary hover:text-white-default"
+            />
           </div>
         </div>
       </div>

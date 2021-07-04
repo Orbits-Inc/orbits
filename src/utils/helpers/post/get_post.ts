@@ -1,7 +1,7 @@
 import axios from "axios";
 import useSWR from "swr";
 
-export async function getPostById(uid) {
+export async function getPostById(uid: String) {
   const res = await axios.get(
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/post/byId/${uid}`
   );
