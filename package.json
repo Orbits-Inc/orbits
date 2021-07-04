@@ -27,6 +27,7 @@
     "eslint": "^7.28.0",
     "firebase": "^8.5.0",
     "firebaseui": "^4.8.0",
+    "formik": "^2.2.9",
     "fs": "0.0.1-security",
     "next": "^11.0.0",
     "next-pwa": "^5.2.21",
@@ -48,7 +49,7 @@
     "swr": "^0.5.6"
   },
   "devDependencies": {
-    "@types/react": "^17.0.11",
+    "@types/react": "^17.0.13",
     "autoprefixer": "^10.2.5",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
