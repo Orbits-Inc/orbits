@@ -249,7 +249,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
               {user ? (
                 <>
                   <div>
-                    <div className="w-40 mx-auto text-sm text-orange-600 font-semibold mb-5 bg-orange-200 p-3 rounded-full">
+                    <div className="w-36 truncate mx-auto text-sm text-orange-600 font-semibold mb-5 bg-orange-200 p-3 rounded-full">
                       <img src="/Orb.svg" className="w-7 inline mr-2" /> 50 Orbs
                     </div>
                   </div>
