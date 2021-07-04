@@ -3,8 +3,8 @@ import { Logo } from "../../types/ui.types";
 
 interface CustomInput {
   className: string;
-  onSubmit: (...args: any[]) => void;
-  logo: Logo;
+  onSubmit?: (...args: any[]) => void;
+  logo?: Logo;
   [otherProps: string]: any;
 }
 
