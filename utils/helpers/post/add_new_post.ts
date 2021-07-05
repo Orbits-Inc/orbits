@@ -11,5 +11,4 @@ export default async function addNewUser(post: any) {
     likes: [],
     comments: [],
   });
-  console.log(res);
 }
