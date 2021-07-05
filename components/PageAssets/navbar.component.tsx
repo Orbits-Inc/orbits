@@ -253,7 +253,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                       <img src="/Orb.svg" className="w-7 inline mr-2" /> 50 Orbs
                     </div>
                   </div>
-                  <div className="bg-white-200 p-3 rounded-full border-2 border-white-300">
+                  <div className="bg-white-200 p-3 pb-2 rounded-full border-2 border-white-300">
                     <ProfileCrumb user={res?.user} />
                   </div>
                 </>

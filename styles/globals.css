@@ -80,3 +80,7 @@ button {
 .bar-of-progress {
   z-index: 50;
 }
+
+#login-prompt{
+  height: 39rem;
+}
