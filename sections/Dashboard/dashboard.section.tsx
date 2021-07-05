@@ -21,9 +21,9 @@ function Dashboard() {
         </div>
         <div className="hidden lg:flex lg:flex-col space-y-2">
           <SearchBar />
-          <TrendingSection/>
-          <TrendingTags/>
-          <LoginPrompt/>
+          <TrendingSection />
+          <TrendingTags />
+          <LoginPrompt />
         </div>
       </div>
     </main>
