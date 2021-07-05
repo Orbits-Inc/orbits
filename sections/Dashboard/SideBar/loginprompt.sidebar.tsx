@@ -12,10 +12,10 @@ function LoginPrompt() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute w-full bottom-0 px-5 py-7">
+      <div className="absolute w-full bottom-0 p-7">
         <CustomButton
           title="Create Account"
-          className="w-full border-secondary border-2 text-secondary py-3 font-medium rounded-xl hover:bg-secondary hover:text-white-default"
+          className="w-full bg-secondary border-secondary border-2 py-3 font-medium rounded-xl hover:bg-blue-700 text-white-default"
         />
       </div>
     </div>
