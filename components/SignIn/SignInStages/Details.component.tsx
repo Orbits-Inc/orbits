@@ -1,6 +1,6 @@
 import { Form, Formik } from "formik";
 import React from "react";
-import InputField from "../../Custom/InputField";
+import InputField from "../../../components/Custom/InputField";
 import ContinueButton from "../ContinueButton.component";
 import { useSignIn } from "../signin.provider";
 import { StageType } from "../types";
