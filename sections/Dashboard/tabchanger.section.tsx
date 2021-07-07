@@ -34,8 +34,8 @@ function TabChanger() {
                 title: "Recent",
               },
             ]}
-            switcherItemClassName="px-5 text-gray-500 font-medium rounded-xl py-2 border-white-400 border text-sm"
-            switcherItemActiveClassName="border-blue-200 bg-blue-200 text-blue-600"
+            switcherItemClassName="px-5 hover:bg-white-200 text-gray-500 font-medium rounded-xl py-2 border-white-400 border text-sm"
+            switcherItemActiveClassName="hover:bg-blue-200 border-blue-200 bg-blue-100 text-blue-600"
           />
           <Filter className="mt-1.5" />
         </div>
@@ -48,7 +48,7 @@ function TabChanger() {
             href={data.href}
             id={idx}
           >
-            <p className="">{data.title}</p>
+            <a className="">{data.title}</a>
           </NavLink>
         ))}
       </div>

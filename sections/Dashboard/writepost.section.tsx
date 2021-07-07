@@ -25,6 +25,7 @@ function WritePost() {
             title="Start a post"
             className="mb-4 w-full text-left text-sm font-medium rounded-full p-3 px-6 text-black-300 border border-white500"
             logo={<Edit className="inline mr-3 pb-1" />}
+            logoPosition="left"
           />
         </AuthRequired>
         <div className="hidden lg:block md:block">

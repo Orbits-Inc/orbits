@@ -170,6 +170,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
       <CustomButton
         logo={<Edit className="inline mr-2" />}
         title="Write"
+        logoPosition="left"
         className="bg-secondary py-3.5 w-full text-white-default font-bold text-sm rounded-full hover:bg-blue-700"
         onClick={() => {
           if (!user) {
@@ -202,7 +203,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
               <div className="mt-6">
                 <StartWriting />
               </div>
-              <div className="flex flex-col space-y-6 my-8 mt-16 font-medium text-primary">
+              <div className="flex flex-col space-y-6 my-8 mt-20 font-medium text-primary">
                 <NavLink
                   href="/"
                   activeClassName="text-secondary font-semibold"
@@ -249,11 +250,11 @@ const Navbar = ({ className, loginText }: Navbar) => {
               {user ? (
                 <>
                   <div>
-                    <div className="w-36 truncate mx-auto text-sm text-orange-600 font-semibold mb-5 bg-orange-200 p-3 rounded-full">
+                    <div className="hover:bg-orange-300 w-36 truncate mx-auto text-sm text-orange-600 font-semibold mb-5 bg-orange-200 p-3 rounded-full">
                       <img src="/Orb.svg" className="w-7 inline mr-2" /> 50 Orbs
                     </div>
                   </div>
-                  <div className="bg-white-200 p-3 pb-2 rounded-full border-2 border-white-300">
+                  <div className="hover:bg-white-300 duration-300 cursor-pointer mb-1 bg-white-200 p-3 pb-2 rounded-full border-2 border-white-300">
                     <ProfileCrumb user={res?.user} />
                   </div>
                 </>

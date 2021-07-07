@@ -5,6 +5,7 @@ interface CustomButton {
   title: string;
   className: string;
   logo?: Logo;
+  logoPosition?: string;
   [otherProps: string]: any;
 }
 
@@ -12,6 +13,7 @@ const CustomButton = ({
   title,
   className,
   logo,
+  logoPosition,
   ...otherProps
 }: CustomButton): JSX.Element => {
   return (
@@ -20,8 +22,9 @@ const CustomButton = ({
       className={`rounded-lg text-sm ${className || ""}`}
       {...otherProps}
     >
-      {logo ? logo : ""}
+      {logoPosition == "left" ? logo : ""}
       {title}
+      {logoPosition == "right" ? logo : ""}
     </button>
   );
 };

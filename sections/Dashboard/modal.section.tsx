@@ -1,6 +1,6 @@
 import Navbar from "../../components/PageAssets/navbar.component";
 import CustomButton from "../../components/Custom/custombutton.component";
-import { X, ChevronDown } from "react-feather";
+import { X, ChevronDown, ChevronRight } from "react-feather";
 import { usePopup } from "../../utils/providers/popup.provider";
 import { useAuth } from "../../utils/providers/auth.provider";
 import { useState } from "react";
@@ -9,7 +9,9 @@ function Modal() {
   const StartWriting = () => {
     return (
       <CustomButton
-        title="Coming Soon"
+        title="Get Started"
+        logo={<ChevronRight className="inline mb-1 ml-3" />}
+        logoPosition="right"
         className="mx-auto lg:mx-none md:lg-none glow bg-secondary text-white-default font-bold text-sm rounded-full py-4 px-12 hover:bg-blue-700"
         onClick={() => {
           if (!user) {
@@ -47,7 +49,7 @@ function Modal() {
           <br />
           Spread.
         </div>
-        <div className="font-medium mx-auto lg:mx-0 md:mx-0 text-center lg:text-left md:text-left w-8/12 lg:w-7/12 md:w-10/12 text-accent text-sm my-6">
+        <div className="font-medium mx-auto lg:mx-0 md:mx-0 text-center xl:w-4/12 lg:text-left md:text-left w-8/12 lg:w-6/12 md:w-10/12 text-accent text-sm my-6">
           Science, space & tech is what all we talk and write about!
         </div>
         <div className="flex flex-col items-center" />
