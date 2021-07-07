@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Logo } from "../../types/ui.types";
 
 interface CustomButton {
@@ -6,6 +6,7 @@ interface CustomButton {
   className: string;
   logo?: Logo;
   logoPosition?: string;
+  isLoading?: boolean;
   [otherProps: string]: any;
 }
 
@@ -13,7 +14,9 @@ const CustomButton = ({
   title,
   className,
   logo,
+  isLoading,
   logoPosition,
+  promise,
   ...otherProps
 }: CustomButton): JSX.Element => {
   return (
@@ -22,9 +25,17 @@ const CustomButton = ({
       className={`rounded-lg text-sm ${className || ""}`}
       {...otherProps}
     >
-      {logoPosition == "left" ? logo : ""}
-      {title}
-      {logoPosition == "right" ? logo : ""}
+      {isLoading ? (
+        <>
+          <img className="w-5 h-5 mx-5" src="/spinner.svg" />
+        </>
+      ) : (
+        <>
+          {logoPosition == "left" ? logo : ""}
+          {title}
+          {logoPosition == "right" ? logo : ""}
+        </>
+      )}
     </button>
   );
 };

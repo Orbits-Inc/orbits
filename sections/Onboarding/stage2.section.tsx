@@ -3,8 +3,16 @@ import { useOnboarding } from "./providers/onboarding.provider";
 import React, { useState } from "react";
 import CustomButton from "../../components/Custom/custombutton.component";
 
+const sleep = (ms) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("done");
+    }, ms);
+  });
+
 function StageTwo() {
   const { setStage } = useOnboarding();
+  const [isLoading, setIsLoading] = useState(false);
 
   const Tag = ({ tag }) => {
     const [isSelected, setIsSelected] = useState(false);
@@ -58,7 +66,13 @@ function StageTwo() {
             className="duration-300 px-6 py-3 font-semibold text-secondary hover:text-blue-700"
           />
           <CustomButton
-            onClick={() => setStage(3)}
+            isLoading={isLoading}
+            onClick={async () => {
+              setIsLoading(true);
+              await sleep(500);
+              setStage(3);
+              setIsLoading(false);
+            }}
             type="submit"
             title="Continue"
             className="px-6 bg-secondary border-secondary border-2 py-3 font-semibold rounded-xl hover:bg-blue-700 text-white-default"

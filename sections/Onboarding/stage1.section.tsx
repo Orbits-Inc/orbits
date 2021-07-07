@@ -5,6 +5,13 @@ import ProgressBar from "./progressbar.section";
 import CustomInput from "../../components/Custom/custominput.component";
 import CustomButton from "../../components/Custom/custombutton.component";
 
+const sleep = (ms) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("done");
+    }, ms);
+  });
+
 function StageOne() {
   const { setStage } = useOnboarding();
   const [data, setData] = useState({
@@ -12,7 +19,7 @@ function StageOne() {
     name: "",
     dob: "",
   });
-
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="p-8 md:p-10 w-full xl:w-4/12 lg:w-5/12 md:w-8/12 bg-white-default mx-auto md:rounded-xl">
       <ProgressBar />
@@ -27,9 +34,12 @@ function StageOne() {
         </div>
         <Formik
           initialValues={{ username: "", name: "", dob: "", ...data }}
-          onSubmit={(values) => {
+          onSubmit={async (values) => {
+            setIsLoading(true);
             setData(values);
+            await sleep(500);
             setStage(2);
+            setIsLoading(false);
           }}
         >
           {({
@@ -85,6 +95,7 @@ function StageOne() {
                 </div>
               </div>
               <CustomButton
+                isLoading={isLoading}
                 type="submit"
                 title="Continue"
                 className="ml-auto px-6 bg-secondary border-secondary border-2 py-3 font-semibold rounded-xl hover:bg-blue-700 text-white-default"
