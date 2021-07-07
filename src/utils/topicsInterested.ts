@@ -1,5 +1,1 @@
-export enum TopicsInterested {
-  ASTRONOMY,
-  SPACE,
-  PHYSICS,
-}
+export const topicsInterested = ["ASTRONOMY", "SPACE", "PHYSICS"];

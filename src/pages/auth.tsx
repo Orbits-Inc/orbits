@@ -1,12 +1,11 @@
 import Branding from "../components/Misc/branding";
-import SignIn from "../components/PageAssets/signin.component";
+import SignIn from "../components/SignIn/signin.component";
 
 const Auth = () => {
   return (
-    <main className="bg-white-200 p-8 h-screen">
-      <Branding />
-      <div className="flex mt-20">
-        <div className="m-auto text-center">
+    <main className="bg-blue-500">
+      <div className="flex h-screen">
+        <div className="m-auto">
           <SignIn />
         </div>
       </div>

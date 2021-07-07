@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useState } from "react";
-import { TopicsInterested } from "../../utils/topicsInterested";
+import { topicsInterested } from "../../utils/topicsInterested";
 import { StageType } from "./types";
 
 interface SignInData {
   username: string;
   fullname: string;
-  topicsInterested: TopicsInterested;
+  topicsInterested: keyof typeof topicsInterested;
 }
 
 const SignInContext = createContext<{
