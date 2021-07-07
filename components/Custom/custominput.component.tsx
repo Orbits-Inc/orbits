@@ -10,27 +10,45 @@ interface CustomInput {
 
 const CustomInput = ({
   className,
-  onSubmit = () => {},
+  onSubmit,
   logo,
   ...otherProps
 }: CustomInput): JSX.Element => {
   const [isActive, setIsActive] = useState(false);
 
+  //form typed buttons
+  if (onSubmit) {
+    return (
+      <form
+        className={`px-1 rounded-lg inline-flex ${className || ""} ${
+          isActive ? "border-2 border-secondary" : ""
+        }`}
+        onSubmit={onSubmit}
+      >
+        <div>{logo}</div>
+        <input
+          onFocus={() => setIsActive(true)}
+          onBlur={() => setIsActive(false)}
+          className="w-full outline-none text-base text-primary px-1 bg-transparent rounded-lg"
+          {...otherProps}
+        />
+      </form>
+    );
+  }
   return (
-    <form
+    <div
       className={`px-1 rounded-lg inline-flex ${className || ""} ${
         isActive ? "border-2 border-secondary" : ""
       }`}
-      onSubmit={onSubmit}
     >
       <div>{logo}</div>
       <input
         onFocus={() => setIsActive(true)}
         onBlur={() => setIsActive(false)}
-        className="outline-none text-base text-primary px-1 bg-transparent rounded-lg"
+        className="w-full outline-none text-base text-primary px-1 bg-transparent rounded-lg"
         {...otherProps}
       />
-    </form>
+    </div>
   );
 };
 

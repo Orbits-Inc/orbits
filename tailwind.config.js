@@ -20,9 +20,10 @@ module.exports = {
           800: "#9A9A9A",
         },
         black: {
+          100: "#7C8288",
           200: "#76787A",
           300: "#616161",
-          400: "#4B4B4B",
+          400: "#2F3133",
           700: "#313131",
         },
         blue: {
@@ -36,6 +37,7 @@ module.exports = {
       },
       fontFamily: {
         display: ["Spartan", "sans-serif"],
+        body: ["Inter", "sans-serif"],
       },
       animation: {
         "spin-slow": "spin 3s linear infinite",

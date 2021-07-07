@@ -63,10 +63,10 @@ const PostCard = ({ post }: PostCard): JSX.Element => {
 
         <div className="flex flex-col md:items-center lg:items-center md:flex-row lg:flex-row space-x-0 space-y-3 lg:space-y-0 lg:space-x-3 md:space-x-3">
           <div className="w-full">
-            <div className="font-bold text-xl mb-2 text-black-700">
+            <div className="font-bold text-xl mb-1 text-black-700">
               {post?.title}
             </div>
-            <div className="leading-relaxed font-medium text-sm mb-1 lg:mb-none md:mb-none text-black-300">
+            <div className="font-body font-regular text-base mb-1 lg:mb-none md:mb-none text-black-300">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua...
             </div>
