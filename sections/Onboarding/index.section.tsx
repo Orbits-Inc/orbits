@@ -9,7 +9,7 @@ function OnBoarding() {
 
   return (
     <div
-      className="min-h-screen flex flex-col justify-end md:justify-evenly h-full lg:py-20 md:py-20"
+      className="min-h-screen flex flex-col md:justify-evenly lg:py-20 md:py-20"
       style={{
         backgroundImage: `url("/OnboardingBackground.svg")`,
         backgroundPosition: "center",

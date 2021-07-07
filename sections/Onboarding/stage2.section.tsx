@@ -36,7 +36,7 @@ function StageTwo() {
   };
 
   return (
-    <div className="p-8 md:p-10 w-full xl:w-4/12 lg:w-5/12 md:w-8/12 bg-white-default mx-auto md:rounded-xl">
+    <div className="absolute md:relative bottom-0 p-8 md:p-10 w-full xl:w-4/12 lg:w-5/12 md:w-8/12 bg-white-default mx-auto md:rounded-xl">
       <ProgressBar />
       <div className="md:px-3 mb-5">
         <div className="text-black-400 font-bold text-lg mb-1">
