@@ -1,10 +1,15 @@
 import React from "react";
-import CustomButton from "../../components/Custom/custombutton.component";
-import ProgressBar from "./progressbar.section";
+import ProgressBar from "../progressbar.section";
+import GoBackContinueButton from "../GoBackContinueButton";
+import { useSignIn } from "../signin.provider";
+import { StageType } from "../types";
 
-function StageThree() {
+const Success: React.FC = () => {
+  const { moveToStage } = useSignIn();
+  if (!moveToStage) return null;
+
   return (
-    <div className="absolute md:relative bottom-0 p-8 md:p-10 w-full xl:w-4/12 lg:w-5/12 md:w-8/12 bg-white-default mx-auto md:rounded-xl">
+    <div className="absolute md:relative bottom-0 p-8 md:p-10 w-full xl:w-4/12 lg:w-5/12 md:w-8/12 bg-white mx-auto md:rounded-xl">
       <ProgressBar />
       <div className="px-3">
         <div className="mb-10">
@@ -30,15 +35,16 @@ function StageThree() {
             </span>
           </div>
         </div>
-        <CustomButton
-          onClick={() => (window.location.href = "/")}
-          type="submit"
+        <GoBackContinueButton
+          onClick={() => {
+            moveToStage(StageType.END);
+          }}
           title="Let's Go!"
-          className="mt-6 mb-4 px-6 bg-secondary border-secondary border-2 py-3 font-semibold rounded-xl hover:bg-blue-700 text-white-default"
+          variant="continue"
         />
       </div>
     </div>
   );
-}
+};
 
-export default StageThree;
+export default Success;

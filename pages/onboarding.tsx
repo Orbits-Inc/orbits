@@ -1,4 +1,4 @@
-import OnBoarding from "../sections/Onboarding/index.section";
+import OnBoarding from "../components/SignIn/signin.component";
 
 function Onboarding() {
   return <OnBoarding />;

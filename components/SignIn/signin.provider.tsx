@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { createContext, useContext, useState } from "react";
 import { topicsInterested } from "../../utils/topicsInterested";
 import { StageType } from "./types";
@@ -10,7 +11,7 @@ interface SignInData {
 
 const SignInContext = createContext<{
   signInStage?: StageType;
-  moveToNextStage?: (stage: StageType, values?: any) => void;
+  moveToStage?: (stage: StageType, values?: any) => void;
   data?: SignInData;
 }>({});
 
@@ -18,7 +19,9 @@ const SignInProvider: React.FC = ({ children }) => {
   const [signInStage, setSignInStage] = useState(StageType.DETAILS);
   const [data, setData] = useState<SignInData>();
 
-  const moveToNextStage = (stage: StageType, values?: any) => {
+  const router = useRouter();
+
+  const moveToStage = (stage: StageType, values?: any) => {
     setData({ ...data, ...values });
 
     if (stage !== StageType.END) {
@@ -26,11 +29,11 @@ const SignInProvider: React.FC = ({ children }) => {
       return;
     }
 
-    // handle success
+    router.push("/");
   };
 
   return (
-    <SignInContext.Provider value={{ signInStage, moveToNextStage, data }}>
+    <SignInContext.Provider value={{ signInStage, moveToStage, data }}>
       {children}
     </SignInContext.Provider>
   );
