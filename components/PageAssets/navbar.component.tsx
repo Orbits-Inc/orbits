@@ -46,7 +46,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
             }
           }}
         >
-          <div className="fixed pt-16 left-0 bottom-0 rounded-none w-full transition duration-300 ease-in-out bg-white-default p-6 lg:p-12 md:p-12 text-center">
+          <div className="fixed pt-16 left-0 bottom-0 rounded-none w-full transition duration-300 ease-in-out bg-white  p-6 lg:p-12 md:p-12 text-center">
             <X
               className="absolute top-0 right-0 m-5 cursor-pointer"
               onClick={() => {
@@ -121,7 +121,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                 title="Login"
                 className={`rounded-full mb-2 font-semibold text-sm px-5 py-2 login bg-transparent border-2 border-blue-500 lg:mr-3 md:mr-3 ${
                   loginText ? loginText : "text-secondary"
-                } hover:bg-secondary hover:text-white-default`}
+                } hover:bg-secondary hover:text-white `}
               />
             )}
           </li>
@@ -156,7 +156,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                   setIsOpen(true);
                 }}
                 title="Sign up"
-                className="sign-up mb-2 rounded-full border-2 border-blue-500 hover:border-blue-700 text-sm font-semibold px-5 py-2 lg:inline md:inline hidden bg-secondary text-white-default hover:text-white-default hover:bg-blue-700"
+                className="sign-up mb-2 rounded-full border-2 border-blue-500 hover:border-blue-700 text-sm font-semibold px-5 py-2 lg:inline md:inline hidden bg-secondary text-white  hover:text-white  hover:bg-blue-700"
               />
             )}
           </li>
@@ -171,7 +171,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
         logo={<Edit className="inline mr-2" />}
         title="Write"
         logoPosition="left"
-        className="bg-secondary py-3.5 w-full text-white-default font-bold text-sm rounded-full hover:bg-blue-700"
+        className="bg-secondary py-3.5 w-full text-white  font-bold text-sm rounded-full hover:bg-blue-700"
         onClick={() => {
           if (!user) {
             setIsOpen(true);
@@ -184,7 +184,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
   const DesktopNavbar = () => (
     <>
       <div className="fixed h-screen w-60 lg:pb-10 md:pb-5">
-        <div className="border border-white-300 p-6 rounded-xl bg-white-default w-full h-full">
+        <div className="border border-white-300 p-6 rounded-xl bg-white  w-full h-full">
           <div className="flex flex-col h-full justify-between">
             <div>
               <div className="logo">
@@ -260,7 +260,7 @@ const Navbar = ({ className, loginText }: Navbar) => {
                 </>
               ) : (
                 <CustomButton
-                  className="font-semibold border-2 border-blue-500 text-secondary w-full px-6 py-3 hover:bg-blue-500 hover:text-white-default rounded-full"
+                  className="font-semibold border-2 border-blue-500 text-secondary w-full px-6 py-3 hover:bg-blue-500 hover:text-white  rounded-full"
                   title="Login"
                   onClick={() => {
                     window.location.href = "/auth";

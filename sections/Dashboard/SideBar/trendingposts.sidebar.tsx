@@ -7,7 +7,7 @@ function TrendingSection() {
   return (
     <div
       id="trending-posts"
-      className="px-5 py-7 rounded-xl border border-white-300 bg-white-default"
+      className="px-5 py-7 rounded-xl border border-white-300 bg-white "
     >
       <div className="flex justify-between">
         <div>
@@ -34,7 +34,7 @@ function TrendingSection() {
         logo={<ChevronRight className="inline ml-2 pb-1" />}
         logoPosition="right"
         title="Show more"
-        className="mt-8 bottom-0 w-full border-secondary border-2 text-secondary py-3 font-medium rounded-xl hover:bg-secondary hover:text-white-default"
+        className="mt-8 bottom-0 w-full border-secondary border-2 text-secondary py-3 font-medium rounded-xl hover:bg-secondary hover:text-white "
       />
     </div>
   );

@@ -18,7 +18,7 @@ function TabChanger() {
   return (
     <div
       id="myfeed"
-      className="overflow-clip overflow-hidden border border-white-300 bg-white-default text-base font-bold w-full py-4 px-8 rounded-t-xl"
+      className="overflow-clip overflow-hidden border border-white-300 bg-white  text-base font-bold w-full py-4 px-8 rounded-t-xl"
     >
       <div className="flex justify-between items-center">
         <div>My Feed</div>

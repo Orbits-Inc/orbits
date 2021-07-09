@@ -21,7 +21,7 @@ function LoginPrompt() {
           logo={<ChevronRight stroke="bold" className="inline ml-2 pb-1" />}
           logoPosition="right"
           title="Get Started"
-          className="font-semibold w-full bg-secondary border-secondary border-2 py-3 rounded-xl hover:bg-blue-700 text-white-default"
+          className="font-semibold w-full bg-secondary border-secondary border-2 py-3 rounded-xl hover:bg-blue-700 text-white "
         />
       </div>
     </div>

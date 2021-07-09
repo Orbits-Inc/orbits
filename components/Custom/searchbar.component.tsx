@@ -19,7 +19,7 @@ function SearchBar({ className }: SearchBar) {
     <CustomInput
       id="search-bar"
       placeholder="Search Orbits"
-      className={`hover:border-2 hover:border-secondary py-4 w-full lg:w-80 duration-500 border-2 border-white-300 bg-white-default py-2 rounded-full px-8 ${className}`}
+      className={`hover:border-2 hover:border-secondary py-4 w-full lg:w-80 duration-500 border-2 border-white-300 bg-white  py-2 rounded-full px-8 ${className}`}
       required
       onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(e.target.value);
