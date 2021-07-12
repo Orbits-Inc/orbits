@@ -15,7 +15,7 @@ const InputField: React.FC<
     <>
       {!!error && <div>{error}</div>}
       <input
-        className={`border-gray-200 border-2 rounded-md py-2 px-4 ${className}`}
+        className={`border border-white-500 w-full p-4 px-4 rounded-md ${className}`}
         {...field}
         {...props}
       />

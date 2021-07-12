@@ -60,7 +60,6 @@ const Details = () => {
                   User Name
                 </div>
                 <InputField
-                  className="border border-white-500 w-full p-4 px-4"
                   name="username"
                   placeholder="Enter User Name"
                   autoComplete="off"
@@ -72,7 +71,6 @@ const Details = () => {
                   Full Name
                 </div>
                 <InputField
-                  className="border border-white-500 w-full p-4 px-4"
                   name="fullname"
                   placeholder="Enter your Fullname"
                   autoComplete="off"
@@ -84,7 +82,6 @@ const Details = () => {
                   Date of Birth
                 </div>
                 <InputField
-                  className="border border-white-500 w-full p-4 px-4"
                   name="dob"
                   placeholder="Enter your DOB"
                   autoComplete="off"
@@ -98,6 +95,7 @@ const Details = () => {
                   title="Continue"
                   variant="continue"
                   className="ml-auto"
+                  disabled={isSubmitting}
                 />
               </div>
             </Form>
