@@ -7,8 +7,11 @@ import SearchBar from "../../components/Custom/searchbar.component";
 import WritePost from "./writepost.section";
 import Posts from "../Post/posts.section";
 import TabChanger from "./tabchanger.section";
+import { useAuth } from "../../utils/providers/auth.provider";
 
 function Dashboard() {
+  const { user } = useAuth();
+
   return (
     <main className="">
       <div className="flex flex-col md:flex-row lg:flex-row lg:space-x-4 md:space-x-2 text-primary">
@@ -23,7 +26,8 @@ function Dashboard() {
           <SearchBar />
           <TrendingSection />
           <TrendingTags />
-          <LoginPrompt />
+
+          {!user && <LoginPrompt />}
         </div>
       </div>
     </main>
