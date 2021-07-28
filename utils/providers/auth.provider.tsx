@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext, createContext } from "react";
-import addNewUser from "../helpers/user/add_new_user";
-import firebaseClient from "../firebase";
-import firebase from "firebase/app";
-import "firebase/auth";
-import { User } from "../../types/data.types";
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import addNewUser from '../helpers/user/add_new_user';
+import firebaseClient from '../firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import { User } from '../../types/data.types';
 
 // TODO: change User type to FirebaseUserData
 
@@ -30,6 +30,7 @@ export const AuthProvider = ({ children }: any) => {
       setUser(_user);
       setLoading(false);
       try {
+        // This request always gives an error
         await addNewUser(_user);
       } catch (err) {
         console.log(err);
@@ -37,10 +38,6 @@ export const AuthProvider = ({ children }: any) => {
       //const __user = await getUser(_user.uid);
     });
   }, []);
-  return (
-    <AuthContext.Provider value={{ user, loading }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ user, loading }}>{children}</AuthContext.Provider>;
 };
 export const useAuth = () => useContext(AuthContext);
