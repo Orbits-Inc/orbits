@@ -1,14 +1,12 @@
 import axios from "axios";
 import useSWR from "swr";
 
-export function getUser(uid: any) {
-  const { data, error } = useSWR(
-    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/user/byId/${uid}`
-  );
+export async function getUser(uid: any) {
+  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/user/byId/${uid}`);
   return {
     user: data,
     isLoading: !error && !data,
-    isError: error,
+    isError: error
   };
 }
 

@@ -9,7 +9,7 @@ function Posts() {
     <div className="flex flex-col space-y-2 text-primary">
       {posts?.map((data: any, idx: any) => (
         <div
-          className={`bg-white-default duration-300 p-6 lg:p-7 border border-white-300 rounded-xl`}
+          className={`bg-white duration-300 p-6 lg:p-7 border border-white-300 rounded-xl`}
           key={idx}
         >
           <PostCard post={data} />

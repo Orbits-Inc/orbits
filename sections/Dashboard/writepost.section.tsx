@@ -9,7 +9,7 @@ function WritePost() {
   return (
     <div
       id="write-post"
-      className="relative pb-10 lg:pb-6 md:pb-6 flex space-x-4 p-6 bg-white-default rounded-xl border border-white-300"
+      className="relative pb-10 lg:pb-6 md:pb-6 flex space-x-4 p-6 bg-white rounded-xl border border-white-300"
     >
       <div className="">
         <div className="h-12 w-12">
@@ -25,6 +25,7 @@ function WritePost() {
             title="Start a post"
             className="mb-4 w-full text-left text-sm font-medium rounded-full p-3 px-6 text-black-300 border border-white500"
             logo={<Edit className="inline mr-3 pb-1" />}
+            logoPosition="left"
           />
         </AuthRequired>
         <div className="hidden lg:block md:block">

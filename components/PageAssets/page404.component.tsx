@@ -4,7 +4,7 @@ interface Page404 {
 
 const Page404 = ({ message }: Page404): JSX.Element => {
   return (
-    <div id="parent" className="parent oops text-white-default h-screen">
+    <div id="parent" className="parent oops text-white h-screen">
       <div
         id="child"
         className="child p-8 err-msg text-5xl text-center w-full font-bold mt-11/12"

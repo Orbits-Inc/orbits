@@ -21,8 +21,7 @@
     "noEmit": true,
     "outDir": "dist",
     "isolatedModules": true
-    // "baseUrl": "src"
   },
-  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx" ],
   "exclude": ["node_modules"]
 }
