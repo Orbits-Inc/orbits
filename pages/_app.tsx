@@ -12,7 +12,7 @@ const progress = new ProgressBar({
   size: 2,
   color: "#347efd",
   className: "bar-of-progress",
-  delay: 100,
+  delay: 100
 });
 
 Router.events.on("routeChangeStart", progress.start);
@@ -29,24 +29,15 @@ function MyApp({ Component, pageProps }: any) {
               <Head>
                 <title>Orbits</title>
                 <link rel="shortcut icon" href="./favicon.png" />
-                <meta
-                  name="title"
-                  content="Orbits - Research | Learn | Share"
-                />
+                <meta name="title" content="Orbits - Research | Learn | Share" />
                 <meta
                   name="description"
                   content="Researching, Exploring, and Sharing makes a day worthy, make it easier with Orbits."
                 />
 
                 <meta property="og:type" content="website" />
-                <meta
-                  property="og:url"
-                  content="https://orbits-theta.vercel.app/"
-                />
-                <meta
-                  property="og:title"
-                  content="Orbits - Research | Learn | Share"
-                />
+                <meta property="og:url" content="https://orbits-theta.vercel.app/" />
+                <meta property="og:title" content="Orbits - Research | Learn | Share" />
                 <meta
                   property="og:image:alt"
                   content="Researching, Exploring, and Sharing makes a day worthy, make it easier with Orbits."
@@ -58,14 +49,8 @@ function MyApp({ Component, pageProps }: any) {
                 <meta property="og:image" content="/Orbits-Banner.png" />
 
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta
-                  property="twitter:url"
-                  content="https://orbits-theta.vercel.app/"
-                />
-                <meta
-                  property="twitter:title"
-                  content="Orbits - Research | Learn | Share"
-                />
+                <meta property="twitter:url" content="https://orbits-theta.vercel.app/" />
+                <meta property="twitter:title" content="Orbits - Research | Learn | Share" />
                 <meta
                   property="twitter:description"
                   content="Researching, Exploring, and Sharing makes a day worthy, make it easier with Orbits."
@@ -73,18 +58,8 @@ function MyApp({ Component, pageProps }: any) {
                 <meta property="twitter:image" content="/Orbits-Banner.png" />
 
                 <link rel="manifest" href="/manifest.json" />
-                <link
-                  href="/favicon.png"
-                  rel="icon"
-                  type="image/png"
-                  sizes="16x16"
-                />
-                <link
-                  href="/favicon.png"
-                  rel="icon"
-                  type="image/png"
-                  sizes="32x32"
-                />
+                <link href="/favicon.png" rel="icon" type="image/png" sizes="16x16" />
+                <link href="/favicon.png" rel="icon" type="image/png" sizes="32x32" />
                 <link rel="apple-touch-icon" href="/favicon.png"></link>
                 <meta name="theme-color" content="#3763ff" />
               </Head>

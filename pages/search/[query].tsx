@@ -9,7 +9,7 @@ import NothingFound from "../../sections/SearchResults/nothingFound.component";
 import { searchUser } from "../../utils/helpers/user/search_user";
 import { searchPost } from "../../utils/helpers/post/search_post";
 import { getUser } from "../../utils/helpers/user/get_user";
-import { User, Post } from "../../types/data.types";
+import { Post, User } from "../../types/data.types";
 
 export const getServerSideProps = async (ctx: { query: { query: any } }) => {
   const query = ctx.query.query;
@@ -32,7 +32,7 @@ interface Search {
 enum SearchFilter {
   TOP,
   PEOPLE,
-  ARTICLES,
+  ARTICLES
 }
 
 function Search({ people, articles }: Search) {
@@ -65,32 +65,27 @@ function Search({ people, articles }: Search) {
           <div className="w-full">
             <div className="font-bold mb-12 text-2xl">
               Search Results for{" "}
-              <span className="text-secondary cursor-pointer hover:underline">
-                {query}
-              </span>
+              <span className="text-secondary cursor-pointer hover:underline">{query}</span>
               <div className="mt-3 text-sm text-secondary border-2 flex bg-blue-50 border-blue-500 space-x-12 rounded-lg py-2 px-6 justify-between lg:justify-start">
                 <div
                   className={`hover:text-blue-800 ${
                     filter === SearchFilter.TOP ? "text-blue-800" : ""
                   } cursor-pointer duration-300 mt-1`}
-                  onClick={() => setFilter(SearchFilter.TOP)}
-                >
+                  onClick={() => setFilter(SearchFilter.TOP)}>
                   TOP
                 </div>
                 <div
                   className={`hover:text-blue-800 ${
                     filter === SearchFilter.PEOPLE ? "text-blue-800" : ""
                   } cursor-pointer duration-300 mt-1`}
-                  onClick={() => setFilter(SearchFilter.PEOPLE)}
-                >
+                  onClick={() => setFilter(SearchFilter.PEOPLE)}>
                   PEOPLE
                 </div>
                 <div
                   className={`hover:text-blue-800 ${
                     filter === SearchFilter.ARTICLES ? "text-blue-800" : ""
                   } cursor-pointer duration-300 mt-1`}
-                  onClick={() => setFilter(SearchFilter.ARTICLES)}
-                >
+                  onClick={() => setFilter(SearchFilter.ARTICLES)}>
                   ARTICLES
                 </div>
               </div>

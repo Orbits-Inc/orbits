@@ -1,4 +1,4 @@
-import { Formik, Form } from "formik";
+import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import ProgressBar from "../progressbar.section";
 import { useSignIn } from "../signin.provider";
@@ -9,7 +9,6 @@ import { StageType } from "../types";
 interface Data {
   username: string;
   fullname: string;
-  // dob: Date;
   dob: string;
 }
 
@@ -32,7 +31,7 @@ const Details = () => {
     alert(JSON.stringify(values));
 
     setSubmitting(false);
-    moveToStage(StageType.TOPICS, values);
+    moveToStage(StageType.TOPICS, data);
   };
 
   return (
@@ -40,25 +39,18 @@ const Details = () => {
       <ProgressBar />
       <div>
         <div className="md:px-3">
-          <div className="text-black-400 font-bold text-lg mb-1">
-            Let's set up your Account
-          </div>
-          <div className="text-black-100 font-body text-xs">
-            Before getting started with Orbits
-          </div>
+          <div className="text-black-400 font-bold text-lg mb-1">Let's set up your Account</div>
+          <div className="text-black-100 font-body text-xs">Before getting started with Orbits</div>
         </div>
 
         <Formik
           initialValues={initialValues}
           onSubmit={onSubmit}
-          className="md:px-3 mt-6 flex flex-col space-y-7"
-        >
+          className="md:px-3 mt-6 flex flex-col space-y-7">
           {({ isSubmitting }) => (
             <Form className="md:px-3 mt-6 flex flex-col space-y-7">
               <div>
-                <div className="text-black-200 text-xs font-semibold mb-2">
-                  User Name
-                </div>
+                <div className="text-black-200 text-xs font-semibold mb-2">User Name</div>
                 <InputField
                   name="username"
                   placeholder="Enter User Name"
@@ -67,9 +59,7 @@ const Details = () => {
                 />
               </div>
               <div className="mt-4">
-                <div className="text-black-200 text-xs font-semibold mb-2">
-                  Full Name
-                </div>
+                <div className="text-black-200 text-xs font-semibold mb-2">Full Name</div>
                 <InputField
                   name="fullname"
                   placeholder="Enter your Fullname"
@@ -78,9 +68,7 @@ const Details = () => {
                 />
               </div>
               <div className="mt-4">
-                <div className="text-black-200 text-xs font-semibold mb-2">
-                  Date of Birth
-                </div>
+                <div className="text-black-200 text-xs font-semibold mb-2">Date of Birth</div>
                 <InputField
                   name="dob"
                   placeholder="Enter your DOB"

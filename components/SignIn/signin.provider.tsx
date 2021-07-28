@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import React, { createContext, useContext, useState } from "react";
-import { topicsInterested } from "../../utils/topicsInterested";
+import { TopicsInterested } from "../../utils/topicsInterested";
 import { StageType } from "./types";
 
 interface SignInData {
   username: string;
   fullname: string;
-  topicsInterested: keyof typeof topicsInterested;
+  topicsInterested: TopicsInterested;
 }
 
 const SignInContext = createContext<{
