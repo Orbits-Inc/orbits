@@ -7,16 +7,10 @@ import SearchBar from "../../components/Custom/searchbar.component";
 import WritePost from "./writepost.section";
 import Posts from "../Post/posts.section";
 import TabChanger from "./tabchanger.section";
-
-import { useEffect } from "react";
 import { useAuth } from "../../utils/providers/auth.provider";
 
 function Dashboard() {
   const { user } = useAuth();
-
-  useEffect(() => {
-    console.log(user);
-  }, []);
 
   return (
     <main className="">
